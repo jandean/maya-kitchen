@@ -1,47 +1,80 @@
 <!DOCTYPE html>
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html>
 <head>
-	<meta charset="utf-8" />
+	<link rel="shortcut icon" href="" />
+	<!-- Load Stylesheet -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/stylesheets/admin/style.css">
 
-	<!-- Set the viewport width to device width for mobile -->
-	<meta name="viewport" content="width=device-width" />
-
-	<title>Welcome to CodeIgniter Foundation</title>
-  
-	<!-- Included CSS Files -->
-	<!-- Combine and Compress These CSS Files -->
-	<link rel="stylesheet" href="stylesheets/globals.css">
-	<link rel="stylesheet" href="stylesheets/typography.css">
-	<link rel="stylesheet" href="stylesheets/grid.css">
-	<link rel="stylesheet" href="stylesheets/ui.css">
-	<link rel="stylesheet" href="stylesheets/forms.css">
-	<link rel="stylesheet" href="stylesheets/orbit.css">
-	<link rel="stylesheet" href="stylesheets/reveal.css">
-	<link rel="stylesheet" href="stylesheets/mobile.css">
-	<!-- End Combine and Compress These CSS Files -->
-	<link rel="stylesheet" href="stylesheets/app.css">
-
-	<!--[if lt IE 9]>
-		<link rel="stylesheet" href="stylesheets/ie.css">
-	<![endif]-->
-	
-	<script src="javascripts/modernizr.foundation.js"></script>
-
-	<!-- IE Fix for HTML5 Tags -->
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
+	<title>The Maya Kitchen Site Admin</title>
 </head>
+
 <body>
+	<nav class="top-bar" data-topbar>
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="#"><img src="<?php echo base_url(); ?>/images/logo.png"></a></h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+		</ul>
+
+		<section class="top-bar-section">
+			<!-- Right Nav Section -->
+			<ul class="right">
+				<!-- <li class="active"><a href="#">Right Button Active</a></li> -->
+				<li class="has-dropdown active">
+					<a href="#">Logged in as <strong>admin</strong></a>
+					<ul class="dropdown">
+						<li><a href="#">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<!-- Left Nav Section -->
+			<ul class="left">
+			<li class="has-dropdown">
+				<a href="#">Classes</a>
+				<ul class="dropdown">
+					<li><a href="">Add Class</a></li>
+					<li><a href="">Manage Classes</a></li>
+				</ul>
+			</li>
+			<li class="has-dropdown">
+				<a href="#">Recipes</a>
+				<ul class="dropdown">
+					<li><a href="">Add Recipe</a></li>
+					<li><a href="">Manage Recipes</a></li>
+				</ul>
+			</li><li class="has-dropdown">
+				<a href="#">Articles</a>
+				<ul class="dropdown">
+					<li><a href="">Add Article</a></li>
+					<li><a href="">Manage Articles</a></li>
+				</ul>
+			</li>
+			<li class="has-dropdown">
+				<a href="#">Products</a>
+				<ul class="dropdown">
+					<li><a href="">Add Product</a></li>
+					<li><a href="">Manage Products</a></li>
+				</ul>
+			</li>
+			<li class="has-dropdown">
+				<a href="#">Features</a>
+				<ul class="dropdown">
+					<li><a href="">Homepage Banner</a></li>
+					<li><a href="">Sidebar Items</a></li>
+				</ul>
+			</li>
+			<li class="has-dropdown">
+				<a href="#">Pages</a>
+				<ul class="dropdown">
+					<li><a href="">Contact Us</a></li>
+				</ul>
+			</li>
+			</ul>
+		</section>
+	</nav>
 
 	<!-- container -->
 	<div class="container">
-
-		
-

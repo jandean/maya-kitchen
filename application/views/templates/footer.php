@@ -1,19 +1,16 @@
 	</div>
 	<!-- container -->
+	
+<footer class="row text-center">
+	<small>Copyright &copy;2014, The Maya Kitchen</small>
+</footer>
 
+<script src="<?php echo base_url(); ?>/javascripts/jquery.min.js"></script>
 
-
-
-	<!-- Included JS Files -->
-	<script src="javascripts/jquery.min.js"></script>
-	<!-- Combine and Compress These JS Files -->
-	<script src="javascripts/jquery.reveal.js"></script>
-	<script src="javascripts/jquery.orbit-1.4.0.js"></script>
-	<script src="javascripts/jquery.customforms.js"></script>
-	<script src="javascripts/jquery.placeholder.min.js"></script>
-	<script src="javascripts/jquery.tooltips.js"></script>
-	<!-- End Combine and Compress These JS Files -->
-	<script src="javascripts/app.js"></script>
+<script src="<?php echo base_url(); ?>/javascripts/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+</script>
 
 </body>
 </html>

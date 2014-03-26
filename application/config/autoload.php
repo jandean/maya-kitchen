@@ -37,7 +37,7 @@
 |
 */
 
-$autoload['packages'] = array('ion_auth');
+$autoload['packages'] = array();
 
 
 /*
@@ -52,7 +52,7 @@ $autoload['packages'] = array('ion_auth');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'session');
+$autoload['libraries'] = array('database', 'session', 'form_validation', 'ion_auth');
 
 
 /*
@@ -110,6 +110,9 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array();
+
+
+$autoload['sparks'] = array('ion_auth/2.5.0');
 
 
 /* End of file autoload.php */
