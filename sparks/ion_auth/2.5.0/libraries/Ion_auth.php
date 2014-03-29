@@ -62,7 +62,6 @@ class Ion_auth
 		$this->lang->load('ion_auth');
 		$this->load->helper('cookie');
 		$this->load->helper('language');
-		$this->load->helper('url');
 
 		// Load IonAuth MongoDB model if it's set to use MongoDB,
 		// We assign the model object to "ion_auth_model" variable.

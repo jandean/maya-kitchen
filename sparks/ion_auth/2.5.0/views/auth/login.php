@@ -14,12 +14,16 @@
         </label>
       </div>
       <div class="row">
-        <label><?php echo lang('login_remember_label', 'remember');?>
-          <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
+        <label>
+          <div style="float:left">
+            <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?><?php echo lang('login_remember_label', 'remember');?>
+          </div>
+          <div style="float:right">
+            <a href="forgot_password"><?php echo lang('login_forgot_password');?></a>
+          </div>
         </label>
       </div>
       <button type="submit" class="small radius"><?php echo lang('login_submit_btn'); ?></button>
     <?php echo form_close();?>
-    <p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
   </div>
 </section>

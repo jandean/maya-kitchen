@@ -39,7 +39,13 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+function get_base_url()
+{
+    $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+    $base = explode("/index.php", $url);
+    return $base[0];
+}
+$config['base_url'] = get_base_url();
 
 /*
 |--------------------------------------------------------------------------

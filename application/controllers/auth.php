@@ -14,6 +14,10 @@ class Auth extends CI_Controller {
 	//log the user in
 	function login()
 	{
+		if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin()):
+			redirect('admin/index', 'refresh');
+		endif;
+		
 		$this->data['title'] = "Login";
 
 		//validate form input
@@ -31,7 +35,7 @@ class Auth extends CI_Controller {
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('/', 'refresh');
+				redirect('admin/index', 'refresh');
 			}
 			else
 			{
@@ -60,21 +64,18 @@ class Auth extends CI_Controller {
 			);
 
 			$this->data['page'] = "auth/login";
-			$this->load->view('template', $this->data);
+			$this->load->view('admin/template', $this->data);
 		}
 	}
 
 	//log the user out
 	function logout()
 	{
-		$this->data['title'] = "Logout";
-
-		//log the user out
-		$logout = $this->ion_auth->logout();
-
-		//redirect them to the login page
-		$this->session->set_flashdata('message', $this->ion_auth->messages());
-		redirect('auth/login', 'refresh');
+		if($this->ion_auth->logged_in())
+	    {
+	        $this->ion_auth->logout();
+	        redirect('admin/login', 'refresh');
+	    }
 	}
 
 	//change password
