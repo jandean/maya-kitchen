@@ -12,7 +12,7 @@ class Recipe extends CI_Controller {
         endif;
 
         $this->data['side'] = "admin/recipe-sidemenu";
-        $this->load->model('recipeCategoryModel', 'category_model');
+        $this->load->model('RecipeCategoryModel', 'category_model');
     }
 
     public function index()

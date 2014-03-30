@@ -16,10 +16,6 @@ $(function() {
       $('#hid_catid').val($(this).parent('td').siblings('.cat-id').html());
     });
   });
-
-  $('button.cancel').click(function(){
-    $('.close-reveal-modal').click();
-  });
 });
 
 function save_category()

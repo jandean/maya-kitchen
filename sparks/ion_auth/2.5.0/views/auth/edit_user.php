@@ -1,43 +1,39 @@
-<h1><?php echo lang('edit_user_heading');?></h1>
-<p><?php echo lang('edit_user_subheading');?></p>
+<section class="main row">
+  <?php echo $sidemenu; ?>
+  <div class="core small-10 columns">
+    <h3><?php echo $title; ?></h3>
+    <hr>
+    <div id="infoMessage"><?php echo $message;?></div>
 
-<div id="infoMessage"><?php echo $message;?></div>
-
-<?php echo form_open(uri_string());?>
-
-      <p>
+    <?php echo form_open(uri_string());?>
+      <label>
             <?php echo lang('edit_user_fname_label', 'first_name');?> <br />
             <?php echo form_input($first_name);?>
-      </p>
-
-      <p>
+      </label>
+      <label>
             <?php echo lang('edit_user_lname_label', 'last_name');?> <br />
             <?php echo form_input($last_name);?>
-      </p>
-
-      <p>
+      </label>
+      <!-- <label>
             <?php echo lang('edit_user_company_label', 'company');?> <br />
             <?php echo form_input($company);?>
-      </p>
-
-      <p>
+      </label> -->
+      <!-- <label>
             <?php echo lang('edit_user_phone_label', 'phone');?> <br />
             <?php echo form_input($phone);?>
-      </p>
-
-      <p>
+      </label> -->
+      <label>
             <?php echo lang('edit_user_password_label', 'password');?> <br />
             <?php echo form_input($password);?>
-      </p>
-
-      <p>
+      </label>
+      <label>
             <?php echo lang('edit_user_password_confirm_label', 'password_confirm');?><br />
             <?php echo form_input($password_confirm);?>
-      </p>
+      </label>
 
-      <?php if ($this->ion_auth->is_admin()): ?>
+      <!-- <?php if ($this->ion_auth->is_admin()): ?>
 
-          <h3><?php echo lang('edit_user_groups_heading');?></h3>
+          <h3></?php echo lang('edit_user_groups_heading');?></h3>
           <?php foreach ($groups as $group):?>
               <label class="checkbox">
               <?php
@@ -56,11 +52,14 @@
               </label>
           <?php endforeach?>
 
-      <?php endif ?>
+      <?php endif ?> -->
 
       <?php echo form_hidden('id', $user->id);?>
       <?php echo form_hidden($csrf); ?>
 
-      <p><?php echo form_submit('submit', lang('edit_user_submit_btn'));?></p>
+      <button type="submit" class="button tiny radius alert">SAVE</button>
+      <a href="<?php echo base_url('index.php/users'); ?>" class="button tiny radius secondary">CANCEL</a>
 
-<?php echo form_close();?>
+    <?php echo form_close();?>
+  </div>
+</section>

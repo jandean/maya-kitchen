@@ -6,6 +6,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('stylesheets/admin/style.css'); ?>">
     <script src="<?php echo base_url('javascripts/jquery.min.js'); ?>"></script>
+    <script src="<?php echo base_url('javascripts/app/common.js'); ?>"></script>
     <script type="text/javascript">
         var config = {
              base: "<?php echo base_url(); ?>",
@@ -43,6 +44,13 @@
 
             <!-- Left Nav Section -->
             <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Users</a>
+                <ul class="dropdown">
+                    <li><a href="">Add User</a></li>
+                    <li><a href="<?php echo base_url('index.php/users'); ?>">Manage Users</a></li>
+                </ul>
+            </li>
             <li class="has-dropdown">
                 <a href="#">Classes</a>
                 <ul class="dropdown">
