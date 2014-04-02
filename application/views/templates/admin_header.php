@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="shortcut icon" href="" />
     <!-- Load Stylesheet -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('stylesheets/admin/style.css'); ?>">
     <script src="<?php echo base_url('javascripts/jquery.min.js'); ?>"></script>
-    <script src="<?php echo base_url('javascripts/app/common.js'); ?>"></script>
     <script type="text/javascript">
         var config = {
              base: "<?php echo base_url(); ?>",
              someOtherPref: 4
          };
 
-        jQuery.fn.reset = function () {
-          $(this).each (function() { this.reset(); });
-        }
+        // var csrf_token_name = "<?php echo $this->security->get_csrf_token_name(); ?>";
+        // var csrf_token_hash = "<?php echo $this->security->get_csrf_hash(); ?>";
     </script>
+    <script src="<?php echo base_url('javascripts/app/common.js'); ?>"></script>
     <title>The Maya Kitchen Site Admin</title>
 </head>
 
@@ -68,7 +68,7 @@
                 <a href="#">Articles</a>
                 <ul class="dropdown">
                     <li><a href="">Add Article</a></li>
-                    <li><a href="">Manage Articles</a></li>
+                    <li><a href="<?php echo base_url('index.php/article'); ?>">Manage Articles</a></li>
                 </ul>
             </li>
             <li class="has-dropdown">

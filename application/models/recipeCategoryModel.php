@@ -31,7 +31,7 @@ class RecipeCategoryModel extends CI_Model {
 
     function remove_entry()
     {
-        $this->id = $this->input->post('catid');
+        $this->id = $this->input->post('id');
         $this->db->delete('recipe_category', array('id' => $this->id));
     }
 

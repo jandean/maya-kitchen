@@ -10,12 +10,6 @@ $(function() {
   $('a.add-cat').click(function(){
     $('button.save-cat').html('ADD');
   });
-
-  $('a.delete-cat').each(function() {
-    $(this).click(function(){
-      $('#hid_catid').val($(this).parent('td').siblings('.cat-id').html());
-    });
-  });
 });
 
 function save_category()
@@ -29,29 +23,6 @@ function save_category()
         if (ret.st == 1){
           $('#infoMessage').html(ret.msg);
           $('#form_category').reset();
-          
-          setTimeout(function() {
-              $('.close-reveal-modal').click();
-              window.location.href = config.base + 'index.php/recipe/category';
-            }, 1000);
-
-        } else{
-          $('#infoMessage').html(ret.msg);
-        }
-      }
-    });
-}
-
-function delete_category()
-{
-    $.ajax({
-      type : 'POST',
-      url : config.base + 'index.php/recipe/delete_category',
-      data : {"catid" : $('#hid_catid').val()},
-      success : function(ret) {
-        ret = JSON.parse(ret);
-        if (ret.st == 1){
-          $('#infoMessageDelete').html(ret.msg);
           
           setTimeout(function() {
               $('.close-reveal-modal').click();
