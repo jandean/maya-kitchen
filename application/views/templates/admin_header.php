@@ -67,7 +67,7 @@
             </li><li class="has-dropdown">
                 <a href="#">Articles</a>
                 <ul class="dropdown">
-                    <li><a href="">Add Article</a></li>
+                    <li><a href="<?php echo base_url('index.php/article/cu_article'); ?>">Add Article</a></li>
                     <li><a href="<?php echo base_url('index.php/article'); ?>">Manage Articles</a></li>
                 </ul>
             </li>
