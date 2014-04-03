@@ -32,7 +32,7 @@ class Article extends CI_Controller {
         $this->load->view('admin/template', $this->data);
     }
 
-    public function cu_article($id = null)
+    public function form($id = null)
     {
         if (is_null($id)) : // add
             $this->data['title'] = "Add Article";
