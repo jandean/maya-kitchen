@@ -54,8 +54,8 @@
             <li class="has-dropdown">
                 <a href="#">Classes</a>
                 <ul class="dropdown">
-                    <li><a href="">Add Class</a></li>
-                    <li><a href="">Manage Classes</a></li>
+                    <li><a href="<?php echo base_url('index.php/article/form/' . CONTENT_CLASS_STR); ?>">Add Class</a></li>
+                    <li><a href="<?php echo base_url('index.php/article/index/' . CONTENT_CLASS_STR); ?>">Manage Classes</a></li>
                 </ul>
             </li>
             <li class="has-dropdown">
@@ -67,15 +67,15 @@
             </li><li class="has-dropdown">
                 <a href="#">Articles</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/article/form'); ?>">Add Article</a></li>
-                    <li><a href="<?php echo base_url('index.php/article'); ?>">Manage Articles</a></li>
+                    <li><a href="<?php echo base_url('index.php/article/form/' . CONTENT_ARTICLE_STR); ?>">Add Article</a></li>
+                    <li><a href="<?php echo base_url('index.php/article/index/' . CONTENT_ARTICLE_STR); ?>">Manage Articles</a></li>
                 </ul>
             </li>
             <li class="has-dropdown">
                 <a href="#">Products</a>
                 <ul class="dropdown">
-                    <li><a href="">Add Product</a></li>
-                    <li><a href="">Manage Products</a></li>
+                    <li><a href="<?php echo base_url('index.php/article/form/' . CONTENT_PRODUCT_STR); ?>">Add Product</a></li>
+                    <li><a href="<?php echo base_url('index.php/article/index/' . CONTENT_PRODUCT_STR); ?>">Manage Products</a></li>
                 </ul>
             </li>
             <li class="has-dropdown">

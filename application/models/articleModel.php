@@ -3,6 +3,7 @@
 class ArticleModel extends CI_Model {
 
     var $id             = '';
+    var $type           = '';
     var $title          = '';
     var $slug           = '';
     var $content        = '';
@@ -18,24 +19,31 @@ class ArticleModel extends CI_Model {
         parent::__construct();
     }
     
-    function get_entries($id = null, $limit = null, $offset = null)
+    function get_entries($type = CONTENT_ARTICLE, $id = null, $limit = null, $offset = null)
     {
         if (is_null($id))
-            $query = $this->db->get_where('article', null, $limit, $offset);
+            $query = $this->db->get_where('article', array('type' => $type), $limit, $offset);
         else
             $query = $this->db->get_where('article', array('id' => $id), $limit, $offset);
 
         return $query;
     }
 
-    function get_count()
+    function get_count($type = CONTENT_ARTICLE)
     {
-        $count = $this->db->count_all('article');
+        $count = $this->db->where('type', $type)
+                ->from('article')
+                ->count_all_results();
         return $count;
     }
 
-    function insert_entry()
+    function insert_entry($type = CONTENT_ARTICLE)
     {
+        if ($this->input->post('is_featured') == 1) :
+            $this->clear_feature($type);
+        endif;
+
+        $this->type         = $type;
         $this->title        = $this->input->post('title');
         $this->slug         = $this->input->post('slug');
         $this->content      = $this->input->post('content');
@@ -51,8 +59,13 @@ class ArticleModel extends CI_Model {
         $this->db->delete('article', array('id' => $this->id));
     }
 
-    function update_entry()
+    function update_entry($type = CONTENT_ARTICLE)
     {
+        if ($this->input->post('is_featured') == 1) :
+            $this->clear_feature($type);
+        endif;
+
+        $this->type         = $type;
         $this->id           = $this->input->post('article_id');
         $this->title        = $this->input->post('title');
         $this->slug         = $this->input->post('slug');
@@ -62,6 +75,11 @@ class ArticleModel extends CI_Model {
         $this->is_featured  = $this->input->post('is_featured');
         $this->date_updated = date('Y-m-d h:i:s');
         $this->db->update('article', $this, array('id' => $this->id));
+    }
+
+    function clear_feature($type)
+    {
+        $this->db->update('article', array('is_featured' => 0), array('type' => $type));
     }
 
 }
