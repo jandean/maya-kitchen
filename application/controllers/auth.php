@@ -9,6 +9,8 @@ class Auth extends CI_Controller {
 
         $this->lang->load('auth');
         $this->load->helper('language');
+
+        $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => 'user'), true);
     }
 
     //log the user in

@@ -14,6 +14,20 @@ switch ($page) {
 		<?php
 		break;
 
+	case 'recipe':
+		?>
+		<aside class="small-2 columns">
+			<div class="sidebar">
+				<ul class="side-nav">
+					<li class="heading"><strong>RECIPE</strong></li>
+					<li class="active"><a href="">+ Add Recipe</a></li>
+					<li><a href="">All Recipes</a></li>
+				</ul>
+			</div>
+		</aside>
+		<?php
+		break;
+
 	case 'article':
 		?>
 		<aside class="small-2 columns">
