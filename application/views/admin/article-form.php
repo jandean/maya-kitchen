@@ -13,7 +13,7 @@
 				<input type="text" placeholder="Title-Slug" name="slug" id="slug" value="<?php echo set_value('slug', @$result->slug); ?>" readonly />
 			</label>
 			<label>Content
-				<textarea rows="10" placeholder="Article Content" name="content"><?php echo set_value('content', @$result->content); ?></textarea>
+				<textarea rows="10" placeholder="Article Content" name="content" id="nicEditArea"><?php echo set_value('content', @$result->content); ?></textarea>
 			</label>
 			<label>Cover Image
 				<input type="file" name="image" />
