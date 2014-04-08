@@ -29,7 +29,7 @@ class Article extends CI_Controller {
         $this->data['title']        = ucfirst($content_type) . " Management";
         $this->data['links']        = $this->pagination->create_links();
         $this->data['recordset']    = $this->article_model->get_entries($type, null, $limit, $offset)->result();
-        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => $content_type), true);
+        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => $content_type, 'active' => 'main'), true);
         $this->data['page']         = "admin/article-main";
         $this->load->view('admin/template', $this->data);
     }
@@ -71,7 +71,7 @@ class Article extends CI_Controller {
         $this->form_validation->set_rules('is_featured', 'Featured', 'trim');
 
         $this->data['content_type'] = $content_type;
-        $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => $content_type), true);
+        $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => $content_type, 'active' => 'add'), true);
         $this->data['page']     = "admin/article-form";
 
         if ($this->form_validation->run() == true) :

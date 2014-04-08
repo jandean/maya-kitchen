@@ -2,7 +2,7 @@
 	<?php echo $sidemenu; ?>
 	<div class="core small-10 columns">
 		<h3><?php echo $title; ?></h3>
-		<a href="<?php echo base_url('index.php/auth/create_user'); ?>" class="button tiny radius">Register User</a>
+		<!-- <a href="<?php echo base_url('index.php/auth/create_user'); ?>" class="button tiny radius">Register User</a> -->
 		<hr>
 		<table class="auto">
 			<thead>

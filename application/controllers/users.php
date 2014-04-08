@@ -13,7 +13,7 @@ class Users extends CI_Controller {
 
         $this->data['side'] = "admin/user-sidemenu";
         $this->load->model('userModel', 'user_model');
-        $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => 'user'), true);
+        $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => 'user', 'active' => 'main'), true);
     }
 
     public function index()

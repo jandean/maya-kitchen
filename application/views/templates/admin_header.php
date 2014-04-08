@@ -47,7 +47,7 @@
             <li class="has-dropdown">
                 <a href="#">Users</a>
                 <ul class="dropdown">
-                    <li><a href="">Add User</a></li>
+                    <li><a href="<?php echo base_url('index.php/auth/create_user'); ?>">Add User</a></li>
                     <li><a href="<?php echo base_url('index.php/users'); ?>">Manage Users</a></li>
                 </ul>
             </li>
@@ -61,7 +61,7 @@
             <li class="has-dropdown">
                 <a href="#">Recipes</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/recipe/add'); ?>">Add Recipe</a></li>
+                    <li><a href="<?php echo base_url('index.php/recipe/form'); ?>">Add Recipe</a></li>
                     <li><a href="<?php echo base_url('index.php/recipe'); ?>">Manage Recipes</a></li>
                 </ul>
             </li><li class="has-dropdown">

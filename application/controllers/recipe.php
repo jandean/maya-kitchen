@@ -13,8 +13,6 @@ class Recipe extends CI_Controller {
 
         $this->load->model('RecipeModel', 'recipe_model');
         $this->load->model('RecipeCategoryModel', 'category_model');
-
-        $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => 'recipe'), true);
     }
 
     public function index()
@@ -30,6 +28,7 @@ class Recipe extends CI_Controller {
         $this->data['title']        = "Recipe Management";
         $this->data['links']        = $this->pagination->create_links();
         $this->data['recordset']    = $this->recipe_model->get_entries(null, $limit, $offset)->result();
+        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'recipe', 'active' => 'main'), true);
         $this->data['page']         = "admin/recipe-main";
         $this->load->view('admin/template', $this->data);
     }
@@ -65,6 +64,7 @@ class Recipe extends CI_Controller {
             $this->form_validation->set_rules('image', 'Image', 'required');
 
         $this->data['categories']   = $this->category_model->get_entries();
+        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'recipe', 'active' => 'add'), true);
         $this->data['page']         = "admin/recipe-form";
 
         if ($this->form_validation->run() == true) :
@@ -116,6 +116,7 @@ class Recipe extends CI_Controller {
         $this->data['title']        = "Recipe Category Management";
         $this->data['links']        = $this->pagination->create_links();
         $this->data['recordset']    = $this->category_model->get_entries($limit, $offset);
+        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'recipe', 'active' => 'category'), true);
         $this->data['page']         = "admin/category-main";
         $this->data['category_form']    = $this->load->view('admin/category-form', null, true);
         $this->load->view('admin/template', $this->data);

@@ -2,7 +2,7 @@
     <?php echo $sidemenu; ?>
     <div class="core small-10 columns">
         <h3><?php echo $title; ?></h3>
-        <a href="<?php echo base_url('index.php/article/form/' . $content_type ); ?>" class="button tiny radius add-cat">Add <?php echo ucfirst($content_type); ?></a>
+        <!-- <a href="<?php echo base_url('index.php/article/form/' . $content_type ); ?>" class="button tiny radius add-cat">Add <?php echo ucfirst($content_type); ?></a> -->
         <hr>
         <table class="auto">
             <thead>

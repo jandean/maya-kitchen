@@ -447,7 +447,7 @@ class Auth extends CI_Controller {
                 'value' => $this->form_validation->set_value('password_confirm'),
             );
 
-            $this->data['side'] = "admin/user-sidemenu";
+            $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => 'user', 'active' => 'add'), true);
             $this->data['page'] = "auth/create_user";
             $this->load->view('admin/template', $this->data);
         }
@@ -585,7 +585,7 @@ class Auth extends CI_Controller {
         );
 
 
-        $this->data['side'] = "admin/user-sidemenu";
+        $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => 'user', 'active' => ''), true);
         $this->data['page'] = "auth/edit_user";
         $this->load->view('admin/template', $this->data);
     }
