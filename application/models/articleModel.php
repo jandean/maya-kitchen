@@ -36,6 +36,7 @@ class ArticleModel extends CI_Model {
     function get_count($type = CONTENT_ARTICLE)
     {
         $count = $this->db->where('type', $type)
+                ->where('is_active', 1)
                 ->from('article')
                 ->count_all_results();
         return $count;

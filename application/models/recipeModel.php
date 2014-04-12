@@ -44,12 +44,17 @@ class RecipeModel extends CI_Model {
 
     function get_count()
     {
-        $count = $this->db->count_all('recipe');
+        $count = $this->db->where('is_active', 1)
+                ->count_all('recipe');
         return $count;
     }
 
     function insert_entry()
     {
+        if ($this->input->post('is_featured') == 1) :
+            $this->clear_feature();
+        endif;
+
         $this->title                = $this->input->post('title');
         $this->slug                 = $this->input->post('slug');
         $this->recipe_category_id   = $this->input->post('recipe_category_id');
@@ -59,6 +64,11 @@ class RecipeModel extends CI_Model {
 
         $this->db->insert('recipe', $this);
         $this->insert_contents($this->db->insert_id());
+    }
+
+    function clear_feature()
+    {
+        $this->db->update('recipe', array('is_featured' => 0));
     }
 
     function insert_contents($recipe_id)
