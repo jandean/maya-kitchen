@@ -19,13 +19,17 @@ class ArticleModel extends CI_Model {
         parent::__construct();
     }
     
-    function get_entries($type = CONTENT_ARTICLE, $id = null, $limit = null, $offset = null)
+    function get_entries($type = CONTENT_ARTICLE, $id = null, $limit = null, $offset = null, $order_by = null)
     {
-        if (is_null($id))
-            $query = $this->db->get_where('article', array('type' => $type), $limit, $offset);
-        else
-            $query = $this->db->get_where('article', array('id' => $id), $limit, $offset);
+        if (!is_null($order_by))
+            $this->db->order_by($order_by);
 
+        if (is_null($id))
+            $where = array('is_active' => 1, 'type' => $type);
+        else
+            $where = array('is_active' => 1, 'id' => $id);
+
+        $query = $this->db->get_where('article', $where, $limit, $offset);
         return $query;
     }
 

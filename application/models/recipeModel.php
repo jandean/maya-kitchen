@@ -21,10 +21,18 @@ class RecipeModel extends CI_Model {
     function get_entries($id = null, $limit = null, $offset = null)
     {
         if (is_null($id))
-            $query = $this->db->get_where('recipe', null, $limit, $offset);
+            $where = array('is_active' => 1);
         else
-            $query = $this->db->get_where('recipe', array('id' => $id), $limit, $offset);
+            $where = array('is_active' => 1, 'id' => $id);
 
+        $query = $this->db->get_where('recipe', $where, $limit, $offset);
+        return $query;
+    }
+
+    function get_featured()
+    {
+        $where = array('is_featured' => 1, 'is_active' => 1);
+        $query = $this->db->get_where('recipe', $where);
         return $query;
     }
 

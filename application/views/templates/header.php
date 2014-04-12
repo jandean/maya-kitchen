@@ -1,80 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="shortcut icon" href="" />
+	<link rel="shortcut icon" href="<?php echo base_url('images/icons/favicon.ico'); ?>" />
 	<!-- Load Stylesheet -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/stylesheets/admin/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('stylesheets/style.css'); ?>">
+
+	<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
 
 	<title>The Maya Kitchen Site Admin</title>
 </head>
 
 <body>
-	<nav class="top-bar" data-topbar>
-		<ul class="title-area">
-			<li class="name">
-				<h1><a href="#"><img src="<?php echo base_url(); ?>/images/logo.png"></a></h1>
-			</li>
-			<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-		</ul>
-
-		<section class="top-bar-section">
-			<!-- Right Nav Section -->
-			<ul class="right">
-				<!-- <li class="active"><a href="#">Right Button Active</a></li> -->
-				<li class="has-dropdown active">
-					<a href="#">Logged in as <strong>admin</strong></a>
-					<ul class="dropdown">
-						<li><a href="#">Logout</a></li>
-					</ul>
-				</li>
-			</ul>
-
-			<!-- Left Nav Section -->
-			<ul class="left">
-			<li class="has-dropdown">
-				<a href="#">Classes</a>
-				<ul class="dropdown">
-					<li><a href="">Add Class</a></li>
-					<li><a href="">Manage Classes</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Recipes</a>
-				<ul class="dropdown">
-					<li><a href="">Add Recipe</a></li>
-					<li><a href="">Manage Recipes</a></li>
-				</ul>
-			</li><li class="has-dropdown">
-				<a href="#">Articles</a>
-				<ul class="dropdown">
-					<li><a href="">Add Article</a></li>
-					<li><a href="">Manage Articles</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Products</a>
-				<ul class="dropdown">
-					<li><a href="">Add Product</a></li>
-					<li><a href="">Manage Products</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Features</a>
-				<ul class="dropdown">
-					<li><a href="">Homepage Banner</a></li>
-					<li><a href="">Sidebar Items</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Pages</a>
-				<ul class="dropdown">
-					<li><a href="">Contact Us</a></li>
-				</ul>
-			</li>
-			</ul>
-		</section>
-	</nav>
+    <header class="siteHead">
+        <div id="brand">
+            <div>
+                <a href="<?php echo base_url('index.php/main'); ?>"><img class="logo" src="<?php echo base_url('images/logo.png'); ?>"></a>
+                <!-- <div class="social">
+                    <a href="http://facebook.com/80kph" rel="nofollow"><span class="icon iconfacebook" aria-hidden="true"></span></a>
+                    <a href="http://twitter.com/upsigmadeltaphi" rel="nofollow"><span class="icon icontwitter" aria-hidden="true"></span></a>
+                    <a href=""><span class="icon iconpinterest" aria-hidden="true"></span></a>
+                </div> -->
+                <nav>
+                    <a href="<?php echo base_url('index.php/main/index'); ?>" <?php if ($page=="home") echo " class=\"active\""; ?>>Home</a>
+                    <a href="<?php echo base_url('index.php/main/classes'); ?>" <?php if ($page=="classes") echo " class=\"active\""; ?>>Classes</a>
+                    <a href="<?php echo base_url('index.php/main/recipes'); ?>" <?php if ($page=="recipes") echo " class=\"active\""; ?>>Recipes</a>
+                    <a href="<?php echo base_url('index.php/main/articles'); ?>" <?php if ($page=="articles") echo " class=\"active\""; ?>>Articles</a>
+                    <a href="<?php echo base_url('index.php/main/kids'); ?>" <?php if ($page=="kids") echo " class=\"active\""; ?> onclick="return false">Kids' Corner</a>
+                    <a href="<?php echo base_url('index.php/main/products'); ?>" <?php if ($page=="products") echo " class=\"active\""; ?> onclick="return false">Products</a>
+                    <a href="<?php echo base_url('index.php/main/contact'); ?>" <?php if ($page=="contact") echo " class=\"active\""; ?>>Contact</a>
+                </nav>  
+            </div>
+        </div>
+    </header>
 
 	<p></p>
 	

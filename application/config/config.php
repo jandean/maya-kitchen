@@ -402,5 +402,8 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
+$config['image_upload_path'] = '/images/uploads/';
+
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */
