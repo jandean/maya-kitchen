@@ -22,7 +22,7 @@ class Recipe extends CI_Controller {
 
         $config['base_url']     = base_url('index.php/recipe/index/');
         $config['total_rows']   = $this->recipe_model->get_count();
-
+        $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
 
         $this->data['title']        = "Recipe Management";

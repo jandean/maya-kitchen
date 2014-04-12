@@ -11,7 +11,6 @@ class Users extends CI_Controller {
             redirect('auth/login', 'refresh');
         endif;
 
-        $this->data['side'] = "admin/user-sidemenu";
         $this->load->model('userModel', 'user_model');
         $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => 'user', 'active' => 'main'), true);
     }
@@ -21,9 +20,9 @@ class Users extends CI_Controller {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(3);
 
-        $config['base_url']     = base_url('index.php/recipe/category/');
+        $config['base_url']     = base_url('index.php/users/index/');
         $config['total_rows']   = $this->user_model->get_count();
-
+        $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
 
         $this->data['title']        = "User Management";

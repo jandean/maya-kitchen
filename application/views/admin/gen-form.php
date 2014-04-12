@@ -4,7 +4,7 @@
 		<h3><?php echo $title; ?></h3>
 		<hr>
 		<div><?php echo $message; ?></div>
-		<?php echo form_open_multipart('article/form/' . $content_type . '/' . @$result->id); ?>
+		<?php echo form_open_multipart('admin/form/' . $content_type . '/' . @$result->id); ?>
 			<input type="hidden" name="article_id" value="<?php echo set_value('article_id', @$result->id); ?>" />
 			<label>Title
 				<input type="text" placeholder="Title" name="title" id="title" value="<?php echo set_value('title', @$result->title); ?>" />
@@ -26,7 +26,7 @@
 			</label>
 			<hr>
 			<button type="submit" class="button tiny radius alert">PUBLISH</button>
-			<a href="<?php echo base_url('index.php/article/index/' . $content_type); ?>" class="button tiny radius secondary">CANCEL</a>
+			<a href="<?php echo base_url('index.php/admin/main/' . $content_type); ?>" class="button tiny radius secondary">CANCEL</a>
 		<?php echo form_close(); ?>
 	</div>
 

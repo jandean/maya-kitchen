@@ -6,8 +6,8 @@ switch ($page) {
 			<div class="sidebar">
 				<ul class="side-nav">
 					<li class="heading"><strong>CLASS</strong></li>
-					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/article/form/' . CONTENT_CLASS_STR); ?>">+ Add Class</a></li>
-					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/article/index/' . CONTENT_CLASS_STR); ?>">All Classes</a></li>
+					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/admin/form/' . CONTENT_CLASS_STR); ?>">+ Add Class</a></li>
+					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/admin/main/' . CONTENT_CLASS_STR); ?>">All Classes</a></li>
 				</ul>
 			</div>
 		</aside>
@@ -35,8 +35,8 @@ switch ($page) {
 			<div class="sidebar">
 				<ul class="side-nav">
 					<li class="heading"><strong>ARTICLE</strong></li>
-					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/article/form/' . CONTENT_ARTICLE_STR); ?>">+ Add Article</a></li>
-					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/article/index/' . CONTENT_ARTICLE_STR); ?>">All Articles</a></li>
+					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/admin/form/' . CONTENT_ARTICLE_STR); ?>">+ Add Article</a></li>
+					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/admin/main/' . CONTENT_ARTICLE_STR); ?>">All Articles</a></li>
 				</ul>
 			</div>
 		</aside>
@@ -49,8 +49,8 @@ switch ($page) {
 			<div class="sidebar">
 				<ul class="side-nav">
 					<li class="heading"><strong>PRODUCT</strong></li>
-					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/article/form/' . CONTENT_PRODUCT_STR); ?>">+ Add Product</a></li>
-					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/article/index/' . CONTENT_PRODUCT_STR); ?>">All Products</a></li>
+					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/admin/form/' . CONTENT_PRODUCT_STR); ?>">+ Add Product</a></li>
+					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/admin/main/' . CONTENT_PRODUCT_STR); ?>">All Products</a></li>
 				</ul>
 			</div>
 		</aside>
