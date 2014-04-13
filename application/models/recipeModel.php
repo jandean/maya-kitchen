@@ -18,14 +18,20 @@ class RecipeModel extends CI_Model {
         parent::__construct();
     }
     
-    function get_entries($id = null, $limit = null, $offset = null)
+    function get_entries($id = null, $limit = null, $offset = null, $order_by = null)
     {
-        if (is_null($id))
-            $where = array('is_active' => 1);
-        else
-            $where = array('is_active' => 1, 'id' => $id);
+        $where = array('recipe.is_active' => 1, 'category.type' => CATEGORY_RECIPE);
 
-        $query = $this->db->get_where('recipe', $where, $limit, $offset);
+        if (!is_null($id))
+            $where['recipe.id'] = $id;
+
+        if (!is_null($order_by))
+            $this->db->order_by($order_by);
+
+        $query = $this->db->select('recipe.*, category.name')
+                ->join('category', 'category.id = recipe.recipe_category_id')
+                ->where($where)
+                ->get('recipe', $limit, $offset);
         return $query;
     }
 

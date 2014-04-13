@@ -2,6 +2,8 @@
 
 class Admin extends CI_Controller {
 
+    var $order_by;
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -12,6 +14,8 @@ class Admin extends CI_Controller {
 		endif;
 
         $this->load->model('articleModel', 'article_model');
+        $this->load->model('categoryModel', 'category_model');
+        $this->order_by = 'article.date_created DESC';
 	}
 
 	public function index()
@@ -35,7 +39,11 @@ class Admin extends CI_Controller {
         $this->data['content_type'] = $content_type;
         $this->data['title']        = ucfirst($content_type) . " Management";
         $this->data['links']        = $this->pagination->create_links();
-        $this->data['recordset']    = $this->article_model->get_entries($type, null, $limit, $offset)->result();
+        if ($type == CONTENT_CLASS) :
+        $this->data['recordset']    = $this->article_model->get_class_entries($limit, $offset, $this->order_by)->result();
+        else :
+        $this->data['recordset']    = $this->article_model->get_entries($type, null, $limit, $offset, $this->order_by)->result();
+        endif;
         $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => $content_type, 'active' => 'main'), true);
         $this->data['page']         = "admin/gen-main";
         $this->load->view('admin/template', $this->data);
@@ -44,8 +52,8 @@ class Admin extends CI_Controller {
     private function getContentTypeId($content_type)
     {
         switch ($content_type) {
-            case 'article':
-                return CONTENT_ARTICLE;
+            case 'class':
+                return CONTENT_CLASS;
                 break;
 
             case 'product':
@@ -53,7 +61,7 @@ class Admin extends CI_Controller {
                 break;
             
             default:
-                return CONTENT_CLASS;
+                return CONTENT_ARTICLE;
                 break;
         }
     }
@@ -71,6 +79,9 @@ class Admin extends CI_Controller {
             $this->form_validation->set_rules('title', 'Title', 'trim|required');
         endif;
 
+        if ($type == CATEGORY_CLASS)
+            $this->form_validation->set_rules('class_category_id', 'Category', 'trim|required');
+
         $this->form_validation->set_rules('article_id', 'ID', 'trim');
         $this->form_validation->set_rules('slug', 'Slug', 'trim|required');
         $this->form_validation->set_rules('content', 'Content', 'trim|required');
@@ -78,6 +89,7 @@ class Admin extends CI_Controller {
         $this->form_validation->set_rules('is_featured', 'Featured', 'trim');
 
         $this->data['content_type'] = $content_type;
+        $this->data['categories']   = $this->category_model->get_entries(CATEGORY_CLASS)->result();
         $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => $content_type, 'active' => 'add'), true);
         $this->data['page']     = "admin/gen-form";
 

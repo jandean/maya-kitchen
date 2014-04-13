@@ -15,6 +15,15 @@
 			<label>Content
 				<textarea rows="10" placeholder="Article Content" name="content" id="nicEditArea"><?php echo set_value('content', @$result->content); ?></textarea>
 			</label>
+			<?php if ($content_type == 'class'): ?>
+	            <label>Category
+	                <?php foreach ($categories as $category) : ?>
+	                <label>
+	                    <input type="radio" name="class_category_id" value="<?php echo $category->id; ?>" <?php echo set_radio('class_category_id', @$result->class_category_id); ?> /> <?php echo $category->name; ?>
+	                </label>
+	                <?php endforeach; ?>
+	            </label>
+        	<?php endif; ?>
 			<label>Cover Image
 				<input type="file" name="image" />
 			</label>

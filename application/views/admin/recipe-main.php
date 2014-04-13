@@ -9,7 +9,9 @@
                 <tr>
                     <th width="30"><input type="checkbox"></input></th>
                     <th width="50">ID</th>
+                    <th>Image</th>
                     <th>Title</th>
+                    <th>Category</th>
                     <th>Active</th>
                     <th>Featured</th>
                     <th width="250">Actions</th>
@@ -21,7 +23,9 @@
                     <tr>
                         <td><input type="checkbox"></input></td>
                         <td class="delete-id"><?php echo $row->id; ?></td>
+                        <td><img src="<?php echo base_url('images/uploads/' . $row->image); ?>" width="80"></td>
                         <td><?php echo $row->title; ?></td>
+                        <td><?php echo $row->name; ?></td>
                         <td><?php echo $row->is_active == 1 ? 'Yes' : 'No'; ?></td>
                         <td><?php echo $row->is_featured == 1 ? 'Yes' : 'No'; ?></td>
                         <td>
@@ -32,7 +36,7 @@
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="6" align="center">No Data</td>
+                        <td colspan="8" align="center">No Data</td>
                     </tr>
                 <?php endif; ?>
             </tbody>

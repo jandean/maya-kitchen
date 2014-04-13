@@ -27,7 +27,7 @@ class Recipe extends CI_Controller {
 
         $this->data['title']        = "Recipe Management";
         $this->data['links']        = $this->pagination->create_links();
-        $this->data['recordset']    = $this->recipe_model->get_entries(null, $limit, $offset)->result();
+        $this->data['recordset']    = $this->recipe_model->get_entries(null, $limit, $offset, 'recipe.date_created DESC')->result();
         $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'recipe', 'active' => 'main'), true);
         $this->data['page']         = "admin/recipe-main";
         $this->load->view('admin/template', $this->data);
@@ -41,13 +41,15 @@ class Recipe extends CI_Controller {
         else : // edit
             $this->data['title']    = "Edit Recipe";
             $this->data['result']   = $this->recipe_model->get_entries($id)->row();
+            $this->recipe_model->date_created = $this->data['result']->date_created;
 
+            $contents_data = array();
             $recipe_contents = $this->recipe_model->get_contents($id);
             foreach ($recipe_contents->result() as $contents) {
                 if ($contents->is_active == 1)
-                    $data[$contents->title] = $contents->content;
+                    $contents_data[$contents->title] = $contents->content;
             }
-            $this->data['contents'] = $data;
+            $this->data['contents'] = $contents_data;
             $this->form_validation->set_rules('title', 'Title', 'trim|required');
         endif;
 
@@ -60,29 +62,30 @@ class Recipe extends CI_Controller {
         $this->form_validation->set_rules('is_active', 'Active', 'trim');
         $this->form_validation->set_rules('is_featured', 'Featured', 'trim');
 
-        if (empty($_FILES['image']['name']))
-            $this->form_validation->set_rules('image', 'Image', 'required');
-
-        $this->data['categories']   = $this->category_model->get_entries();
+        $this->data['categories']   = $this->category_model->get_entries()->result();
         $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'recipe', 'active' => 'add'), true);
         $this->data['page']         = "admin/recipe-form";
 
         if ($this->form_validation->run() == true) :
+            if (is_null($id) || !empty($_FILES['image']['name'])) :
+                $image_ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+                $config['upload_path']      = FCPATH . '/images/uploads/';
+                $config['allowed_types']    = 'gif|jpg|jpeg|png';
+                $config['overwrite']        = TRUE;
+                $config['file_name']        = 'recipe-' . $this->input->post('slug') . '.' . $image_ext;
+                $this->load->library('upload', $config);
 
-            $image_ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-            $config['upload_path']      = FCPATH . '/images/uploads/';
-            $config['allowed_types']    = 'gif|jpg|jpeg|png';
-            $config['overwrite']        = TRUE;
-            $config['file_name']        = 'recipe-' . $this->input->post('slug') . '.' . $image_ext;
-            $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('image')) :
+                    $this->data['message'] = $this->upload->display_errors();
+                    $this->load->view('admin/template', $this->data);
+                    return false;
+                endif;
 
-            if (!$this->upload->do_upload('image')) :
-                $this->data['message'] = $this->upload->display_errors();
-                $this->load->view('admin/template', $this->data);
-                return false;
+                $this->recipe_model->image = $config['file_name'];
+            else:
+                $this->recipe_model->image = $this->data['result']->image;
             endif;
 
-            $this->recipe_model->image = $config['file_name'];
             if (!$this->input->post('recipe_id'))
                 $this->recipe_model->insert_entry();
             else

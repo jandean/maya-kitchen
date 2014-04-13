@@ -32,6 +32,19 @@ class ArticleModel extends CI_Model {
         $query = $this->db->get_where('article', $where, $limit, $offset);
         return $query;
     }
+    
+    function get_class_entries($limit = null, $offset = null, $order_by = null)
+    {
+        if (!is_null($order_by))
+            $this->db->order_by($order_by);
+
+        $query = $this->db->select('article.*, category.name')
+                ->join('category', 'category.id = article.class_category_id')
+                ->where(array('article.is_active' => 1, 'article.type' => CONTENT_CLASS, 'category.type' => CATEGORY_CLASS))
+                ->get('article', $limit, $offset);
+                
+        return $query;
+    }
 
     function get_count($type = CONTENT_ARTICLE)
     {
