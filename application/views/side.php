@@ -2,7 +2,7 @@
 
     <?php echo @$home_side; ?>
 
-    <?php if ($feat_recipe): ?>
+    <?php if (@$feat_recipe): ?>
     <div class="rotm">
         <h6>Recipe of the Month</h6>
         <a href="<?php echo base_url('index.php/main/recipe/' . $feat_recipe->slug); ?>"><strong><?php echo $feat_recipe->title; ?></strong></a>
