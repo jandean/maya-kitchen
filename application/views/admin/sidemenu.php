@@ -8,6 +8,7 @@ switch ($page) {
 					<li class="heading"><strong>CLASS</strong></li>
 					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/admin/form/' . CONTENT_CLASS_STR); ?>">+ Add Class</a></li>
 					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/admin/main/' . CONTENT_CLASS_STR); ?>">All Classes</a></li>
+					<li <?php echo $active == 'category' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/category/index/' . CATEGORY_CLASS_STR); ?>">All Class Categories</a></li>
 				</ul>
 			</div>
 		</aside>
@@ -22,7 +23,7 @@ switch ($page) {
 					<li class="heading"><strong>RECIPE</strong></li>
 					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/recipe/form'); ?>">+ Add Recipe</a></li>
 					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/recipe'); ?>">All Recipes</a></li>
-					<li <?php echo $active == 'category' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/recipe/category'); ?>">All Recipe Categories</a></li>
+					<li <?php echo $active == 'category' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/category/index/' . CATEGORY_RECIPE_STR); ?>">All Recipe Categories</a></li>
 				</ul>
 			</div>
 		</aside>

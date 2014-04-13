@@ -73,12 +73,19 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 */
 define('SHOW_DEBUG_BACKTRACE', TRUE);
 
+
+
 define('CONTENT_CLASS_STR', 'class');
 define('CONTENT_ARTICLE_STR', 'article');
 define('CONTENT_PRODUCT_STR', 'product');
 define('CONTENT_CLASS', 1);
 define('CONTENT_ARTICLE', 2);
 define('CONTENT_PRODUCT', 3);
+
+define('CATEGORY_RECIPE_STR', 'recipe');
+define('CATEGORY_CLASS_STR', 'class');
+define('CATEGORY_RECIPE', 1);
+define('CATEGORY_CLASS', 2);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

@@ -23,7 +23,7 @@ class UserModel extends CI_Model {
 
     function get_count()
     {
-        $count = $this->db->count_all('recipe_category');
+        $count = $this->db->count_all('category');
         return $count;
     }
 }
