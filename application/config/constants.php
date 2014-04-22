@@ -87,5 +87,9 @@ define('CATEGORY_CLASS_STR', 'class');
 define('CATEGORY_RECIPE', 1);
 define('CATEGORY_CLASS', 2);
 
+define('PAGE_CONTACT', 1);
+define('PAGE_TERMS', 2);
+define('PAGE_POLICY', 3);
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

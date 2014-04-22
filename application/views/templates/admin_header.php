@@ -88,7 +88,9 @@
             <li class="has-dropdown">
                 <a href="#">Pages</a>
                 <ul class="dropdown">
-                    <li><a href="">Contact Us</a></li>
+                    <li><a href="<?php echo base_url('index.php/pages/contact'); ?>">Contact</a></li>
+                    <li><a href="<?php echo base_url('index.php/pages/terms'); ?>">Terms of Use</a></li>
+                    <li><a href="<?php echo base_url('index.php/pages/policy'); ?>">Privacy Policy</a></li>
                 </ul>
             </li>
             </ul>

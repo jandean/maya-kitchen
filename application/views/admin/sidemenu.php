@@ -57,6 +57,21 @@ switch ($page) {
 		</aside>
 		<?php
 		break;
+
+	case 'pages':
+		?>
+		<aside class="small-2 columns">
+			<div class="sidebar">
+				<ul class="side-nav">
+					<li class="heading"><strong>PAGES</strong></li>
+					<li <?php echo $active == 'contact' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/pages/contact'); ?>">Contact</a></li>
+					<li <?php echo $active == 'terms' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/pages/terms'); ?>">Terms of Use</a></li>
+					<li <?php echo $active == 'policy' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/pages/policy'); ?>">Privacy Policy</a></li>
+				</ul>
+			</div>
+		</aside>
+		<?php
+		break;
 	
 	default:
 		?>
