@@ -10,6 +10,7 @@ class Main extends CI_Controller {
         parent::__construct();
         $this->load->model('RecipeModel', 'recipe_model');
         $this->load->model('ArticleModel', 'article_model');
+        $this->load->model('pagesModel', 'pages_model');
         $this->data['feat_recipe']  = $this->recipe_model->get_featured()->row();
         $this->order_by = 'date_created DESC';
         $this->common_side = $this->load->view('side', null, true);
@@ -68,10 +69,47 @@ class Main extends CI_Controller {
         $this->load->view('template', $this->data);
     }
 
-    public function contact()
+    public function products()
     {
-        $this->data['side'] = $this->common_side;
-        $this->data['page'] = "contact";
+        $limit  = $this->config->item('per_page');
+        $offset = $this->uri->segment(3);
+
+        $config['base_url']     = base_url("index.php/main/products/");
+        $config['total_rows']   = $this->article_model->get_count(CONTENT_PRODUCT);
+        $config['per_page']     = $this->config->item('per_page');
+        $this->pagination->initialize($config);
+
+        $this->data['links']        = $this->pagination->create_links();
+        $this->data['side']         = $this->common_side;
+        $this->data['recordset']    = $this->article_model->get_entries(CONTENT_PRODUCT, null, $limit, $offset, $this->order_by)->result();
+        $this->data['page']         = "products";
+        $this->load->view('template', $this->data);
+    }
+
+    public function contact_us()
+    {
+        $this->data['title']    = 'Contact Us';
+        $this->data['side']     = $this->common_side;
+        $this->data['result']   = $this->pages_model->get_entries();
+        $this->data['page']     = "static_page";
+        $this->load->view('template', $this->data);
+    }
+
+    public function terms_of_use()
+    {
+        $this->data['title']    = 'Terms of Use';
+        $this->data['side']     = $this->common_side;
+        $this->data['result']   = $this->pages_model->get_entries(PAGE_TERMS);
+        $this->data['page']     = "static_page";
+        $this->load->view('template', $this->data);
+    }
+
+    public function privacy_policy()
+    {
+        $this->data['title']    = 'Privacy Policy';
+        $this->data['side']     = $this->common_side;
+        $this->data['result']   = $this->pages_model->get_entries(PAGE_POLICY);
+        $this->data['page']     = "static_page";
         $this->load->view('template', $this->data);
     }
 }
