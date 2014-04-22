@@ -31,7 +31,7 @@
                     <a href="<?php echo base_url('index.php/main/classes'); ?>" <?php if ($page=="classes") echo " class=\"active\""; ?>>Classes</a>
                     <a href="<?php echo base_url('index.php/main/recipes'); ?>" <?php if ($page=="recipes") echo " class=\"active\""; ?>>Recipes</a>
                     <a href="<?php echo base_url('index.php/main/articles'); ?>" <?php if ($page=="articles") echo " class=\"active\""; ?>>Articles</a>
-                    <a href="<?php echo base_url('index.php/main/kids'); ?>" <?php if ($page=="kids") echo " class=\"active\""; ?>>Kids' Corner</a>
+                    <a href="<?php echo base_url('index.php/main/kids_corner'); ?>" <?php if ($page=="kids") echo " class=\"active\""; ?>>Kids' Corner</a>
                     <a href="<?php echo base_url('index.php/main/products'); ?>" <?php if ($page=="products") echo " class=\"active\""; ?>>Products</a>
                     <a href="<?php echo base_url('index.php/main/contact_us'); ?>" <?php if ($page=="contact") echo " class=\"active\""; ?>>Contact</a>
                 </nav>  

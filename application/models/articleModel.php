@@ -18,6 +18,12 @@ class ArticleModel extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
+
+    function get($slug)
+    {
+        $query = $this->db->get_where('article', array('slug' => $slug));
+        return $query->row();
+    }
     
     function get_entries($type = CONTENT_ARTICLE, $id = null, $limit = null, $offset = null, $order_by = null)
     {

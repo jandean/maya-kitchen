@@ -69,6 +69,14 @@ class Main extends CI_Controller {
         $this->load->view('template', $this->data);
     }
 
+    public function article($slug)
+    {
+        $this->data['row']  = $this->article_model->get($slug);
+        $this->data['side'] = $this->common_side;
+        $this->data['page'] = "article";
+        $this->load->view('template', $this->data);
+    }
+
     public function products()
     {
         $limit  = $this->config->item('per_page');
