@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 05, 2014 at 10:04 AM
+-- Generation Time: Apr 26, 2014 at 02:18 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -37,24 +37,51 @@ CREATE TABLE IF NOT EXISTS `article` (
   `image` varchar(100) NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '0',
   `is_featured` tinyint(1) NOT NULL DEFAULT '0',
+  `class_category_id` int(10) DEFAULT NULL,
   `date_created` datetime NOT NULL,
   `date_updated` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
 
 --
 -- Dumping data for table `article`
 --
 
-INSERT INTO `article` (`id`, `type`, `title`, `slug`, `content`, `image`, `is_active`, `is_featured`, `date_created`, `date_updated`) VALUES
-(18, 2, 'VASK at The Maya Kitchens', 'vask-at-the-maya-kitchens', 'Regional cuisines from the Basque Country and the North of Spain take center stage on March 15, Saturday, 9am-1pm as Chef Jose Luis Gonzalez of renowned restaurant VASK visits The Maya Kitchen.', 'article-vask-at-the-maya-kitchens.jpg', 1, 1, '0000-00-00 00:00:00', '2014-04-05 09:58:46'),
-(19, 2, 'Chef J. Luis Gonzalez', 'chef-j-luis-gonzalez', 'To truly understand the philosophy of a restaurant, one must truly understand the mind of its Chef. In the modern culture we exist in, the culinary profession has evolved from an ordinary occupation into a respected art form. This evolution means that often the greatest moments in our lives our specifically placed in the confines of our favorite restaurants.\r\n\r\nBorn in Santander Spain, Luis Gonzalez found an affinity for cooking at a very early age. Through an innate desire to cook he began to prepare food for his family throughout the years and thoroughly enjoyed doing so. When he reached his maturity, he expressed his desire to cook professionally, which his family strongly disagreed with due to the fact that the culinary profession was not as highly regarded as it is now. Following the behest of his elders, Jose Luis enrolled in a university where he studied Business Management and Marketing. Following his graduation he opened up his own business. Taking his earnings from his business, he enrolled and paid for his culinary education and degree from Artxanda, Bilbao. From that schooling his career started to skyrocket to unimaginable proportions.\r\n\r\nDuring the first two years of his college career Chef Luis spent his summers working in a hotel and finished his college culinary practice in the Michelin star restaurant Andra Mari. After graduation he was rewarded with a position with the world-renowned restaurant Arzak, in San Sebastian. Instantly acknowledged for his inherent talents, he was assigned to the Arzak Laboratory where he developed and facilitated upcoming menus and conceptions. During his time at Arzak, his compulsion for fine cuisine increased and he pursued and strived for more knowledge.\r\n\r\nFollowing his time at Arzak, he continued his career at the legendary restaurant Mugaritz where he was Chef de Partie of fish as well as also working behind the scenes in the laboratory. Luis depicts his time at Mugaritz as the most influential time in his career as he fell in love with the philosophy of the Mugaritz kitchen.\r\n\r\nDue to the good friendship of Arzak Chef Juan Mari Arzak and Ferran Adria, Chef of El Bulli, he transferred to El Bulli, the number one restaurant in the world at that time. He was 1 of 35 chefs accepted, amongst 80, 000 applicants. After finishing a season at El Bulli, he decided to take a tour of restaurants in southern France where had the privilege of experiencing Brass. After his tour of Southern France he spent a few months at yet another world famous location, Cellar de Can Roca before obtaining a position at the Nerua restaurant at the Guggenheim Museum in Bilbao, a part of the Mugaritz company. He started as Chef de Partie of meats, then pastries and starters, and then became head Chef of events and catering as well as Sous Chef for the fine dining and gastronomy restaurant. Jose Luis describes this time in his career as a very important step in his culinary education. Nerua-Guggenheim shared a similar philosophy with Noma and it’s concept of the kitchen. At that time Jose Luis was able to intern with Noma to experience their new technologies and concepts of cooking.\r\n\r\nAfter almost 3 years at Guggenheim, Luis moved to the Philippines to occupy the position of Chef de Cuisine for the luxury hotels Sofitel and Shangri-La where his culinary skills were utilized to run multiple kitchens and increase the food quality of both establishments.\r\n\r\nInfluenced by traveling to all the far reaches of Asia (Indonesia, Vietnam, Cambodia, Laos, etc) Chef Luis Gonzalez strives to find new flavors, ingredients, and most importantly different ways to understand food. This has helped him create a distinctive awareness of how to combine modern techniques with an Asian perspective. From the traditional to the most modern and sophisticated Chef Luis takes the best of both worlds and combines them in his own unique way. Using the knowledge obtained from working in some of the best restaurants in the world and his many Asian culinary trips he creates his own personal world; a world that delivers an exeptional culinary experience at VASK.\r\n\r\n    “The kitchen is passion and love. In some ways I need to cook to live. I don’t understand life without cooking. I don’t see myself in any other job.”\r\n\r\n    - Chef J. Luis Gonzalez', 'article-chef-j-luis-gonzalez.jpg', 1, 0, '2014-04-02 11:08:21', '0000-00-00 00:00:00'),
-(20, 2, 'Chef Fern Aracama Recreates Childhood Media Noche', 'chef-fern-aracama-recreates-childhood-media-noche', 'Well known Chef Fernando “Fern” Aracama recalls fond memories of Christmas past in his cooking class at The Maya Kitchen on November 23, Saturday from 9am–1pm.\r\n\r\nA very young boy walking home from midnight mass with his family is something Chef Fern remembers to this day. He took inspiration from the traditional Media Noche meal that awaited them but this time he shares recipes of dishes that are not the usual but delightful nonetheless.\r\n\r\nTo warm you up is Patatas Riojana, a very simple yet hearty and delicious potato and chorizo soup Chef Fern revisited on his recent trip to Spain.\r\n\r\nTo fill you up is Grilled Ensaimada Media Noche style. Hot and crusty butter grilled ensaimada stuffed with Chinese ham and queso de bola.\r\n\r\nInsalata Uvato goes with the Grilled Ensaimada. This is his signature salad with honey balsamico vinaigrette, toasted pine nuts, green and red grapes and kesong puti. Malunggay and Mozzarella dip is nutritious greens in a creamy, cheesy brûleé best served with crispy crostini. This is a signature appetizer in Aracama Filipino Cuisine, one of Chef Fern’s restaurants.\r\n\r\nAnd because it is Christmas there has to be Bunuelos and Warm Chocolate Dip. These are the recipes of Chef Fern’s dear Abuelita of deep fried choux pastries served with a thick and smooth milk chocolate dip.\r\n\r\nChef Fern hails from Bacolod and is a graduate of the University of the Philippines with a degree in Hotel and Restaurant Administration. He took further studies at The New England Culinary Institute in Montpelier, Vermont USA and was a 2003 Cochran Fellowship Program Awardee at the Hilton College, University Of Houston, Texas, USA.\r\n\r\nChef Fern has a long list of bars and restaurants to his name like Aracama Filipino Cuisine, Opus, Republiq & Café Republiq, MYTHAI Kitchen, Lucky Niku Café, The ChopHouse, The Tides Hotel Boracay as well as previous spots Restaurant UVA, Encore/Embassy & Member’s Only and CANTEEN simple+good food. He is also active in World Association of Chef Societies (WACS), Les Toques Blances Philippines, Council of Chefs, United States of America’s Department of Agriculture and is a Chef Consultant with Philippine Airlines.', 'article-chef-fern-aracama-recreates-childhood-media-noche.jpg', 1, 0, '2014-04-02 11:10:02', '0000-00-00 00:00:00'),
-(21, 2, 'Farm to Table — Organic Gourmet Cuisine', 'farm-to-table-organic-gourmet-cuisine', 'On September 28, Saturday, 9am–1pm, Chef Robby Goco, the man behind the Cyma Greek Taverna restaurant chain will again launch a new dining concept as he visits The Maya Kitchen for a cooking demonstration.\r\n\r\nChef Robby will share dishes inspired by Green Pastures, his latest restaurant that features a unique farm to table cuisine featuring dishes that are created from all organic, local, original, with no antibiotics, vine ripened, unprocessed whole ingredients.\r\n\r\nThe philosophy behind Green Pastures is to have the taste of the food as the main focus. It is to offer food the way it is supposed to be.\r\n\r\nThe food is not your usual bland, lackluster organic kitchen offerings but rather food of exceptional taste presented in the most creative ways. It is like gourmet organic with the restaurant offering duck, roast beef, chicken cooked slow for as long as six hours. The chef uses lardon and has rillette on his menu. He pulls his own cheese and what he cannot produce on his own, he sources from reliable suppliers.\r\n\r\nChef Robby is a graduate of the California Culinary Academy. He owns and operates a total of eight Cyma Greek Taverna restaurants in Greenbelt 2, Shangri-la Plaza Mall, Trinoma, Eastwood Mall, Robinsons Place Ermita, Robinsons Magnolia, Ayala Mall Cebu and D-Mall Boracay. His latest venture, Green Pastures is on Level 4, East Wing, Shangri–la Plaza Mall.', 'article-farm-to-table-organic-gourmet-cuisine.jpg', 1, 0, '2014-04-02 11:10:43', '0000-00-00 00:00:00'),
-(22, 2, 'Ilustrado Restaurant’s ‘Breaking Bread with our Heroes’ at The Maya Kitchen', 'ilustrado-restaurants-breaking-bread-with-our-heroes-at-the-maya-kitchen', 'Ilustrado, the home of heritage Filipino–Spanish cuisine shares well loved dishes from our heroes’ hometowns at The Maya Kitchen, 9am–1pm on October 26, Saturday with Boni Pimentel, Ilustrado president and his chefs taking center stage.\r\n\r\nRecipes include Umbuyan, tinapa flakes sauteed in olive oil and wrapped in pechay leaves has its origins in Manila where Andres Bonifacio was born.\r\n\r\nBagnet with KBL Sauce is an Ilocano version of lechon kawali with kamatis, bagoong and lasuna as sauce. Juan Luna and Antonio Luna are the proud sons of Ilocos Norte.\r\n\r\nManok ng mga Bayani, chicken simmered in bold textures of dill, kamias, ground peanuts and toasted rice is inspired by no less than President Manuel Luis Quezon who hailed from Baler, Aurora.\r\n\r\nNational hero Jose Rizal from Binan, Laguna inspired Jaleang Bayabas, very ripe guavas peeled and mashed in milk and sugar.\r\n\r\nRounding off the recipe line–up is Paella Ilustrado, Spanish rice dish with pork, chicken, seafood, chorizo bilbao, peppers and peas which is a consistent bestseller in the restaurant menu.\r\n\r\nIlustrado, located at 744 General Luna Street, Intramuros, Manila opened its doors in 1989. Through the years it has expanded all over the metro and has also made a name in catering for clients such as Malacanang Palace and other government agencies, foreign embassies, multinational corporations, local businesses and prominent personalities. It is also a favorite wedding reception venue due in part to its proximity to some of Manila’s historic churches.', 'article-ilustrado-restaurants-breaking-bread-with-our-heroes-at-the-maya-kitchen.jpg', 1, 0, '2014-04-02 11:11:10', '0000-00-00 00:00:00'),
-(28, 1, 'class title', 'class-title', 'class content', 'class-class-title.jpg', 1, 1, '2014-04-05 09:22:49', '0000-00-00 00:00:00'),
-(29, 3, 'Porduct Titles', 'porduct-titles', 'Product Contents', 'product-porduct-titles.jpg', 0, 1, '0000-00-00 00:00:00', '2014-04-05 09:23:42'),
-(37, 2, 'New', 'new', 'Article', 'article-new.jpg', 0, 0, '2014-04-05 09:58:03', '0000-00-00 00:00:00');
+INSERT INTO `article` (`id`, `type`, `title`, `slug`, `content`, `image`, `is_active`, `is_featured`, `class_category_id`, `date_created`, `date_updated`) VALUES
+(44, 3, 'Chocolate Truffle', 'chocolate-truffle', 'Description<br>', 'product-product-1.jpg', 1, 0, NULL, '2014-04-22 01:00:54', '2014-04-26 11:06:10'),
+(45, 1, 'Dough-Re-Mi', 'dough-re-mi', '26 April 2014', 'class-dough-re-mi.jpg', 0, 0, 3, '0000-00-00 00:00:00', '2014-04-26 01:08:51'),
+(46, 2, 'Ilustrado Restaurant’s ‘Breaking Bread with our Heroes’ at The Maya Kitchen', 'ilustrado-restaurants-breaking-bread-with-our-heroes-at-the-maya-kitchen', '<p><strong>Ilustrado</strong>, the home of heritage Filipino–Spanish \r\ncuisine shares well loved dishes from our heroes’ hometowns at The Maya \r\nKitchen, 9am–1pm on October 26, Saturday with Boni Pimentel, Ilustrado \r\npresident and his chefs taking center stage.</p>\r\n<p>Recipes include Umbuyan, tinapa flakes sauteed in olive oil and \r\nwrapped in pechay leaves has its origins in Manila where Andres \r\nBonifacio was born.</p>\r\n<p><strong>Bagnet with KBL</strong> Sauce is an Ilocano version of \r\nlechon kawali with kamatis, bagoong and lasuna as sauce. Juan Luna and \r\nAntonio Luna are the proud sons of Ilocos Norte.</p>\r\n<p><strong>Manok ng mga Bayani</strong>, chicken simmered in bold \r\ntextures of dill, kamias, ground peanuts and toasted rice is inspired by\r\n no less than President Manuel Luis Quezon who hailed from Baler, \r\nAurora.</p>\r\n<p>National hero Jose Rizal from Binan, Laguna inspired <strong>Jaleang Bayabas</strong>, very ripe guavas peeled and mashed in milk and sugar.</p>\r\n<p>Rounding off the recipe line–up is <strong>Paella Ilustrado</strong>,\r\n Spanish rice dish with pork, chicken, seafood, chorizo bilbao, peppers \r\nand peas which is a consistent bestseller in the restaurant menu.</p>\r\n<p>Ilustrado, located at 744 General Luna Street, Intramuros, Manila \r\nopened its doors in 1989. Through the years it has expanded all over the\r\n metro and has also made a name in catering for clients such as \r\nMalacanang Palace and other government agencies, foreign embassies, \r\nmultinational corporations, local businesses and prominent \r\npersonalities. It is also a favorite wedding reception venue due in part\r\n to its proximity to some of Manila’s historic churches.</p>', 'article-ilustrado-restaurants-breaking-bread-with-our-heroes-at-the-maya-kitchen.jpg', 0, 0, NULL, '2014-04-26 10:52:32', '2014-04-26 12:48:19'),
+(49, 2, 'Farm to Table — Organic Gourmet Cuisines', 'farm-to-table-organic-gourmet-cuisines', '<p>COn September 28, Saturday, 9am–1pm, Chef Robby Goco, the man behind \r\nthe Cyma Greek Taverna restaurant chain will again launch a new dining \r\nconcept as he visits The Maya Kitchen for a cooking demonstration.</p>\r\n<p>Chef Robby will share dishes inspired by Green Pastures, his latest \r\nrestaurant that features a unique farm to table cuisine featuring dishes\r\n that are created from all organic, local, original, with no \r\nantibiotics, vine ripened, unprocessed whole ingredients.</p>\r\n<p>The philosophy behind Green Pastures is to have the taste of the food\r\n as the main focus. It is to offer food the way it is supposed to be.</p>\r\n<p>The food is not your usual bland, lackluster organic kitchen \r\nofferings but rather food of exceptional taste presented in the most \r\ncreative ways. It is like gourmet organic with the restaurant offering \r\nduck, roast beef, chicken cooked slow for as long as six hours. The chef\r\n uses lardon and has rillette on his menu. He pulls his own cheese and \r\nwhat he cannot produce on his own, he sources from reliable suppliers.</p>\r\n<p>Chef Robby is a graduate of the California Culinary Academy. He owns \r\nand operates a total of eight Cyma Greek Taverna restaurants in \r\nGreenbelt 2, Shangri-la Plaza Mall, Trinoma, Eastwood Mall, Robinsons \r\nPlace Ermita, Robinsons Magnolia, Ayala Mall Cebu and D-Mall Boracay. \r\nHis latest venture, Green Pastures is on Level 4, East Wing, Shangri–la \r\nPlaza Mall.</p>', 'article-farm-to-table-organic-gourmet-cuisines.jpg', 1, 0, NULL, '2014-04-26 11:03:31', '2014-04-26 12:47:06'),
+(50, 2, 'Chef Fern Aracama Recreates Childhood Media Noche', 'chef-fern-aracama-recreates-childhood-media-noche', '<p>Well known Chef Fernando “Fern” Aracama recalls fond memories of \r\nChristmas past in his cooking class at The Maya Kitchen on November 23, \r\nSaturday from 9am–1pm.</p>\r\n<p>A very young boy walking home from midnight mass with his family is \r\nsomething Chef Fern remembers to this day. He took inspiration from the \r\ntraditional Media Noche meal that awaited them but this time he shares \r\nrecipes of dishes that are not the usual but delightful nonetheless.</p>\r\n<p>To warm you up is <strong>Patatas Riojana</strong>, a very simple yet hearty and delicious potato and chorizo soup Chef Fern revisited on his recent trip to Spain.</p>\r\n<p>To fill you up is <strong>Grilled Ensaimada</strong> Media Noche style. Hot and crusty butter grilled ensaimada stuffed with Chinese ham and queso de bola.</p>\r\n<p><strong>Insalata Uvato</strong> goes with the Grilled Ensaimada. This\r\n is his signature salad with honey balsamico vinaigrette, toasted pine \r\nnuts, green and red grapes and kesong puti. Malunggay and Mozzarella dip\r\n is nutritious greens in a creamy, cheesy brûleé best served with crispy\r\n crostini. This is a signature appetizer in Aracama Filipino Cuisine, \r\none of Chef Fern’s restaurants.</p>\r\n<p>And because it is Christmas there has to be <strong>Bunuelos and Warm Chocolate Dip</strong>.\r\n These are the recipes of Chef Fern’s dear Abuelita of deep fried choux \r\npastries served with a thick and smooth milk chocolate dip.</p>\r\n<p>Chef Fern hails from Bacolod and is a graduate of the University of \r\nthe Philippines with a degree in Hotel and Restaurant Administration. He\r\n took further studies at The New England Culinary Institute in \r\nMontpelier, Vermont USA and was a 2003 Cochran Fellowship Program \r\nAwardee at the Hilton College, University Of Houston, Texas, USA.</p>\r\n<p>Chef Fern has a long list of bars and restaurants to his name like \r\nAracama Filipino Cuisine, Opus, Republiq &amp; Café Republiq, MYTHAI \r\nKitchen, Lucky Niku Café, The ChopHouse, The Tides Hotel Boracay as well\r\n as previous spots Restaurant UVA, Encore/Embassy &amp; Member’s Only \r\nand CANTEEN simple+good food. He is also active in World Association of \r\nChef Societies (WACS), Les Toques Blances Philippines, Council of Chefs,\r\n United States of America’s Department of Agriculture and is a Chef \r\nConsultant with Philippine Airlines.</p>', 'article-chef-fern-aracama-recreates-childhood-media-noche.jpg', 1, 1, NULL, '2014-04-26 11:05:17', '2014-04-26 12:47:12'),
+(51, 1, 'Basic Culinary', 'basic-culinary', 'May 13 to 16<br>', 'class-basic-culinary.jpg', 1, 0, 2, '2014-04-26 12:30:33', '2014-04-26 12:31:15'),
+(52, 1, 'Mother’s Day Baking Class', 'mothers-day-baking-class', 'May 10<br>', 'class-mothers-day-baking-class.jpg', 1, 0, 2, '2014-04-26 12:31:08', '2014-04-26 12:31:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1 Recipe; 2 Class',
+  `name` varchar(45) NOT NULL,
+  `description` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `type`, `name`, `description`) VALUES
+(1, 2, 'Lifestyle Courses', ''),
+(2, 2, 'Short Courses', ''),
+(3, 2, 'Kids', ''),
+(4, 1, 'Filipino', ''),
+(5, 1, 'International', ''),
+(6, 1, 'Kids', '');
 
 -- --------------------------------------------------------
 
@@ -109,37 +136,16 @@ CREATE TABLE IF NOT EXISTS `recipe` (
   `date_updated` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `recipe_category_id` (`recipe_category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `recipe`
 --
 
 INSERT INTO `recipe` (`id`, `title`, `slug`, `recipe_category_id`, `image`, `is_active`, `is_featured`, `date_created`, `date_updated`) VALUES
-(17, 'Veggie Scroll in Red Wine Vinaigrette', 'veggie-scroll-in-red-wine-vinaigrette', 7, 'recipe-veggie-scroll-in-red-wine-vinaigrette.jpg', 1, 1, '0000-00-00 00:00:00', '2014-04-03 02:14:46');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `recipe_category`
---
-
-CREATE TABLE IF NOT EXISTS `recipe_category` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `description` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
-
---
--- Dumping data for table `recipe_category`
---
-
-INSERT INTO `recipe_category` (`id`, `name`, `description`) VALUES
-(1, 'Filipino', ''),
-(2, 'Italian', ''),
-(4, 'American', ''),
-(7, 'French', '');
+(23, 'Fresh Vegetarian Spring Roll', 'fresh-vegetarian-spring-roll', 4, 'recipe-fresh-vegetarian-spring-roll.jpg', 1, 0, '2014-04-26 10:47:21', '2014-04-26 01:07:52'),
+(24, 'Blinis Shrimp Torte Canapes', 'blinis-shrimp-torte-canapes', 6, 'recipe-blinis-shrimp-torte-canapes.jpg', 0, 0, '2014-04-26 10:48:41', '2014-04-26 01:08:38'),
+(25, 'Cheesecake Crunch Bites', 'cheesecake-crunch-bites', 6, 'recipe-cheesecake-crunch-bites.jpg', 1, 1, '2014-04-26 10:51:06', '2014-04-26 01:08:30');
 
 -- --------------------------------------------------------
 
@@ -155,17 +161,50 @@ CREATE TABLE IF NOT EXISTS `recipe_contents` (
   `is_active` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `recipe_id` (`recipe_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
 
 --
 -- Dumping data for table `recipe_contents`
 --
 
 INSERT INTO `recipe_contents` (`id`, `recipe_id`, `title`, `content`, `is_active`) VALUES
-(31, 17, 'ingredient', '2-3 pieces medium-sized zucchini, cut lengthwise\r\n    olive oil, as needed\r\n    salt and pepper\r\n    1 piece grilled seasoned chicken breast, sliced (prepared)\r\n    1 piece julienne carrots, blanched\r\n    1 small bundle of asparagus spears, blanched (cut into 2-inch)\r\n    cherry tomatoes, halves', 1),
-(32, 17, 'procedure', 'Preheat grill pan.\r\n    Brush the front and back of sliced zucchinis with olive oil and season it with salt and pepper. Grill until tender and grill marks are visible. Cool and set aside.\r\n    Lay one piece of grilled zucchini and place chicken, carrots and asparagus at about 1/2 inch from end of the zucchini slice then roll-up and place seam side down. Use toothpick to pierce and attach the tomatoes on top of the rolled zucchini.\r\n    Arrange in serving platter. Set aside.', 1),
-(33, 17, 'yield', '16-20 pieces', 1),
-(34, 17, 'notes', 'Note', 1);
+(55, 23, 'ingredient', '<ul><li>Rice Wrapper, sprayed with water</li><li>Lettuce</li><li>Ubod,shredded, blanched</li><li>Angel’s hair pasta, cooked</li><li>Thai Basil</li><li>Carrots (shredded)</li><li>Cabbage (shredded</li><li>Radish (shredded)</li><li>Coriander</li></ul>\r\n<p><font size="3">Sauce:</font><font size="3"><br></font></p><ul><li><font size="3">Sweet Chili, prepared</font></li></ul>\r\n<p>Garnish:</p>\r\n<ul><li>Fried Shallot</li><li>Crushed Peanuts</li></ul>', 1),
+(56, 23, 'procedure', '<ol><li>Spray rice wrapper with water to soften.</li><li>Place the wrapper on middle of plate.</li><li>Arrange in alternate layers the vegetables and pasta according to the listing.</li><li>Roll wrapper to form cylinder.</li><li>Garnish with fried shallot and crushed peanuts.</li><li>Serve with sweet chili.</li></ol>', 1),
+(57, 23, 'yield', '', 1),
+(58, 23, 'notes', '<br>', 1),
+(59, 24, 'ingredient', '<p>Shrimp Torte:</p>\r\n<ul><li>1 cup shrimps, deveined, shelled and cooked</li><li>1 package cream cheese</li><li>1/4 cup bacon bits</li><li>2 tablespoons green onions, chopped</li><li>2 tablespoons marsala wine</li></ul>\r\n<p>Blinis:</p>\r\n<ul><li>1 piece egg</li><li>1 cup water</li><li>2 tablespoons oil</li><li>1 pack MAYA Whole Wheat Pancake Mix 200g</li><li>fresh dill</li></ul>', 1),
+(60, 24, 'procedure', 'Combine all ingredients for shrimp torte in a food processor and process until smooth and well blended. Set aside. <strong>Prepare Blinis:</strong>\r\n Combine egg, water and oil. Mix in pancake mix until well blended. Drop\r\n one tablespoon of pancake mixture onto a heated teflon coated pan. Do \r\nthe same procedure with the rest of the mixture. Get one piece of blinis\r\n then put a little shrimp mixture on top then cover with another blinis \r\nand garnish on top as desired then serve.', 1),
+(61, 24, 'yield', '', 1),
+(62, 24, 'notes', '<br>', 1),
+(63, 25, 'ingredient', '<p>Base crumbs:</p>\r\n<ul><li>1 cup Japanese crumbs</li><li>1/4 cup MAYA All–Purpose Flour</li><li>1/2 cup butter</li><li>1/3 cup grated parmesan</li><li>pepper to taste</li><li>1 tablespoon chopped parsley</li></ul>\r\n<p>Filling:</p>\r\n<ul><li>1/2 cup dry white wine</li><li>1/4 cup minced shallots</li><li>1/2 cup cream cheese</li><li>1/2 cup cubed cheddar cheese</li><li>1 piece egg</li></ul>\r\n<p>Toppings:</p>\r\n<ul><li>glazed sweet ham, diced</li><li>chopped spring onions</li></ul>', 1),
+(64, 25, 'procedure', '<ol><li><font size="3">Preheat oven to 350F/177C. </font></li><li><font size="3">Grease 1 ounce muffin tins. </font></li><li><font size="3">Set aside.</font></li></ol><strong>Prepare Base Crumbs:</strong>\r\n<br><ol><li> Combine all ingredients in a food processor then pulse until well \r\nblended. </li><li>Press into prepared muffin tins and bake for 5 to 10 minutes or \r\nuntil golden brown. </li><li>Set aside. </li></ol><strong>Prepare Filling:</strong> <br><ol><li>In a \r\nsmall saucepan, heat wine and shallots until liquid is reduced. </li><li>Lower \r\nthe heat and mix in the cheeses, keep stirring until well incorporated. \r\n</li><li>Whisk in the egg until mixture become smooth. </li><li>Set aside. </li></ol><strong>To Assemble:</strong> <br><ol><li>Fill each prepared base crumbs with filling and top with glazed ham. </li><li>Garnish with chopped spring onions.</li></ol>', 1),
+(65, 25, 'yield', '', 1),
+(66, 25, 'notes', '<br>', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `static_pages`
+--
+
+CREATE TABLE IF NOT EXISTS `static_pages` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `type` tinyint(10) NOT NULL COMMENT '1 Contact; 2 Terms; 3 Policy; 4 banner;',
+  `content` text NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `type` (`type`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `static_pages`
+--
+
+INSERT INTO `static_pages` (`id`, `type`, `content`, `date_updated`) VALUES
+(1, 1, '<article>\r\n            <div class="details"><article>\r\n            <div class="details"><article>\r\n            <div class="details">\r\n                <h4 align="center">Maya Kitchen Culinary Arts Center</h4>\r\n                <p align="center">8th Floor, Liberty Building</p>\r\n                <p align="center">835 A. Arnaiz Avenue</p>\r\n                <p align="center">Legazpi Village, Makati City</p>\r\n                <p align="center"><span class="icon iconphone"></span> 892-5011 loc. 108</p>\r\n                <p align="center"><span class="icon iconprint"></span> 892-1185 (fax)</p>\r\n            </div>\r\n        </article></div>\r\n        </article></div>\r\n        </article>', '2014-04-26 11:07:15'),
+(2, 2, '<h4 align="center">Terms of Use<br></h4>', '2014-04-26 11:07:31'),
+(3, 3, '<h4 align="center">Privacy Policy<br></h4>', '2014-04-26 11:07:45'),
+(4, 4, '<h1 align="center">Welcome to the Maya Kitchen</h1>\r\n            <h5 align="center">Take a look at the classes we offer, try out our recipes, or catch up with our latest news!</h5>\r\n                                                <div align="center"><img src="http://themayakitchen.com/wp-content/uploads/2014/03/familymatters_main.jpg"></div>', '2014-04-26 12:04:19');
 
 -- --------------------------------------------------------
 
@@ -192,16 +231,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `company` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1396534013, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(2, '0.0.0.0', 'jd fajardo', '$2y$08$pYtR012239ZTjw1J6EgroOAc23rvnddNHW1DVoVuoSyCfcEOOQJ4e', NULL, 'jd@admin.com', NULL, NULL, NULL, NULL, 1396191704, 1396674704, 1, 'Jan', 'Dean', NULL, NULL),
-(3, '0.0.0.0', 'just in', '$2y$08$JUC4fdZC/zwYZhE3mIsVh..JpPaFbrqvLQaVkKzfskHVGjWwaTJp.', NULL, 'justin@admin.com', '9cfc3a0365e9d8423132cf44e9f1815356fcfcd3', NULL, NULL, NULL, 1396192463, 1396192463, 0, 'Just', 'In', NULL, NULL);
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1398134374, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(2, '0.0.0.0', 'jd fajardo', '$2y$08$pYtR012239ZTjw1J6EgroOAc23rvnddNHW1DVoVuoSyCfcEOOQJ4e', NULL, 'jd@admin.com', NULL, NULL, NULL, NULL, 1396191704, 1398501471, 1, 'Jan', 'Dean', NULL, NULL),
+(3, '0.0.0.0', 'just in', '$2y$08$JUC4fdZC/zwYZhE3mIsVh..JpPaFbrqvLQaVkKzfskHVGjWwaTJp.', NULL, 'justin@admin.com', '9cfc3a0365e9d8423132cf44e9f1815356fcfcd3', NULL, NULL, NULL, 1396192463, 1396192463, 0, 'Just', 'In', NULL, NULL),
+(4, '0.0.0.0', 'user 1', '$2y$08$pqCB0M7fii/eiZkUEnvyUOZH8MnDK0axpny.3D6OZyGSGa2UG3DWS', NULL, 'user@admin.com', '94459b37da5a0d62df417322f5aee1c1aeb0bad2', NULL, NULL, NULL, 1398510513, 1398510513, 0, 'User', '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -217,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
   KEY `fk_users_groups_users1_idx` (`user_id`),
   KEY `fk_users_groups_groups1_idx` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `users_groups`
@@ -227,7 +267,8 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 2, 1),
-(4, 3, 1);
+(4, 3, 1),
+(5, 4, 1);
 
 --
 -- Constraints for dumped tables
@@ -237,7 +278,7 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 -- Constraints for table `recipe`
 --
 ALTER TABLE `recipe`
-  ADD CONSTRAINT `recipe_ibfk_1` FOREIGN KEY (`recipe_category_id`) REFERENCES `recipe_category` (`id`);
+  ADD CONSTRAINT `recipe_ibfk_1` FOREIGN KEY (`recipe_category_id`) REFERENCES `category` (`id`);
 
 --
 -- Constraints for table `recipe_contents`
