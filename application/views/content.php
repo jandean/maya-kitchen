@@ -1,7 +1,7 @@
 <div class="main" id="articles">
 	<!-- <h1>CLASSES</h1> -->
     <nav class="breadcrumb">
-        <a href="index.php">The Maya Kitchen</a>
+        <a href="<?php echo base_url(); ?>">The Maya Kitchen</a>
         <!-- <span class="icon iconarrowright" aria-hidden="true"></span><a href="#" class="active" onclick="return false"> Classes</a> -->
     </nav>
     
