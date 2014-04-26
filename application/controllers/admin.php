@@ -31,7 +31,7 @@ class Admin extends CI_Controller {
         $offset = $this->uri->segment(4);
 
         $config['base_url']     = base_url("index.php/admin/main/article/");
-        $config['total_rows']   = $this->article_model->get_count($type);
+        $config['total_rows']   = $this->article_model->get_count($type, 0);
         $config['per_page']     = $this->config->item('per_page');
         $config['uri_segment']  = 4;
         $this->pagination->initialize($config);
@@ -40,9 +40,9 @@ class Admin extends CI_Controller {
         $this->data['title']        = ucfirst($content_type) . " Management";
         $this->data['links']        = $this->pagination->create_links();
         if ($type == CONTENT_CLASS) :
-        $this->data['recordset']    = $this->article_model->get_class_entries($limit, $offset, $this->order_by)->result();
+        $this->data['recordset']    = $this->article_model->get_class_entries($limit, $offset, $this->order_by, 0)->result();
         else :
-        $this->data['recordset']    = $this->article_model->get_entries($type, null, $limit, $offset, $this->order_by)->result();
+        $this->data['recordset']    = $this->article_model->get_entries($type, null, $limit, $offset, $this->order_by, 0)->result();
         endif;
         $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => $content_type, 'active' => 'main'), true);
         $this->data['page']         = "admin/gen-main";
@@ -76,6 +76,7 @@ class Admin extends CI_Controller {
         else : // edit
             $this->data['title'] = "Edit " . ucfirst($content_type);
             $this->data['result'] = $this->article_model->get_entries($type, $id)->row();
+            $this->article_model->date_created = $this->data['result']->date_created;
             $this->form_validation->set_rules('title', 'Title', 'trim|required');
         endif;
 

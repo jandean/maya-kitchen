@@ -21,6 +21,7 @@ class Main extends CI_Controller {
         $this->data['classes']      = $this->article_model->get_entries(CONTENT_CLASS, null, null, null, $this->order_by)->result();
         $this->data['home_side']    = $this->load->view('homepage_side', $this->data, true);
 
+        $this->data['banner']       = $this->pages_model->get_entries(PAGE_BANNER)->content;
         $this->data['side']         = $this->load->view('side', $this->data, true);
         $this->data['recordset']    = $this->article_model->get_entries(CONTENT_ARTICLE, null, 7, null, $this->order_by)->result();
         $this->data['page']         = "home";
@@ -29,8 +30,17 @@ class Main extends CI_Controller {
 
     public function classes()
     {
+        $limit  = $this->config->item('per_page');
+        $offset = $this->uri->segment(3);
+
+        $config['base_url']     = base_url("index.php/main/classes/");
+        $config['total_rows']   = $this->article_model->get_count(CONTENT_CLASS);
+        $config['per_page']     = $this->config->item('per_page');
+        $this->pagination->initialize($config);
+
+        $this->data['links']        = $this->pagination->create_links();
         $this->data['side']         = $this->common_side;
-        $this->data['recordset']    = $this->article_model->get_entries(CONTENT_CLASS, null, null, null, $this->order_by)->result();
+        $this->data['recordset']    = $this->article_model->get_entries(CONTENT_CLASS, null, $limit, $offset, $this->order_by)->result();
         $this->data['page']         = "classes";
         $this->load->view('template', $this->data);
     }
@@ -69,11 +79,29 @@ class Main extends CI_Controller {
         $this->load->view('template', $this->data);
     }
 
-    public function article($slug)
+    public function content($slug)
     {
         $this->data['row']  = $this->article_model->get($slug);
         $this->data['side'] = $this->common_side;
-        $this->data['page'] = "article";
+        $this->data['page'] = "content";
+        $this->load->view('template', $this->data);
+    }
+
+    public function kids_corner()
+    {
+        $limit  = $this->config->item('per_page');
+        $offset = $this->uri->segment(3);
+
+        $config['base_url']     = base_url("index.php/main/kids_corner/");
+        $config['total_rows']   = $this->article_model->get_count(CONTENT_CLASS, 1, CLASS_KIDS) + $this->recipe_model->get_count(1, RECIPE_KIDS);
+        $config['per_page']     = $this->config->item('per_page');
+        $this->pagination->initialize($config);
+
+        $this->data['links']        = $this->pagination->create_links();
+        $this->data['side']         = $this->common_side;
+        $this->data['class_set']    = $this->article_model->get_entries(CONTENT_CLASS, null, $limit / 2 , $offset / 2, $this->order_by)->result();
+        $this->data['recipe_set']   = $this->recipe_model->get_entries(null, $limit / 2 , $offset / 2, $this->order_by)->result();
+        $this->data['page']         = "kids_corner";
         $this->load->view('template', $this->data);
     }
 

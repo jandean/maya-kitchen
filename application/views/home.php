@@ -1,8 +1,6 @@
 <div class="main" id="home">
     <div class="topTier">
-        <h1>Welcome to the Maya Kitchen</h1>
-        <h5>Take a look at the classes we offer, try out our recipes, or catch up with our latest news!</h5>
-        <img src="<?php echo base_url('images/essential/feb-feature-class-02.jpg'); ?>" style="width: 100%; margin-bottom: 30px; padding: 0 28px;">
+        <?php echo $banner; ?>
         <br>
         <div>
             <a href="<?php echo base_url('index.php/main/classes'); ?>"><img src="<?php echo base_url('images/essential/classes.jpg'); ?>"></a>

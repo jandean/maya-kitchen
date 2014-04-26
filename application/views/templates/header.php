@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
 	<link rel="shortcut icon" href="<?php echo base_url('images/icons/favicon.ico'); ?>" />
 	<!-- Load Stylesheet -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
@@ -31,15 +32,13 @@
                     <a href="<?php echo base_url('index.php/main/classes'); ?>" <?php if ($page=="classes") echo " class=\"active\""; ?>>Classes</a>
                     <a href="<?php echo base_url('index.php/main/recipes'); ?>" <?php if ($page=="recipes") echo " class=\"active\""; ?>>Recipes</a>
                     <a href="<?php echo base_url('index.php/main/articles'); ?>" <?php if ($page=="articles") echo " class=\"active\""; ?>>Articles</a>
-                    <a href="<?php echo base_url('index.php/main/kids_corner'); ?>" <?php if ($page=="kids") echo " class=\"active\""; ?>>Kids' Corner</a>
+                    <a href="<?php echo base_url('index.php/main/kids_corner'); ?>" <?php if ($page=="kids_corner") echo " class=\"active\""; ?>>Kids' Corner</a>
                     <a href="<?php echo base_url('index.php/main/products'); ?>" <?php if ($page=="products") echo " class=\"active\""; ?>>Products</a>
                     <a href="<?php echo base_url('index.php/main/contact_us'); ?>" <?php if ($page=="contact") echo " class=\"active\""; ?>>Contact</a>
                 </nav>  
             </div>
         </div>
     </header>
-
-	<p></p>
 	
 	<!-- container -->
 	<div class="container">

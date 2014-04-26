@@ -26,37 +26,48 @@ class ArticleModel extends CI_Model {
         return $query->row();
     }
     
-    function get_entries($type = CONTENT_ARTICLE, $id = null, $limit = null, $offset = null, $order_by = null)
+    function get_entries($type = CONTENT_ARTICLE, $id = null, $limit = null, $offset = null, $order_by = null, $active = 1)
     {
+        if (!is_null($id)) :
+            $where = array('id' => $id);
+        else :
+            $where = array('type' => $type);
+            if ($active == 1)
+                $this->db->where('is_active', 1);
+        endif;
+
         if (!is_null($order_by))
             $this->db->order_by($order_by);
-
-        if (is_null($id))
-            $where = array('type' => $type);
-        else
-            $where = array('id' => $id);
 
         $query = $this->db->get_where('article', $where, $limit, $offset);
         return $query;
     }
     
-    function get_class_entries($limit = null, $offset = null, $order_by = null)
+    function get_class_entries($limit = null, $offset = null, $order_by = null, $active = 1)
     {
         if (!is_null($order_by))
             $this->db->order_by($order_by);
 
+        if ($active == 1)
+            $this->db->where('article.is_active', 1);
+
         $query = $this->db->select('article.*, category.name')
                 ->join('category', 'category.id = article.class_category_id')
-                ->where(array('article.is_active' => 1, 'article.type' => CONTENT_CLASS, 'category.type' => CATEGORY_CLASS))
+                ->where(array('article.type' => CONTENT_CLASS, 'category.type' => CATEGORY_CLASS))
                 ->get('article', $limit, $offset);
                 
         return $query;
     }
 
-    function get_count($type = CONTENT_ARTICLE)
+    function get_count($type = CONTENT_ARTICLE, $active = 1, $category = null)
     {
+        if ($active == 1)
+            $this->db->where('is_active', 1);
+
+        if (!is_null($category))
+            $this->db->where('class_category_id', $category);
+
         $count = $this->db->where('type', $type)
-                ->where('is_active', 1)
                 ->from('article')
                 ->count_all_results();
         return $count;
@@ -102,7 +113,6 @@ class ArticleModel extends CI_Model {
         $this->content      = $this->input->post('content');
         $this->is_active    = $this->input->post('is_active');
         $this->is_featured  = $this->input->post('is_featured');
-        $this->date_created = $this->input->post('date_created');
         $this->date_updated = date('Y-m-d h:i:s');
         $this->db->update('article', $this, array('id' => $this->id));
     }

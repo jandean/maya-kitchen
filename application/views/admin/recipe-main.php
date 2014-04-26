@@ -7,7 +7,7 @@
         <table class="auto">
             <thead>
                 <tr>
-                    <th width="30"><input type="checkbox"></input></th>
+                    <!-- <th width="30"><input type="checkbox"></input></th> -->
                     <th width="50">ID</th>
                     <th>Image</th>
                     <th>Title</th>
@@ -21,7 +21,7 @@
                 <?php if ($recordset) : ?>
                     <?php foreach ($recordset as $row) : ?>
                     <tr>
-                        <td><input type="checkbox"></input></td>
+                        <!-- <td><input type="checkbox"></input></td> -->
                         <td class="delete-id"><?php echo $row->id; ?></td>
                         <td><img src="<?php echo base_url('images/uploads/' . $row->image); ?>" width="80"></td>
                         <td><?php echo $row->title; ?></td>

@@ -21,13 +21,13 @@ class Recipe extends CI_Controller {
         $offset = $this->uri->segment(3);
 
         $config['base_url']     = base_url('index.php/recipe/index/');
-        $config['total_rows']   = $this->recipe_model->get_count();
+        $config['total_rows']   = $this->recipe_model->get_count(0);
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
 
         $this->data['title']        = "Recipe Management";
         $this->data['links']        = $this->pagination->create_links();
-        $this->data['recordset']    = $this->recipe_model->get_entries(null, $limit, $offset, 'recipe.date_created DESC')->result();
+        $this->data['recordset']    = $this->recipe_model->get_entries(null, $limit, $offset, 'recipe.date_created DESC', 0)->result();
         $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'recipe', 'active' => 'main'), true);
         $this->data['page']         = "admin/recipe-main";
         $this->load->view('admin/template', $this->data);

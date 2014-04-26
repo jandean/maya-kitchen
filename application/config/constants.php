@@ -92,5 +92,7 @@ define('PAGE_TERMS', 2);
 define('PAGE_POLICY', 3);
 define('PAGE_BANNER', 4);
 
+define('CLASS_KIDS', 3);
+define('RECIPE_KIDS', 6);
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

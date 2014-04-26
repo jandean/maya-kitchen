@@ -2,15 +2,15 @@
 
 class RecipeModel extends CI_Model {
 
-    var $id                 = '';
-    var $title              = '';
-    var $slug               = '';
-    var $recipe_category_id = '';
-    var $image              = '';
-    var $is_active          = '';
-    var $is_featured        = '';
-    var $date_created       = '';
-    var $date_updated       = '';
+    var $id;
+    var $title;
+    var $slug;
+    var $recipe_category_id;
+    var $image;
+    var $is_active;
+    var $is_featured;
+    var $date_created;
+    var $date_updated;
 
     function __construct()
     {
@@ -18,13 +18,16 @@ class RecipeModel extends CI_Model {
         parent::__construct();
     }
     
-    function get_entries($id = null, $limit = null, $offset = null, $order_by = null)
+    function get_entries($id = null, $limit = null, $offset = null, $order_by = null, $active = 1)
     {
-        $where = array('recipe.is_active' => 1, 'category.type' => CATEGORY_RECIPE);
-
-        if (!is_null($id))
+        if (!is_null($id)) :
             $where['recipe.id'] = $id;
-
+        else :
+            $where = array('category.type' => CATEGORY_RECIPE);
+            if ($active == 1)
+                $this->db->where('recipe.is_active', 1);
+        endif;
+        
         if (!is_null($order_by))
             $this->db->order_by($order_by);
 
@@ -37,7 +40,7 @@ class RecipeModel extends CI_Model {
 
     function get_featured()
     {
-        $where = array('is_featured' => 1, 'is_active' => 1);
+        $where = array('is_featured' => 1);
         $query = $this->db->get_where('recipe', $where);
         return $query;
     }
@@ -48,10 +51,15 @@ class RecipeModel extends CI_Model {
         return $query;
     }
 
-    function get_count()
+    function get_count($active = 1, $category = null)
     {
-        $count = $this->db->where('is_active', 1)
-                ->count_all('recipe');
+        if ($active == 1)
+            $this->db->where('is_active', 1);
+
+        if (!is_null($category))
+            $this->db->where('recipe_category_id', $category);
+
+        $count = $this->db->count_all('recipe');
         return $count;
     }
 
