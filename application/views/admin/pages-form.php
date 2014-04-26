@@ -7,7 +7,7 @@
 		<?php echo form_open('pages/' . $type); ?>
 			<input type="hidden" name="page_type" value="<?php echo set_value('page_type', @$result->type); ?>" />
 			<label>
-				<textarea rows="30" placeholder="Article Content" name="content" id="nicEditArea"><?php echo set_value('content', @$result->content); ?></textarea>
+				<textarea rows="30" name="content" id="nicEditArea"><?php echo set_value('content', @$result->content); ?></textarea>
 			</label>
 			<hr>
 			<button type="submit" class="button tiny radius alert">PUBLISH</button>

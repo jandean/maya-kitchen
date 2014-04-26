@@ -72,6 +72,19 @@ switch ($page) {
 		</aside>
 		<?php
 		break;
+
+	case 'features':
+		?>
+		<aside class="small-2 columns">
+			<div class="sidebar">
+				<ul class="side-nav">
+					<li class="heading"><strong>FEATURES</strong></li>
+					<li <?php echo $active == 'banner' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/pages/banner'); ?>">Banner</a></li>
+				</ul>
+			</div>
+		</aside>
+		<?php
+		break;
 	
 	default:
 		?>
@@ -79,8 +92,8 @@ switch ($page) {
 			<div class="sidebar">
 				<ul class="side-nav">
 					<li class="heading"><strong>USER</strong></li>
-					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="">+ Add User</a></li>
-					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="">All Users</a></li>
+					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/auth/register'); ?>">+ Add User</a></li>
+					<li <?php echo $active == 'main' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('index.php/users/index'); ?>">All Users</a></li>
 				</ul>
 			</div>
 		</aside>

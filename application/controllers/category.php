@@ -31,7 +31,7 @@ class Category extends CI_Controller {
         $this->data['title']        = ucfirst($content_type) . " Category Management";
         $this->data['links']        = $this->pagination->create_links();
         $this->data['recordset']    = $this->category_model->get_entries($type, null, $limit, $offset)->result();
-        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'recipe', 'active' => 'category'), true);
+        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => $content_type, 'active' => 'category'), true);
         $this->data['page']         = "admin/category-main";
         $this->load->view('admin/template', $this->data);
     }

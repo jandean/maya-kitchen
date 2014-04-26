@@ -76,4 +76,25 @@ class Pages extends CI_Controller {
             $this->load->view('admin/template', $this->data);
         endif;
     }
+
+    public function banner()
+    {
+        $this->form_validation->set_rules('page_type', 'Page Type', 'trim');
+        $this->form_validation->set_rules('content', 'Content', 'trim|required');
+
+        $this->data['title']        = "Home Page Banner";
+        $this->data['type']         = "banner";
+        $this->data['result']       = $this->pages_model->get_entries(PAGE_BANNER);
+        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'features', 'active' => 'banner'), true);
+        $this->data['page']         = "admin/pages-form";
+
+        if ($this->form_validation->run() == true) :
+            $this->pages_model->update_entry(PAGE_BANNER);
+            redirect('pages/banner', 'refresh');
+        else :
+            //set the flash data error message if there is one
+            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            $this->load->view('admin/template', $this->data);
+        endif;
+    }
 }

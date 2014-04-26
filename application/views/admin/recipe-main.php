@@ -2,7 +2,7 @@
     <?php echo $sidemenu; ?>
     <div class="core small-10 columns">
         <h3><?php echo $title; ?></h3>
-        <a href="<?php echo base_url('index.php/recipe/form'); ?>" class="button tiny radius">Add Recipe</a>
+        <!-- <a href="<?php echo base_url('index.php/recipe/form'); ?>" class="button tiny radius">Add Recipe</a> -->
         <hr>
         <table class="auto">
             <thead>

@@ -47,7 +47,7 @@
             <li class="has-dropdown">
                 <a href="#">Users</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/auth/create_user'); ?>">Add User</a></li>
+                    <li><a href="<?php echo base_url('index.php/auth/register'); ?>">Add User</a></li>
                     <li><a href="<?php echo base_url('index.php/users'); ?>">Manage Users</a></li>
                 </ul>
             </li>
@@ -81,8 +81,8 @@
             <li class="has-dropdown">
                 <a href="#">Features</a>
                 <ul class="dropdown">
-                    <li><a href="">Homepage Banner</a></li>
-                    <li><a href="">Sidebar Items</a></li>
+                    <li><a href="<?php echo base_url('index.php/pages/banner'); ?>">Homepage Banner</a></li>
+                    <!-- <li><a href="">Sidebar Items</a></li> -->
                 </ul>
             </li>
             <li class="has-dropdown">

@@ -28,7 +28,7 @@
             <label>Category
                 <?php foreach ($categories as $category) : ?>
                 <label>
-                    <input type="radio" name="recipe_category_id" value="<?php echo $category->id; ?>" <?php echo set_radio('recipe_category_id', @$result->recipe_category_id); ?> /> <?php echo $category->name; ?>
+                    <input type="radio" name="recipe_category_id" value="<?php echo $category->id; ?>" <?php echo set_value('recipe_category_id', @$result->recipe_category_id) == $category->id ? "checked" : ""; ?> /> <?php echo $category->name; ?>
                 </label>
                 <?php endforeach; ?>
             </label>
@@ -36,10 +36,10 @@
                 <input type="file" name="image" />
             </label>
             <label>
-                <input type="checkbox" name="is_active" value="1" <?php echo set_checkbox('is_active', @$result->is_active, TRUE); ?> /> Active
+                <input type="checkbox" name="is_active" value="1" <?php echo set_value('is_active', @$result->is_active, TRUE) == 1 ? "checked" : ""; ?> /> Active
             </label>
             <label>
-                <input type="checkbox" name="is_featured" value="1" <?php echo set_checkbox('is_featured', @$result->is_featured); ?> /> Feature this recipe
+                <input type="checkbox" name="is_featured" value="1" <?php echo set_value('is_featured', @$result->is_featured) == 1 ? "checked" : ""; ?> /> Feature this recipe
             </label>
             <hr>
             <button type="submit" class="button tiny radius alert">PUBLISH</button>

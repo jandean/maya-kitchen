@@ -79,8 +79,8 @@ class Admin extends CI_Controller {
             $this->form_validation->set_rules('title', 'Title', 'trim|required');
         endif;
 
-        if ($type == CATEGORY_CLASS)
-            $this->form_validation->set_rules('class_category_id', 'Category', 'trim|required');
+        if ($type == CONTENT_CLASS)
+            $this->form_validation->set_rules('class_category_id', 'Category', 'required');
 
         $this->form_validation->set_rules('article_id', 'ID', 'trim');
         $this->form_validation->set_rules('slug', 'Slug', 'trim|required');

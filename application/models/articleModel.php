@@ -2,16 +2,17 @@
 
 class ArticleModel extends CI_Model {
 
-    var $id             = '';
-    var $type           = '';
-    var $title          = '';
-    var $slug           = '';
-    var $content        = '';
-    var $image          = '';
-    var $is_active      = '';
-    var $is_featured    = '';
-    var $date_created   = '';
-    var $date_updated   = '';
+    var $id;
+    var $type;
+    var $title;
+    var $slug;
+    var $content;
+    var $image;
+    var $is_active;
+    var $is_featured;
+    var $date_created;
+    var $date_updated;
+    var $class_category_id   = null;
 
     function __construct()
     {
@@ -31,9 +32,9 @@ class ArticleModel extends CI_Model {
             $this->db->order_by($order_by);
 
         if (is_null($id))
-            $where = array('is_active' => 1, 'type' => $type);
+            $where = array('type' => $type);
         else
-            $where = array('is_active' => 1, 'id' => $id);
+            $where = array('id' => $id);
 
         $query = $this->db->get_where('article', $where, $limit, $offset);
         return $query;
@@ -63,9 +64,11 @@ class ArticleModel extends CI_Model {
 
     function insert_entry($type = CONTENT_ARTICLE)
     {
-        if ($this->input->post('is_featured') == 1) :
+        if ($this->input->post('is_featured') == 1)
             $this->clear_feature($type);
-        endif;
+
+        if ($type == CONTENT_CLASS)
+            $this->class_category_id = $this->input->post('class_category_id');
 
         $this->type         = $type;
         $this->title        = $this->input->post('title');
@@ -74,6 +77,7 @@ class ArticleModel extends CI_Model {
         $this->is_active    = $this->input->post('is_active');
         $this->is_featured  = $this->input->post('is_featured');
         $this->date_created = date('Y-m-d h:i:s');
+        $this->date_updated = date('Y-m-d h:i:s');
         $this->db->insert('article', $this);
     }
 
@@ -85,9 +89,11 @@ class ArticleModel extends CI_Model {
 
     function update_entry($type = CONTENT_ARTICLE)
     {
-        if ($this->input->post('is_featured') == 1) :
+        if ($this->input->post('is_featured') == 1)
             $this->clear_feature($type);
-        endif;
+
+        if ($type == CONTENT_CLASS)
+            $this->class_category_id = $this->input->post('class_category_id');
 
         $this->type         = $type;
         $this->id           = $this->input->post('article_id');
@@ -96,7 +102,7 @@ class ArticleModel extends CI_Model {
         $this->content      = $this->input->post('content');
         $this->is_active    = $this->input->post('is_active');
         $this->is_featured  = $this->input->post('is_featured');
-        $this->is_featured  = $this->input->post('is_featured');
+        $this->date_created = $this->input->post('date_created');
         $this->date_updated = date('Y-m-d h:i:s');
         $this->db->update('article', $this, array('id' => $this->id));
     }

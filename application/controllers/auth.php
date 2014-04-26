@@ -10,7 +10,7 @@ class Auth extends CI_Controller {
         $this->lang->load('auth');
         $this->load->helper('language');
 
-        $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => 'user'), true);
+        $this->data['sidemenu'] = $this->load->view('admin/sidemenu', array('page' => 'user', 'active' => 'main'), true);
     }
 
     //log the user in
@@ -330,7 +330,6 @@ class Auth extends CI_Controller {
             $this->data['csrf'] = $this->_get_csrf_nonce();
             $this->data['user'] = $this->ion_auth->user($id)->row();
 
-            $this->data['side'] = "admin/user-sidemenu";
             $this->data['page'] = "auth/deactivate_user";
             $this->load->view('admin/template', $this->data);
         }
@@ -358,7 +357,7 @@ class Auth extends CI_Controller {
     }
 
     //create a new user
-    function create_user()
+    function register()
     {
         $this->data['title'] = "Create User";
 

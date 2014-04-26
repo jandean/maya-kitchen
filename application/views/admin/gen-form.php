@@ -6,6 +6,7 @@
 		<div><?php echo $message; ?></div>
 		<?php echo form_open_multipart('admin/form/' . $content_type . '/' . @$result->id); ?>
 			<input type="hidden" name="article_id" value="<?php echo set_value('article_id', @$result->id); ?>" />
+			<input type="hidden" name="date_created" value="<?php echo set_value('date_created', @$result->date_created); ?>" />
 			<label>Title
 				<input type="text" placeholder="Title" name="title" id="title" value="<?php echo set_value('title', @$result->title); ?>" />
 			</label>
@@ -19,7 +20,7 @@
 	            <label>Category
 	                <?php foreach ($categories as $category) : ?>
 	                <label>
-	                    <input type="radio" name="class_category_id" value="<?php echo $category->id; ?>" <?php echo set_radio('class_category_id', @$result->class_category_id); ?> /> <?php echo $category->name; ?>
+	                    <input type="radio" name="class_category_id" value="<?php echo $category->id; ?>" <?php echo set_value('class_category_id', @$result->class_category_id) == $category->id ? "checked" : ""; ?> /> <?php echo $category->name; ?>
 	                </label>
 	                <?php endforeach; ?>
 	            </label>
@@ -28,10 +29,10 @@
 				<input type="file" name="image" />
 			</label>
 			<label>
-				<input type="checkbox" name="is_active" value="1" <?php echo set_checkbox('is_active', @$result->is_active, TRUE); ?> /> Active
+				<input type="checkbox" name="is_active" value="1" <?php echo set_value('is_active', @$result->is_active) == 1 ? "checked" : ""; ?> /> Active
 			</label>
 			<label>
-				<input type="checkbox" name="is_featured" value="1" <?php echo set_checkbox('is_featured', @$result->is_featured); ?> /> Featured
+				<input type="checkbox" name="is_featured" value="1" <?php echo set_value('is_featured', @$result->is_featured) == 1 ? "checked" : ""; ?> /> Featured
 			</label>
 			<hr>
 			<button type="submit" class="button tiny radius alert">PUBLISH</button>

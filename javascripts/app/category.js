@@ -10,6 +10,10 @@ $(function() {
   $('a.add-cat').click(function(){
     $('button.save-cat').html('ADD');
   });
+
+  $('form#form_category').on('submit', function(e){
+    return false;
+  });
 });
 
 function save_category()
