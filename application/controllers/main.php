@@ -45,6 +45,19 @@ class Main extends CI_Controller {
         $this->load->view('template', $this->data);
     }
 
+    public function recipe($slug)
+    {
+        if ($slug) :
+            $this->data['row']      = $this->recipe_model->get($slug);
+            $this->data['contents'] = $this->recipe_model->get_contents($this->data['row']->id);
+            $this->data['side']     = $this->common_side;
+            $this->data['page']     = "recipe_content";
+            $this->load->view('template', $this->data);
+        else :
+            redirect('main/index', 'refresh');
+        endif;
+    }
+
     public function recipes()
     {
         $limit  = $this->config->item('per_page');
@@ -81,10 +94,14 @@ class Main extends CI_Controller {
 
     public function content($slug)
     {
-        $this->data['row']  = $this->article_model->get($slug);
-        $this->data['side'] = $this->common_side;
-        $this->data['page'] = "content";
-        $this->load->view('template', $this->data);
+        if ($slug) :
+            $this->data['row']  = $this->article_model->get($slug);
+            $this->data['side'] = $this->common_side;
+            $this->data['page'] = "content";
+            $this->load->view('template', $this->data);
+        else :
+            redirect('main/index', 'refresh');
+        endif;
     }
 
     public function kids_corner()

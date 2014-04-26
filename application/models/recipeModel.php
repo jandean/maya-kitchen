@@ -17,6 +17,12 @@ class RecipeModel extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
+
+    function get($slug)
+    {
+        $query = $this->db->get_where('recipe', array('slug' => $slug));
+        return $query->row();
+    }
     
     function get_entries($id = null, $limit = null, $offset = null, $order_by = null, $active = 1)
     {

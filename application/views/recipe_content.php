@@ -11,7 +11,13 @@
         <h1><?php echo $row->title; ?></h1>
         <article>
             <img src="<?php echo base_url('images/uploads/' . $row->image); ?>">
-            <p class="articleContent"><?php echo $row->content; ?></p>
+            <p></p>
+            <?php foreach ($contents->result() as $row) :
+                if ($row->content != '' && $row->content != '<br>') :
+                    echo "<h6>" . strtoupper($row->title) . "</h6>";
+                    echo $row->content;
+                endif;
+            endforeach; ?>
         </article>
     </div>
 </div>
