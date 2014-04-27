@@ -29,11 +29,11 @@
                 </div> -->
                 <nav>
                     <a href="<?php echo base_url('index.php/home'); ?>" <?php if ($page=="home") echo " class=\"active\""; ?>>Home</a>
-                    <a href="<?php echo base_url('index.php/classes'); ?>" <?php if ($page=="classes") echo " class=\"active\""; ?>>Classes</a>
-                    <a href="<?php echo base_url('index.php/recipes'); ?>" <?php if ($page=="recipes") echo " class=\"active\""; ?>>Recipes</a>
-                    <a href="<?php echo base_url('index.php/articles'); ?>" <?php if ($page=="articles") echo " class=\"active\""; ?>>Articles</a>
+                    <a href="<?php echo base_url('index.php/classes'); ?>" <?php if ($page=="classes" || @$crumb=="classes") echo " class=\"active\""; ?>>Classes</a>
+                    <a href="<?php echo base_url('index.php/recipes'); ?>" <?php if ($page=="recipes" || @$crumb=="recipes") echo " class=\"active\""; ?>>Recipes</a>
+                    <a href="<?php echo base_url('index.php/articles'); ?>" <?php if ($page=="articles" || @$crumb=="articles") echo " class=\"active\""; ?>>Articles</a>
                     <a href="<?php echo base_url('index.php/kids'); ?>" <?php if ($page=="kids_corner") echo " class=\"active\""; ?>>Kids' Corner</a>
-                    <a href="<?php echo base_url('index.php/products'); ?>" <?php if ($page=="products") echo " class=\"active\""; ?>>Products</a>
+                    <a href="<?php echo base_url('index.php/products'); ?>" <?php if ($page=="products" || @$crumb=="products") echo " class=\"active\""; ?>>Products</a>
                     <a href="<?php echo base_url('index.php/contact-us'); ?>" <?php if ($page=="contact") echo " class=\"active\""; ?>>Contact</a>
                 </nav>  
             </div>

@@ -50,6 +50,7 @@ class Main extends CI_Controller {
         if ($slug) :
             $this->data['row']      = $this->recipe_model->get($slug);
             $this->data['contents'] = $this->recipe_model->get_contents($this->data['row']->id);
+            $this->data['crumb']    = "recipes";
             $this->data['side']     = $this->common_side;
             $this->data['page']     = "recipe_content";
             $this->load->view('template', $this->data);

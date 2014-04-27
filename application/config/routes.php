@@ -78,9 +78,9 @@ $route['contact-us']        = "main/contact_us";
 $route['terms-of-use']      = "main/terms_of_use";
 $route['privacy-policy']    = "main/privacy_policy";
 
-$route['classes/(:any)']    = "main/content/class/$1";
-$route['articles/(:any)']   = "main/content/article/$1";
-$route['products/(:any)']   = "main/content/product/$1";
+$route['classes/(:any)']    = "main/content/classes/$1";
+$route['articles/(:any)']   = "main/content/articles/$1";
+$route['products/(:any)']   = "main/content/products/$1";
 $route['recipes/(:any)']    = "main/recipe/$1";
 
 /* End of file routes.php */
