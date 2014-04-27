@@ -1,7 +1,7 @@
 <div class="main" id="basic">
     <nav class="breadcrumb">
         <a href="<?php echo base_url(); ?>">The Maya Kitchen</a>
-        <span class="icon iconarrowright" aria-hidden="true"></span><a href="" class="active" onclick="return false"> Contact</a>
+        <span class="icon iconarrowright" aria-hidden="true"></span><a href="" class="active" onclick="return false"> <?php echo $title; ?></a>
     </nav>
 
     <?php echo $side; ?>

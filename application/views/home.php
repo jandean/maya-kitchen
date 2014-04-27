@@ -25,7 +25,7 @@
                 <div class="articleSummary">
                     <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="40">
                     <div>
-                        <a href="<?php echo base_url('index.php/content/' . $row->slug); ?>"><h4><?php echo html_entity_decode($row->title); ?></h4></a>
+                        <a href="<?php echo base_url('index.php/articles/' . $row->slug); ?>"><h4><?php echo html_entity_decode($row->title); ?></h4></a>
                         <?php echo substr($row->content, 0, 200); ?> [<a href="articles/vask.php">Read More</a>]
                     </div>
                 </div>

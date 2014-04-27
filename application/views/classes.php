@@ -13,7 +13,7 @@
             <?php foreach ($recordset as $row) : ?>
             <div class="card">
                 <div>
-                    <a href="<?php echo base_url('index.php/content/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
+                    <a href="<?php echo base_url('index.php/classes/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
                 </div>
                 <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%">
             </div>

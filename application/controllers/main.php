@@ -92,11 +92,12 @@ class Main extends CI_Controller {
         $this->load->view('template', $this->data);
     }
 
-    public function content($slug)
+    public function content($type, $slug)
     {
         if ($slug) :
             $this->data['row']  = $this->article_model->get($slug);
             $this->data['side'] = $this->common_side;
+            $this->data['crumb'] = $type;
             $this->data['page'] = "content";
             $this->load->view('template', $this->data);
         else :
