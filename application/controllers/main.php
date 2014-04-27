@@ -54,7 +54,7 @@ class Main extends CI_Controller {
             $this->data['page']     = "recipe_content";
             $this->load->view('template', $this->data);
         else :
-            redirect('main/index', 'refresh');
+            redirect('home', 'refresh');
         endif;
     }
 
@@ -100,7 +100,7 @@ class Main extends CI_Controller {
             $this->data['page'] = "content";
             $this->load->view('template', $this->data);
         else :
-            redirect('main/index', 'refresh');
+            redirect('home', 'refresh');
         endif;
     }
 

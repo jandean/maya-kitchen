@@ -67,6 +67,19 @@
 $route['default_controller'] = "main";
 $route['404_override'] = '';
 
+//Front End
+$route['home'] 				= "main/index";
+$route['kids'] 				= "main/kids_corner";
+$route['classes'] 			= "main/classes";
+$route['recipes'] 			= "main/recipes";
+$route['articles'] 			= "main/articles";
+$route['products'] 			= "main/products";
+$route['contact-us']		= "main/contact_us";
+$route['terms-of-use'] 		= "main/terms_of_use";
+$route['privacy-policy'] 	= "main/privacy_policy";
+
+$route['content/(:any)'] 	= "main/content/$1";
+$route['recipe/(:any)'] 	= "main/recipe/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

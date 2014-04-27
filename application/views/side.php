@@ -5,7 +5,7 @@
     <?php if (@$feat_recipe): ?>
     <div class="rotm">
         <h6>Recipe of the Month</h6>
-        <a href="<?php echo base_url('index.php/main/recipe/' . $feat_recipe->slug); ?>"><strong><?php echo $feat_recipe->title; ?></strong></a>
+        <a href="<?php echo base_url('index.php/recipe/' . $feat_recipe->slug); ?>"><strong><?php echo $feat_recipe->title; ?></strong></a>
         <img src="<?php echo base_url($this->config->item('image_upload_path') . $feat_recipe->image); ?>" width="250">
     </div>
     <?php endif; ?>

@@ -28,13 +28,13 @@
                     <a href=""><span class="icon iconpinterest" aria-hidden="true"></span></a>
                 </div> -->
                 <nav>
-                    <a href="<?php echo base_url('index.php/main/index'); ?>" <?php if ($page=="home") echo " class=\"active\""; ?>>Home</a>
-                    <a href="<?php echo base_url('index.php/main/classes'); ?>" <?php if ($page=="classes") echo " class=\"active\""; ?>>Classes</a>
-                    <a href="<?php echo base_url('index.php/main/recipes'); ?>" <?php if ($page=="recipes") echo " class=\"active\""; ?>>Recipes</a>
-                    <a href="<?php echo base_url('index.php/main/articles'); ?>" <?php if ($page=="articles") echo " class=\"active\""; ?>>Articles</a>
-                    <a href="<?php echo base_url('index.php/main/kids_corner'); ?>" <?php if ($page=="kids_corner") echo " class=\"active\""; ?>>Kids' Corner</a>
-                    <a href="<?php echo base_url('index.php/main/products'); ?>" <?php if ($page=="products") echo " class=\"active\""; ?>>Products</a>
-                    <a href="<?php echo base_url('index.php/main/contact_us'); ?>" <?php if ($page=="contact") echo " class=\"active\""; ?>>Contact</a>
+                    <a href="<?php echo base_url('index.php/home'); ?>" <?php if ($page=="home") echo " class=\"active\""; ?>>Home</a>
+                    <a href="<?php echo base_url('index.php/classes'); ?>" <?php if ($page=="classes") echo " class=\"active\""; ?>>Classes</a>
+                    <a href="<?php echo base_url('index.php/recipes'); ?>" <?php if ($page=="recipes") echo " class=\"active\""; ?>>Recipes</a>
+                    <a href="<?php echo base_url('index.php/articles'); ?>" <?php if ($page=="articles") echo " class=\"active\""; ?>>Articles</a>
+                    <a href="<?php echo base_url('index.php/kids'); ?>" <?php if ($page=="kids_corner") echo " class=\"active\""; ?>>Kids' Corner</a>
+                    <a href="<?php echo base_url('index.php/products'); ?>" <?php if ($page=="products") echo " class=\"active\""; ?>>Products</a>
+                    <a href="<?php echo base_url('index.php/contact-us'); ?>" <?php if ($page=="contact") echo " class=\"active\""; ?>>Contact</a>
                 </nav>  
             </div>
         </div>

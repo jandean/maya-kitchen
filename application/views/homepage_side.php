@@ -11,7 +11,7 @@
         <h6>Class Schedules</h6>
         <?php foreach ($classes as $row) : ?>
             <div>
-                <a href="<?php echo base_url('index.php/main/class/' . $row->slug); ?>"><strong><?php echo $row->title; ?></strong></a>
+                <a href="<?php echo base_url('index.php/content/' . $row->slug); ?>"><strong><?php echo $row->title; ?></strong></a>
                 <?php echo $row->content; ?>
             </div>
         <?php endforeach; ?>
