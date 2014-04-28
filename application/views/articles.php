@@ -15,7 +15,7 @@
                     <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="225">
                     <div>
                         <a href="<?php echo base_url('index.php/articles/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
-                        <?php echo substr($row->content, 0, 200); ?> [<a href="articles/vask.php">Read More</a>]
+                        <?php echo substr($row->content, 0, 200); ?> [<a href="<?php echo base_url('index.php/articles/' . $row->slug); ?>">Read More</a>]
                     </div>
                 </div>
             <?php endforeach; ?>
