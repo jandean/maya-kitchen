@@ -239,9 +239,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
 (1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1398134374, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(2, '0.0.0.0', 'jd fajardo', '$2y$08$pYtR012239ZTjw1J6EgroOAc23rvnddNHW1DVoVuoSyCfcEOOQJ4e', NULL, 'jd@admin.com', NULL, NULL, NULL, NULL, 1396191704, 1398501471, 1, 'Jan', 'Dean', NULL, NULL),
-(3, '0.0.0.0', 'just in', '$2y$08$JUC4fdZC/zwYZhE3mIsVh..JpPaFbrqvLQaVkKzfskHVGjWwaTJp.', NULL, 'justin@admin.com', '9cfc3a0365e9d8423132cf44e9f1815356fcfcd3', NULL, NULL, NULL, 1396192463, 1396192463, 0, 'Just', 'In', NULL, NULL),
-(4, '0.0.0.0', 'user 1', '$2y$08$pqCB0M7fii/eiZkUEnvyUOZH8MnDK0axpny.3D6OZyGSGa2UG3DWS', NULL, 'user@admin.com', '94459b37da5a0d62df417322f5aee1c1aeb0bad2', NULL, NULL, NULL, 1398510513, 1398510513, 0, 'User', '1', NULL, NULL);
+(2, '0.0.0.0', 'jd fajardo', '$2y$08$pYtR012239ZTjw1J6EgroOAc23rvnddNHW1DVoVuoSyCfcEOOQJ4e', NULL, 'jd@admin.com', NULL, NULL, NULL, NULL, 1396191704, 1398501471, 1, 'Jan', 'Dean', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -266,9 +264,7 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
-(3, 2, 1),
-(4, 3, 1),
-(5, 4, 1);
+(3, 2, 1);
 
 --
 -- Constraints for dumped tables
