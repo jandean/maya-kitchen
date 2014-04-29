@@ -35,7 +35,7 @@
 			</label>
 			<hr>
 			<button type="submit" class="button tiny radius alert">PUBLISH</button>
-			<a href="<?php echo base_url('index.php/admin/main/' . $content_type); ?>" class="button tiny radius secondary">CANCEL</a>
+			<a href="<?php echo base_url('admin/main/' . $content_type); ?>" class="button tiny radius secondary">CANCEL</a>
 		<?php echo form_close(); ?>
 	</div>
 

@@ -24,7 +24,7 @@
     <nav class="top-bar" data-topbar>
         <ul class="title-area">
             <li class="name">
-                <h1><a href="<?php echo base_url('index.php/admin'); ?>"><img src="<?php echo base_url(); ?>/images/logo.png"></a></h1>
+                <h1><a href="<?php echo base_url('admin'); ?>"><img src="<?php echo base_url(); ?>/images/logo.png"></a></h1>
             </li>
             <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
         </ul>
@@ -37,7 +37,7 @@
                 <li class="has-dropdown active">
                     <a href="#">Logged in as <strong><?php echo $this->session->userdata('identity'); ?></strong></a>
                     <ul class="dropdown">
-                        <li><a href="<?php echo base_url('index.php/auth/logout'); ?>">Logout</a></li>
+                        <li><a href="<?php echo base_url('auth/logout'); ?>">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -47,50 +47,50 @@
             <li class="has-dropdown">
                 <a href="#">Users</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/auth/register'); ?>">Add User</a></li>
-                    <li><a href="<?php echo base_url('index.php/users'); ?>">Manage Users</a></li>
+                    <li><a href="<?php echo base_url('auth/register'); ?>">Add User</a></li>
+                    <li><a href="<?php echo base_url('users'); ?>">Manage Users</a></li>
                 </ul>
             </li>
             <li class="has-dropdown">
                 <a href="#">Classes</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/admin/form/' . CONTENT_CLASS_STR); ?>">Add Class</a></li>
-                    <li><a href="<?php echo base_url('index.php/admin/main/' . CONTENT_CLASS_STR); ?>">Manage Classes</a></li>
+                    <li><a href="<?php echo base_url('admin/form/' . CONTENT_CLASS_STR); ?>">Add Class</a></li>
+                    <li><a href="<?php echo base_url('admin/main/' . CONTENT_CLASS_STR); ?>">Manage Classes</a></li>
                 </ul>
             </li>
             <li class="has-dropdown">
                 <a href="#">Recipes</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/recipe/form'); ?>">Add Recipe</a></li>
-                    <li><a href="<?php echo base_url('index.php/recipe'); ?>">Manage Recipes</a></li>
+                    <li><a href="<?php echo base_url('recipe/form'); ?>">Add Recipe</a></li>
+                    <li><a href="<?php echo base_url('recipe'); ?>">Manage Recipes</a></li>
                 </ul>
             </li><li class="has-dropdown">
                 <a href="#">Articles</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/admin/form/' . CONTENT_ARTICLE_STR); ?>">Add Article</a></li>
-                    <li><a href="<?php echo base_url('index.php/admin/main/' . CONTENT_ARTICLE_STR); ?>">Manage Articles</a></li>
+                    <li><a href="<?php echo base_url('admin/form/' . CONTENT_ARTICLE_STR); ?>">Add Article</a></li>
+                    <li><a href="<?php echo base_url('admin/main/' . CONTENT_ARTICLE_STR); ?>">Manage Articles</a></li>
                 </ul>
             </li>
             <li class="has-dropdown">
                 <a href="#">Products</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/admin/form/' . CONTENT_PRODUCT_STR); ?>">Add Product</a></li>
-                    <li><a href="<?php echo base_url('index.php/admin/main/' . CONTENT_PRODUCT_STR); ?>">Manage Products</a></li>
+                    <li><a href="<?php echo base_url('admin/form/' . CONTENT_PRODUCT_STR); ?>">Add Product</a></li>
+                    <li><a href="<?php echo base_url('admin/main/' . CONTENT_PRODUCT_STR); ?>">Manage Products</a></li>
                 </ul>
             </li>
             <li class="has-dropdown">
                 <a href="#">Features</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/pages/banner'); ?>">Homepage Banner</a></li>
+                    <li><a href="<?php echo base_url('pages/banner'); ?>">Homepage Banner</a></li>
                     <!-- <li><a href="">Sidebar Items</a></li> -->
                 </ul>
             </li>
             <li class="has-dropdown">
                 <a href="#">Pages</a>
                 <ul class="dropdown">
-                    <li><a href="<?php echo base_url('index.php/pages/contact'); ?>">Contact</a></li>
-                    <li><a href="<?php echo base_url('index.php/pages/terms'); ?>">Terms of Use</a></li>
-                    <li><a href="<?php echo base_url('index.php/pages/policy'); ?>">Privacy Policy</a></li>
+                    <li><a href="<?php echo base_url('pages/contact'); ?>">Contact</a></li>
+                    <li><a href="<?php echo base_url('pages/terms'); ?>">Terms of Use</a></li>
+                    <li><a href="<?php echo base_url('pages/policy'); ?>">Privacy Policy</a></li>
                 </ul>
             </li>
             </ul>

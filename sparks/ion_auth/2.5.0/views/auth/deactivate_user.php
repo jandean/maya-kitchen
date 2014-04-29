@@ -15,7 +15,7 @@
       <?php echo form_hidden($csrf); ?>
       <?php echo form_hidden(array('id'=>$user->id)); ?>
       <button type="submit" class="button tiny radius alert">SAVE</button>
-      <a href="<?php echo base_url('index.php/users'); ?>" class="button tiny radius secondary">CANCEL</a>
+      <a href="<?php echo base_url('users'); ?>" class="button tiny radius secondary">CANCEL</a>
 
     <?php echo form_close();?>
   </div>

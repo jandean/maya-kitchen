@@ -3,16 +3,16 @@
         <?php echo $banner; ?>
         <br>
         <div>
-            <a href="<?php echo base_url('index.php/classes'); ?>"><img src="<?php echo base_url('images/essential/classes.jpg'); ?>"></a>
-            <a href="<?php echo base_url('index.php/classes'); ?>">CLASSES</a>
+            <a href="<?php echo base_url('classes'); ?>"><img src="<?php echo base_url('images/essential/classes.jpg'); ?>"></a>
+            <a href="<?php echo base_url('classes'); ?>">CLASSES</a>
         </div>
         <div>
-            <a href="<?php echo base_url('index.php/recipes'); ?>"><img src="<?php echo base_url('images/essential/recipes.jpg'); ?>"></a>
-            <a href="<?php echo base_url('index.php/recipes'); ?>">RECIPES</a>
+            <a href="<?php echo base_url('recipes'); ?>"><img src="<?php echo base_url('images/essential/recipes.jpg'); ?>"></a>
+            <a href="<?php echo base_url('recipes'); ?>">RECIPES</a>
         </div>
         <div>
-            <a href="<?php echo base_url('index.php/articles'); ?>"><img src="<?php echo base_url('images/essential/articles.jpg'); ?>"></a>
-            <a href="<?php echo base_url('index.php/articles'); ?>">ARTICLES</a>
+            <a href="<?php echo base_url('articles'); ?>"><img src="<?php echo base_url('images/essential/articles.jpg'); ?>"></a>
+            <a href="<?php echo base_url('articles'); ?>">ARTICLES</a>
         </div>
     </div>
 
@@ -25,8 +25,8 @@
                 <div class="articleSummary">
                     <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="40">
                     <div>
-                        <a href="<?php echo base_url('index.php/articles/' . $row->slug); ?>"><h4><?php echo html_entity_decode($row->title); ?></h4></a>
-                        <?php echo substr($row->content, 0, 200); ?> [<a href="<?php echo base_url('index.php/articles/' . $row->slug); ?>">Read More</a>]
+                        <a href="<?php echo base_url('articles/' . $row->slug); ?>"><h4><?php echo html_entity_decode($row->title); ?></h4></a>
+                        <?php echo substr($row->content, 0, 200); ?> [<a href="<?php echo base_url('articles/' . $row->slug); ?>">Read More</a>]
                     </div>
                 </div>
             <?php endforeach; ?>

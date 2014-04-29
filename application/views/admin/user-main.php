@@ -2,7 +2,7 @@
 	<?php echo $sidemenu; ?>
 	<div class="core small-10 columns">
 		<h3><?php echo $title; ?></h3>
-		<!-- <a href="<?php echo base_url('index.php/auth/register'); ?>" class="button tiny radius">Register User</a> -->
+		<!-- <a href="<?php echo base_url('auth/register'); ?>" class="button tiny radius">Register User</a> -->
 		<hr>
 		<table class="auto">
 			<thead>
@@ -28,9 +28,9 @@
 					<td class="cat-name"><?php echo $row->email; ?></td>
 					<td class="cat-name"><?php echo $row->active == 1 ? 'Yes' : 'No'; ?></td>
 					<td>
-						<a href="<?php echo base_url('index.php/auth/edit_user/'.$row->id); ?>" class="button tiny radius">Edit</a>
+						<a href="<?php echo base_url('auth/edit_user/'.$row->id); ?>" class="button tiny radius">Edit</a>
 						<?php if ($row->active == 1) : ?>
-							<a href="<?php echo base_url('index.php/auth/deactivate/'.$row->id); ?>" class="button tiny radius warning" data-reveal-id="deactivate-prompt">Deactivate</a>
+							<a href="<?php echo base_url('auth/deactivate/'.$row->id); ?>" class="button tiny radius warning" data-reveal-id="deactivate-prompt">Deactivate</a>
 						<?php endif; ?>
 					</td>
 				</tr>
