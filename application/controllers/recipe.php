@@ -11,8 +11,7 @@ class Recipe extends CI_Controller {
             redirect('auth/login', 'refresh');
         endif;
 
-        $this->load->model('recipeModel', 'recipe_model');
-        $this->load->model('categoryModel', 'category_model');
+        $this->load->model(array('recipe_model','category_model'));
     }
 
     public function index()

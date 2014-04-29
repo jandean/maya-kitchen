@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ArticleModel extends CI_Model {
+class Article_model extends CI_Model {
 
     var $id;
     var $type;

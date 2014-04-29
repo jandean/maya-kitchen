@@ -13,8 +13,7 @@ class Admin extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		endif;
 
-        $this->load->model('articleModel', 'article_model');
-        $this->load->model('categoryModel', 'category_model');
+        $this->load->model(array('article_model','category_model'));
         $this->order_by = 'article.date_created DESC';
 	}
 

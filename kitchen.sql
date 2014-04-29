@@ -19,8 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `kitchen`
 --
-CREATE DATABASE IF NOT EXISTS `kitchen` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `kitchen`;
+USE `themayak_kitchen`;
 
 -- --------------------------------------------------------
 

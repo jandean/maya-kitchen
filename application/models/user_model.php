@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class UserModel extends CI_Model {
+class User_model extends CI_Model {
 
     var $id         = '';
     var $username   = '';

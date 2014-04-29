@@ -11,7 +11,7 @@ class Category extends CI_Controller {
             redirect('auth/login', 'refresh');
         endif;
 
-        $this->load->model('categoryModel', 'category_model');
+        $this->load->model('category_model');
     }
 
     public function index($content_type = CATEGORY_RECIPE_STR)

@@ -77,9 +77,9 @@ $active_record = TRUE;
 
 $db['default']['dsn']      = '';
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'kitchen';
+$db['default']['username'] = 'themayak_root';
+$db['default']['password'] = 'kitchen';
+$db['default']['database'] = 'themayak_kitchen';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;

@@ -8,9 +8,7 @@ class Main extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('RecipeModel', 'recipe_model');
-        $this->load->model('ArticleModel', 'article_model');
-        $this->load->model('pagesModel', 'pages_model');
+        $this->load->model(array('recipe_model','article_model','pages_model'));
         $this->data['feat_recipe']  = $this->recipe_model->get_featured()->row();
         $this->order_by = 'date_created DESC';
         $this->common_side = $this->load->view('side', null, true);

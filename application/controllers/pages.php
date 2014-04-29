@@ -11,7 +11,7 @@ class Pages extends CI_Controller {
             redirect('auth/login', 'refresh');
         endif;
 
-        $this->load->model('pagesModel', 'pages_model');
+        $this->load->model('pages_model');
     }
 
     public function contact()
