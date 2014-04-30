@@ -81,7 +81,7 @@ class Recipe_model extends CI_Model {
         $this->is_active            = $this->input->post('is_active');
         $this->is_featured          = $this->input->post('is_featured');
         $this->date_created         = date('Y-m-d h:i:s');
-
+        $this->date_updated         = date('Y-m-d h:i:s');
         $this->db->insert('recipe', $this);
         $this->insert_contents($this->db->insert_id());
     }
