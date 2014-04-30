@@ -85,6 +85,8 @@ class Admin extends CI_Controller {
         $this->form_validation->set_rules('article_id', 'ID', 'trim');
         $this->form_validation->set_rules('slug', 'Slug', 'trim|required');
         $this->form_validation->set_rules('content', 'Content', 'trim|required');
+        $this->form_validation->set_rules('is_url', 'Is URL', 'trim');
+        $this->form_validation->set_rules('url', 'URL', 'trim');
         $this->form_validation->set_rules('is_active', 'Active', 'trim');
         $this->form_validation->set_rules('is_featured', 'Featured', 'trim');
 

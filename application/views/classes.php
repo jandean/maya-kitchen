@@ -11,14 +11,29 @@
         <!-- <h6>Lifestyle Courses</h6> -->
         <?php if ($recordset) : ?>
             <?php foreach ($recordset as $row) : ?>
+            <?php if ($row->is_url == 1) : ?>
+            <div class="card">
+                <div>
+                    <a href="<?php echo $row->url; ?>" target="_blank"><h4><?php echo $row->title; ?></h4></a>
+                </div>
+                <a href="<?php echo $row->url; ?>" target="_blank"><img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%"></a>
+            </div>
+            <?php else : ?>
             <div class="card">
                 <div>
                     <a href="<?php echo base_url('classes/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
                 </div>
                 <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%">
             </div>
+            <?php endif; ?>
             <?php endforeach; ?>
         <?php endif; ?>
+    </div>
+
+    <div class="pagination-centered">
+        <ul class="pagination">
+            <?php echo $links; ?>
+        </ul>
     </div>
 
 </div>

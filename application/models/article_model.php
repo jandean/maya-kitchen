@@ -8,6 +8,8 @@ class Article_model extends CI_Model {
     var $slug;
     var $content;
     var $image;
+    var $is_url;
+    var $url;
     var $is_active;
     var $is_featured;
     var $date_created;
@@ -85,6 +87,8 @@ class Article_model extends CI_Model {
         $this->title        = $this->input->post('title');
         $this->slug         = $this->input->post('slug');
         $this->content      = $this->input->post('content');
+        $this->is_url       = $this->input->post('is_url');
+        $this->url          = $this->input->post('url');
         $this->is_active    = $this->input->post('is_active');
         $this->is_featured  = $this->input->post('is_featured');
         $this->date_created = date('Y-m-d h:i:s');
@@ -111,6 +115,8 @@ class Article_model extends CI_Model {
         $this->title        = $this->input->post('title');
         $this->slug         = $this->input->post('slug');
         $this->content      = $this->input->post('content');
+        $this->is_url       = $this->input->post('is_url');
+        $this->url          = $this->input->post('url');
         $this->is_active    = $this->input->post('is_active');
         $this->is_featured  = $this->input->post('is_featured');
         $this->date_updated = date('Y-m-d h:i:s');

@@ -24,6 +24,10 @@
 	                <?php endforeach; ?>
 	            </label>
         	<?php endif; ?>
+			<label>
+				<input type="checkbox" name="is_url" value="1" <?php echo set_value('is_url', @$result->is_url) == 1 ? "checked" : ""; ?> /> Link
+				<input type="text" placeholder="URL" name="url" id="url" value="<?php echo set_value('url', @$result->url); ?>" />
+			</label>
 			<label>Cover Image
 				<input type="file" name="image" />
 			</label>
