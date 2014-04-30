@@ -2,7 +2,7 @@
     <?php echo $sidemenu; ?>
     <div class="core small-10 columns">
         <h3><?php echo $title; ?></h3>
-        <!-- <a href="<?php echo base_url('index.php/admin/form/' . $content_type ); ?>" class="button tiny radius add-cat">Add <?php echo ucfirst($content_type); ?></a> -->
+        <!-- <a href="<?php echo base_url('admin/form/' . $content_type ); ?>" class="button tiny radius add-cat">Add <?php echo ucfirst($content_type); ?></a> -->
         <hr>
         <table class="auto">
             <thead>
@@ -33,7 +33,7 @@
                         <td><?php echo $row->is_active == 1 ? 'Yes' : 'No'; ?></td>
                         <td><?php echo $row->is_featured == 1 ? 'Yes' : 'No'; ?></td>
                         <td>
-                            <a href="<?php echo base_url('index.php/admin/form/' . $content_type . '/' . $row->id); ?>" class="button tiny radius edit-cat">Edit</a>
+                            <a href="<?php echo base_url('admin/form/' . $content_type . '/' . $row->id); ?>" class="button tiny radius edit-cat">Edit</a>
                             <a href="" class="button tiny radius warning delete" data-reveal-id="delete-prompt">Delete</a>
                         </td>
                     </tr>

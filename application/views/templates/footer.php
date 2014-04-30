@@ -4,9 +4,9 @@
 <footer class="siteFoot">
     <nav>
         <!-- <a href="">ABOUT US</a> -->
-        <a href="<?php echo base_url('index.php/contact-us'); ?>">CONTACT</a>
-        <a href="<?php echo base_url('index.php/terms-of-use'); ?>">TERMS OF USE</a>
-        <a href="<?php echo base_url('index.php/privacy-policy'); ?>">PRIVACY POLICY</a>
+        <a href="<?php echo base_url('contact-us'); ?>">CONTACT</a>
+        <a href="<?php echo base_url('terms-of-use'); ?>">TERMS OF USE</a>
+        <a href="<?php echo base_url('privacy-policy'); ?>">PRIVACY POLICY</a>
     </nav>
 
     <div class="social">

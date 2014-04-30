@@ -21,20 +21,20 @@
     <header class="siteHead">
         <div id="brand">
             <div>
-                <a href="<?php echo base_url('index.php/main'); ?>"><img class="logo" src="<?php echo base_url('images/logo.png'); ?>"></a>
+                <a href="<?php echo base_url('main'); ?>"><img class="logo" src="<?php echo base_url('images/logo.png'); ?>"></a>
                 <!-- <div class="social">
                     <a href="http://facebook.com/80kph" rel="nofollow"><span class="icon iconfacebook" aria-hidden="true"></span></a>
                     <a href="http://twitter.com/upsigmadeltaphi" rel="nofollow"><span class="icon icontwitter" aria-hidden="true"></span></a>
                     <a href=""><span class="icon iconpinterest" aria-hidden="true"></span></a>
                 </div> -->
                 <nav>
-                    <a href="<?php echo base_url('index.php/home'); ?>" <?php if ($page=="home") echo " class=\"active\""; ?>>Home</a>
-                    <a href="<?php echo base_url('index.php/classes'); ?>" <?php if ($page=="classes" || @$crumb=="classes") echo " class=\"active\""; ?>>Classes</a>
-                    <a href="<?php echo base_url('index.php/recipes'); ?>" <?php if ($page=="recipes" || @$crumb=="recipes") echo " class=\"active\""; ?>>Recipes</a>
-                    <a href="<?php echo base_url('index.php/articles'); ?>" <?php if ($page=="articles" || @$crumb=="articles") echo " class=\"active\""; ?>>Articles</a>
-                    <a href="<?php echo base_url('index.php/kids'); ?>" <?php if ($page=="kids_corner") echo " class=\"active\""; ?>>Kids' Corner</a>
-                    <a href="<?php echo base_url('index.php/products'); ?>" <?php if ($page=="products" || @$crumb=="products") echo " class=\"active\""; ?>>Products</a>
-                    <a href="<?php echo base_url('index.php/contact-us'); ?>" <?php if ($page=="contact") echo " class=\"active\""; ?>>Contact</a>
+                    <a href="<?php echo base_url('home'); ?>" <?php if ($page=="home") echo " class=\"active\""; ?>>Home</a>
+                    <a href="<?php echo base_url('classes'); ?>" <?php if ($page=="classes" || @$crumb=="classes") echo " class=\"active\""; ?>>Classes</a>
+                    <a href="<?php echo base_url('recipes'); ?>" <?php if ($page=="recipes" || @$crumb=="recipes") echo " class=\"active\""; ?>>Recipes</a>
+                    <a href="<?php echo base_url('articles'); ?>" <?php if ($page=="articles" || @$crumb=="articles") echo " class=\"active\""; ?>>Articles</a>
+                    <a href="<?php echo base_url('kids'); ?>" <?php if ($page=="kids_corner") echo " class=\"active\""; ?>>Kids' Corner</a>
+                    <a href="<?php echo base_url('products'); ?>" <?php if ($page=="products" || @$crumb=="products") echo " class=\"active\""; ?>>Products</a>
+                    <a href="<?php echo base_url('contact-us'); ?>" <?php if ($page=="contact") echo " class=\"active\""; ?>>Contact</a>
                 </nav>  
             </div>
         </div>
