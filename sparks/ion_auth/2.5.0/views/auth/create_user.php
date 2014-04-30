@@ -5,7 +5,7 @@
     <hr>
     <div id="infoMessage"><?php echo $message;?></div>
 
-    <?php echo form_open("auth/create_user");?>
+    <?php echo form_open("auth/register");?>
       <label>
           <?php echo lang('create_user_fname_label', 'first_name');?> <br />
           <?php echo form_input($first_name);?>
