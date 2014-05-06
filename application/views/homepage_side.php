@@ -2,8 +2,8 @@
     <h6>Social Media</h6>
     <div class="social">
         <a href="https://www.facebook.com/Mayakitchen" target="_blank"><span class="icon iconfacebook" aria-hidden="true"></span></a>
-        <a href="https://twitter.com/mayakitchen" target="_blank"><span class="icon icontwitter" aria-hidden="true"></span></a>
-        <a href="http://instagram.com/themayakitchen" target="_blank"><span class="icon iconinstagram" aria-hidden="true"></span></a>
+        <a href="https://twitter.com/themayakitchen1" target="_blank"><span class="icon icontwitter" aria-hidden="true"></span></a>
+        <a href="http://instagram.com/themayakitchen1" target="_blank"><span class="icon iconinstagram" aria-hidden="true"></span></a>
     </div>
 </div>
 <div class="schedules">

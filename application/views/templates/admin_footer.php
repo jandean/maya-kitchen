@@ -10,7 +10,7 @@
 <script src="<?php echo base_url('javascripts/nicEdit.js'); ?>"></script>
 <script>
 	$(document).foundation();
-	bkLib.onDomLoaded(function() { nicEditors.allTextAreas(); });
+	bkLib.onDomLoaded(function() { nicEditors.allTextAreas({fullPanel : true}); });
 </script>
 
 </body>

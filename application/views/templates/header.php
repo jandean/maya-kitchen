@@ -6,6 +6,7 @@
 	<!-- Load Stylesheet -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('stylesheets/style.css'); ?>">
+	<script src="<?php echo base_url('javascripts/jquery.min.js'); ?>"></script>
 
 	<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
     <style type="text/css">
@@ -14,10 +15,22 @@
            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
 
-	<title>The Maya Kitchen Site Admin</title>
+	<title>The Maya Kitchen</title>
 </head>
 
 <body>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-50518338-1', 'themayakitchen.com');
+	  ga('require', 'displayfeatures');
+	  ga('send', 'pageview');
+	
+	</script>
+
     <header class="siteHead">
         <div id="brand">
             <div>

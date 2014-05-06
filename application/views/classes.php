@@ -12,17 +12,13 @@
         <?php if ($recordset) : ?>
             <?php foreach ($recordset as $row) : ?>
             <?php if ($row->is_url == 1) : ?>
-            <div class="card">
-                <div>
-                    <a href="<?php echo $row->url; ?>" target="_blank"><h4><?php echo $row->title; ?></h4></a>
-                </div>
+            <div class="card class">
+                <a href="<?php echo $row->url; ?>" target="_blank"><h4><?php echo $row->title; ?></h4></a>
                 <a href="<?php echo $row->url; ?>" target="_blank"><img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%"></a>
             </div>
             <?php else : ?>
-            <div class="card">
-                <div>
-                    <a href="<?php echo base_url('classes/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
-                </div>
+            <div class="card class">
+	            <a href="<?php echo base_url('classes/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
                 <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%">
             </div>
             <?php endif; ?>

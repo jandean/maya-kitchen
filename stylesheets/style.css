@@ -765,7 +765,7 @@ fieldset div {
   height: 380px;
 }
 /* line 22, ../sass/partials/specific/_basic.scss */
-#classes .class:nth-child(3n + 1) {
+#classes .class:nth-child(3n) {
   margin-right: 0;
 }
 /* line 25, ../sass/partials/specific/_basic.scss */
@@ -977,3 +977,26 @@ ul.pagination li {
   float: none;
   display: inline-block;
 }
+
+.singleArticle img { text-align: center; }
+
+#home .topTier > .carousel {
+	width: 100%;
+	margin-bottom: 625px;
+}
+
+#home .topTier > .carousel div {
+	width: 1110px;
+	padding: 10px;
+	display: none;
+	position: absolute;
+	max-height: 600px;
+	overflow: hidden;
+	margin-right: 20px;
+}
+
+#home .topTier > .carousel div:first-child { display: block; }
+
+#home .topTier > .carousel div img { width: 100%; }
+
+#products .card:nth-child(3n) { margin-right: 0; }

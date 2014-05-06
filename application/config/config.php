@@ -45,7 +45,7 @@ function get_base_url()
     $base = explode("/index.php", $url);
     return $base[0];
 }
-$config['base_url'] = get_base_url();
+$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'];
 
 /*
 |--------------------------------------------------------------------------

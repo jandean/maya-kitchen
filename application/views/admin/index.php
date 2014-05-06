@@ -1,10 +1,3 @@
-<h1>The Maya Kitchen Site Admin</h1>
+<h1 style="text-align: center;">The Maya Kitchen Site Admin</h1>
 <hr>
-<ul>
-	<li><a href="login.php">Login Page</a></li>
-	<li>Base Layouts</li>
-	<ul>
-		<li><a href="basic.php">Basic</a></li>
-		<li><a href="basic-content-editor">Content Editor</a></li>
-	</ul>
-</ul>
+<p style="text-align: center; margin-bottom: 400px;">Select a site section in the navigation area above to manage your website.</p>
