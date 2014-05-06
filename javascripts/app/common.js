@@ -34,6 +34,17 @@ $(function() {
     }
   });
 
+  $("#start_date").datepicker({
+      onSelect: function(selected) {
+        $("#end_date").datepicker("option","minDate", selected)
+      }
+  });
+  $("#end_date").datepicker({
+      onSelect: function(selected) {
+         $("#start_date").datepicker("option","maxDate", selected)
+      }
+  });
+
 });
 
 function delete_entry(obj)

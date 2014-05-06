@@ -12,7 +12,11 @@
         <?php foreach ($classes as $row) : ?>
             <div>
                 <a href="<?php echo base_url('classes/' . $row->slug); ?>"><strong><?php echo $row->title; ?></strong></a>
-                <?php echo $row->content; ?>
+                <?php
+                echo date('F d', strtotime($row->start_date));
+                if (!is_null($row->end_date))
+                    echo ' to ' . date('F d', strtotime($row->end_date));
+                ?>
             </div>
         <?php endforeach; ?>
     <?php endif; ?>

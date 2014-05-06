@@ -12,10 +12,14 @@
 			<label>Slug
 				<input type="text" placeholder="Title-Slug" name="slug" id="slug" value="<?php echo set_value('slug', @$result->slug); ?>" readonly />
 			</label>
-			<label>Content
-				<textarea rows="10" placeholder="Article Content" name="content" id="nicEditArea"><?php echo set_value('content', @$result->content); ?></textarea>
-			</label>
 			<?php if ($content_type == 'class'): ?>
+				<label>
+					Start Date
+					<input type="text" placeholder="Start Date" name="start_date" id="start_date" value="<?php echo set_value('start_date', date('m/d/Y', strtotime(@$result->start_date))); ?>" readonly />
+				</label>
+	            <label>End Date
+					<input type="text" placeholder="End Date" name="end_date" id="end_date" value="<?php echo set_value('end_date', date('m/d/Y', strtotime(@$result->end_date))); ?>" readonly />
+				</label>
 	            <label>Category
 	                <?php foreach ($categories as $category) : ?>
 	                <label>
@@ -23,6 +27,10 @@
 	                </label>
 	                <?php endforeach; ?>
 	            </label>
+	        <?php else : ?>
+				<label>Content
+					<textarea rows="10" placeholder="Article Content" name="content" id="nicEditArea"><?php echo set_value('content', @$result->content); ?></textarea>
+				</label>
         	<?php endif; ?>
 			<label>Cover Image
 				<input type="file" name="image" />

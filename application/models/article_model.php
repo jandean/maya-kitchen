@@ -15,7 +15,9 @@ class Article_model extends CI_Model {
     var $is_featured;
     var $date_created;
     var $date_updated;
-    var $class_category_id   = null;
+    var $class_category_id  = null;
+    var $start_date         = null;
+    var $end_date           = null;
 
     function __construct()
     {
@@ -98,8 +100,11 @@ class Article_model extends CI_Model {
         if ($this->input->post('is_featured') == 1)
             $this->clear_feature($type);
 
-        if ($type == CONTENT_CLASS)
+        if ($type == CONTENT_CLASS) :
             $this->class_category_id = $this->input->post('class_category_id');
+            $this->start_date       = date('Y-m-d', strtotime($this->input->post('start_date')));
+            $this->end_date         = date('Y-m-d', strtotime($this->input->post('end_date')));
+        endif;
 
         $this->type         = $type;
         $this->title        = $this->input->post('title');
@@ -126,8 +131,11 @@ class Article_model extends CI_Model {
         if ($this->input->post('is_featured') == 1)
             $this->clear_feature($type);
 
-        if ($type == CONTENT_CLASS)
+        if ($type == CONTENT_CLASS) :
             $this->class_category_id = $this->input->post('class_category_id');
+            $this->start_date       = date('Y-m-d', strtotime($this->input->post('start_date')));
+            $this->end_date         = date('Y-m-d', strtotime($this->input->post('end_date')));
+        endif;
 
         $this->type         = $type;
         $this->id           = $this->input->post('article_id');

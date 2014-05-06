@@ -79,12 +79,16 @@ class Admin extends CI_Controller {
             $this->form_validation->set_rules('title', 'Title', 'trim|required');
         endif;
 
-        if ($type == CONTENT_CLASS)
+        if ($type == CONTENT_CLASS) :
             $this->form_validation->set_rules('class_category_id', 'Category', 'required');
+            $this->form_validation->set_rules('start_date', 'Start Date', 'trim|required');
+            $this->form_validation->set_rules('end_date', 'End Date', 'trim');
+        else :
+            $this->form_validation->set_rules('content', 'Content', 'trim|required');
+        endif;
 
         $this->form_validation->set_rules('article_id', 'ID', 'trim');
         $this->form_validation->set_rules('slug', 'Slug', 'trim|required');
-        $this->form_validation->set_rules('content', 'Content', 'trim|required');
         $this->form_validation->set_rules('is_url', 'Is URL', 'trim');
         $this->form_validation->set_rules('url', 'URL', 'trim');
         $this->form_validation->set_rules('for_kids', 'For Kids', 'trim');

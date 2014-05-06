@@ -6,7 +6,7 @@
 	<!-- Load Stylesheet -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('stylesheets/style.css'); ?>">
-	<script src="<?php echo base_url('javascripts/jquery.min.js'); ?>"></script>
+	<script src="<?php echo base_url('javascripts/jquery-1.11.0.min.js'); ?>"></script>
 
 	<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
     <style type="text/css">
