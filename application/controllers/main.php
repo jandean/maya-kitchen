@@ -39,7 +39,7 @@ class Main extends CI_Controller {
 
         $this->data['links']        = $this->pagination->create_links();
         $this->data['side']         = $this->common_side;
-        $this->data['recordset']    = $this->article_model->get_entries(CONTENT_CLASS, null, $limit, $offset, $this->order_by)->result();
+        $this->data['recordset']    = $this->article_model->get_entries(CONTENT_CLASS, null, $limit, $offset, 'date_created')->result();
         $this->data['page']         = "classes";
         $this->load->view('template', $this->data);
     }
