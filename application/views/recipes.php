@@ -8,7 +8,10 @@
     <?php echo $side; ?>
 
     <div class="core" id="recipes">
-        <!-- <h6>November 2013</h6> -->
+        <?php
+        if (!is_null($filter))
+            echo "<h6>CATEGORY: {$filter->name}</h6>";
+        ?>
         <?php if ($recordset) : ?>
             <?php foreach ($recordset as $row) : ?>
             <div class="card">

@@ -64,8 +64,12 @@ class Main extends CI_Controller {
         $offset = $this->uri->segment(3);
 
         $where = array('is_active' => 1);
-        if (!is_null($category))
+        if (!is_null($category)) :
             $where['recipe_category_id'] = $category;
+            $this->data['filter'] = $this->category_model->get_entries(null, $category)->row();
+        else :
+            $this->data['filter'] = null;
+        endif;
 
         $config['base_url']     = base_url("index.php/main/recipes/");
         $config['total_rows']   = $this->recipe_model->get_count($where);
