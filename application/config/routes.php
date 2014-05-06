@@ -81,6 +81,7 @@ $route['privacy-policy']    = "main/privacy_policy";
 $route['classes/(:any)']    = "main/content/classes/$1";
 $route['articles/(:any)']   = "main/content/articles/$1";
 $route['products/(:any)']   = "main/content/products/$1";
+$route['recipes/(:num)']    = "main/recipes/$1";
 $route['recipes/(:any)']    = "main/recipe/$1";
 
 /* End of file routes.php */

@@ -25,10 +25,10 @@ class Recipe_model extends CI_Model {
         return $query->row();
     }
     
-    function get_entries($id = null, $limit = null, $offset = null, $order_by = null, $active = 1)
+    function get_entries($condition = null, $limit = null, $offset = null, $order_by = null, $active = 1)
     {
-        if (!is_null($id)) :
-            $where['recipe.id'] = $id;
+        if (!is_null($condition)) :
+            $where = $condition;
         else :
             $where = array('category.type' => CATEGORY_RECIPE);
             if ($active == 1)
@@ -69,10 +69,10 @@ class Recipe_model extends CI_Model {
         return $query;
     }
 
-    function get_count($active = 1)
+    function get_count($condition = null)
     {
-        if ($active == 1)
-            $this->db->where('is_active', 1);
+        if (!is_null($condition))
+            $this->db->where($condition);
 
         $count = $this->db->count_all('recipe');
         return $count;

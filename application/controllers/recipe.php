@@ -20,7 +20,7 @@ class Recipe extends CI_Controller {
         $offset = $this->uri->segment(3);
 
         $config['base_url']     = base_url('index.php/recipe/index/');
-        $config['total_rows']   = $this->recipe_model->get_count(0);
+        $config['total_rows']   = $this->recipe_model->get_count();
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
 
@@ -39,7 +39,8 @@ class Recipe extends CI_Controller {
             $this->form_validation->set_rules('title', 'Title', 'trim|required|is_unique[recipe.title]');
         else : // edit
             $this->data['title']    = "Edit Recipe";
-            $this->data['result']   = $this->recipe_model->get_entries($id)->row();
+            $where = array('recipe.id' => $id);
+            $this->data['result']   = $this->recipe_model->get_entries($where)->row();
             $this->recipe_model->date_created = $this->data['result']->date_created;
 
             $contents_data = array();

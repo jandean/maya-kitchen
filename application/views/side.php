@@ -2,6 +2,8 @@
 
     <?php echo @$home_side; ?>
 
+    <?php echo @$side_links; ?>
+
     <?php if (@$feat_recipe): ?>
     <div class="rotm">
         <h6>Recipe of the Month</h6>

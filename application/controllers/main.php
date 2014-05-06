@@ -8,7 +8,7 @@ class Main extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(array('recipe_model','article_model','pages_model','carousel_model'));
+        $this->load->model(array('recipe_model','article_model','pages_model','carousel_model','category_model'));
         $this->data['feat_recipe']  = $this->recipe_model->get_featured()->row();
         $this->order_by = 'date_created DESC';
         $this->common_side = $this->load->view('side', $this->data, true);
@@ -58,19 +58,25 @@ class Main extends CI_Controller {
         endif;
     }
 
-    public function recipes()
+    public function recipes($category = null)
     {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(3);
 
+        $where = array('is_active' => 1);
+        if (!is_null($category))
+            $where['recipe_category_id'] = $category;
+
         $config['base_url']     = base_url("index.php/main/recipes/");
-        $config['total_rows']   = $this->recipe_model->get_count();
+        $config['total_rows']   = $this->recipe_model->get_count($where);
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
 
         $this->data['links']        = $this->pagination->create_links();
-        $this->data['side']         = $this->common_side;
-        $this->data['recordset']    = $this->recipe_model->get_entries(null, $limit, $offset, $this->order_by)->result();
+        $this->data['categories']   = $this->category_model->get_entries(CATEGORY_RECIPE, null, null, null, 'name');
+        $this->data['side_links']   = $this->load->view('side_category', $this->data, true);
+        $this->data['side']         = $this->load->view('side', $this->data, true);
+        $this->data['recordset']    = $this->recipe_model->get_entries($where, $limit, $offset, $this->order_by)->result();
         $this->data['page']         = "recipes";
         $this->load->view('template', $this->data);
     }
