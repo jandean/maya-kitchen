@@ -75,6 +75,9 @@ define('SHOW_DEBUG_BACKTRACE', TRUE);
 
 
 
+define('CONTENT_CLASS_STRS', 'Classes');
+define('CONTENT_ARTICLE_STRS', 'Articles');
+define('CONTENT_PRODUCT_STRS', 'Products');
 define('CONTENT_CLASS_STR', 'class');
 define('CONTENT_ARTICLE_STR', 'article');
 define('CONTENT_PRODUCT_STR', 'product');

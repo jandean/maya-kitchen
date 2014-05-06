@@ -16,15 +16,15 @@
                     echo '<h6>';
                     switch ($row->type) {
                         case 1:
-                            echo 'Classes';
+                            echo CONTENT_CLASS_STRS;
                             break;
 
                         case 2:
-                            echo 'Articles';
+                            echo CONTENT_ARTICLE_STRS;
                             break;
                         
                         default:
-                            echo 'Products';
+                            echo CONTENT_PRODUCT_STRS;
                             break;
                     }
                     echo ' for Kids</h6>';
