@@ -24,12 +24,15 @@
 	                <?php endforeach; ?>
 	            </label>
         	<?php endif; ?>
-			<label>
-				<input type="checkbox" name="is_url" value="1" <?php echo set_value('is_url', @$result->is_url) == 1 ? "checked" : ""; ?> /> Link
-				<input type="text" placeholder="URL" name="url" id="url" value="<?php echo set_value('url', @$result->url); ?>" />
-			</label>
 			<label>Cover Image
 				<input type="file" name="image" />
+			</label>
+			<label>
+				<input type="checkbox" name="is_url" id="is_url" value="1" <?php echo set_value('is_url', @$result->is_url) == 1 ? "checked" : ""; ?> /> Show this as link?
+				<div id="div_url" style="display:none;"><input type="text" placeholder="URL" name="url" id="url" value="<?php echo set_value('url', @$result->url); ?>" /></div>
+			</label>
+			<label>
+				<input type="checkbox" name="for_kids" value="1" <?php echo set_value('for_kids', @$result->for_kids) == 1 ? "checked" : ""; ?> /> Is this for Kids?
 			</label>
 			<label>
 				<input type="checkbox" name="is_active" value="1" <?php echo set_value('is_active', @$result->is_active) == 1 ? "checked" : ""; ?> /> Active

@@ -10,6 +10,7 @@ class Article_model extends CI_Model {
     var $image;
     var $is_url;
     var $url;
+    var $for_kids;
     var $is_active;
     var $is_featured;
     var $date_created;
@@ -45,6 +46,17 @@ class Article_model extends CI_Model {
         return $query;
     }
     
+    function get_kids_entries($limit = null, $offset = null, $order_by = null)
+    {
+        $where = array('for_kids' => 1, 'is_active' => 1);
+
+        if (!is_null($order_by))
+            $this->db->order_by($order_by);
+
+        $query = $this->db->get_where('article', $where, $limit, $offset);
+        return $query;
+    }
+    
     function get_class_entries($limit = null, $offset = null, $order_by = null, $active = 1)
     {
         if (!is_null($order_by))
@@ -61,16 +73,21 @@ class Article_model extends CI_Model {
         return $query;
     }
 
-    function get_count($type = CONTENT_ARTICLE, $active = 1, $category = null)
+    function get_count($type = CONTENT_ARTICLE, $active = 1)
     {
         if ($active == 1)
             $this->db->where('is_active', 1);
 
-        if (!is_null($category))
-            $this->db->where('class_category_id', $category);
-
         $count = $this->db->where('type', $type)
                 ->from('article')
+                ->count_all_results();
+        return $count;
+    }
+
+    function get_kids_count()
+    {
+        $count = $this->db->from('article')
+                ->where(array('for_kids' => 1, 'is_active' => 1))
                 ->count_all_results();
         return $count;
     }
@@ -89,6 +106,7 @@ class Article_model extends CI_Model {
         $this->content      = $this->input->post('content');
         $this->is_url       = $this->input->post('is_url');
         $this->url          = $this->input->post('url');
+        $this->for_kids     = $this->input->post('for_kids');
         $this->is_active    = $this->input->post('is_active');
         $this->is_featured  = $this->input->post('is_featured');
         $this->date_created = date('Y-m-d h:i:s');
@@ -117,6 +135,7 @@ class Article_model extends CI_Model {
         $this->content      = $this->input->post('content');
         $this->is_url       = $this->input->post('is_url');
         $this->url          = $this->input->post('url');
+        $this->for_kids     = $this->input->post('for_kids');
         $this->is_active    = $this->input->post('is_active');
         $this->is_featured  = $this->input->post('is_featured');
         $this->date_updated = date('Y-m-d h:i:s');

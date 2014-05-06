@@ -36,6 +36,9 @@
                 <input type="file" name="image" />
             </label>
             <label>
+                <input type="checkbox" name="for_kids" value="1" <?php echo set_value('for_kids', @$result->for_kids) == 1 ? "checked" : ""; ?> /> Is this for Kids?
+            </label>
+            <label>
                 <input type="checkbox" name="is_active" value="1" <?php echo set_value('is_active', @$result->is_active, TRUE) == 1 ? "checked" : ""; ?> /> Active
             </label>
             <label>

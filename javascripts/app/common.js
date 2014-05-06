@@ -26,6 +26,14 @@ $(function() {
     }
   });
 
+  $('input#is_url').on('click', function() {
+    if ($(this).is(':checked')){
+      $('#div_url').show('slow');
+    } else {
+      $('#div_url').hide('slow');
+    }
+  });
+
 });
 
 function delete_entry(obj)

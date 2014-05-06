@@ -111,14 +111,14 @@ class Main extends CI_Controller {
         $offset = $this->uri->segment(3);
 
         $config['base_url']     = base_url("index.php/main/kids_corner/");
-        $config['total_rows']   = $this->article_model->get_count(CONTENT_CLASS, 1, CLASS_KIDS) + $this->recipe_model->get_count(1, RECIPE_KIDS);
+        $config['total_rows']   = $this->article_model->get_kids_count() + $this->recipe_model->get_kids_count();
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
 
         $this->data['links']        = $this->pagination->create_links();
         $this->data['side']         = $this->common_side;
-        $this->data['class_set']    = $this->article_model->get_entries(CONTENT_CLASS, null, $limit / 2 , $offset / 2, $this->order_by)->result();
-        $this->data['recipe_set']   = $this->recipe_model->get_entries(null, $limit / 2 , $offset / 2, $this->order_by)->result();
+        $this->data['class_set']    = $this->article_model->get_kids_entries($limit / 2 , $offset / 2, $this->order_by)->result();
+        $this->data['recipe_set']   = $this->recipe_model->get_kids_entries($limit / 2 , $offset / 2, $this->order_by)->result();
         $this->data['page']         = "kids_corner";
         $this->load->view('template', $this->data);
     }

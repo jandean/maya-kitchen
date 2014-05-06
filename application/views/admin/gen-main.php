@@ -11,10 +11,11 @@
                     <th width="50">ID</th>
                     <th>Image</th>
                     <th>Title</th>
-                    <th>Link</th>
                     <?php if ($content_type == CATEGORY_CLASS_STR) : ?>
                         <th>Category</th>
                     <?php endif; ?>
+                    <th>Link</th>
+                    <th>For Kids</th>
                     <th>Active</th>
                     <th>Featured</th>
                     <th width="250">Actions</th>
@@ -28,10 +29,11 @@
                         <td class="delete-id"><?php echo $row->id; ?></td>
                         <td><img src="<?php echo base_url('images/uploads/' . $row->image); ?>" width="80"></td>
                         <td><?php echo $row->title; ?></td>
-                        <td><?php echo $row->is_url == 1 ? 'Yes' : 'No'; ?></td>
                         <?php if ($content_type == CATEGORY_CLASS_STR) : ?>
                             <td><?php echo $row->name; ?></td>
                         <?php endif; ?>
+                        <td><?php echo $row->is_url == 1 ? 'Yes' : 'No'; ?></td>
+                        <td><?php echo $row->for_kids == 1 ? 'Yes' : 'No'; ?></td>
                         <td><?php echo $row->is_active == 1 ? 'Yes' : 'No'; ?></td>
                         <td><?php echo $row->is_featured == 1 ? 'Yes' : 'No'; ?></td>
                         <td>

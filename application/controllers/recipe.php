@@ -58,6 +58,7 @@ class Recipe extends CI_Controller {
         $this->form_validation->set_rules('yield', 'Yield', 'trim');
         $this->form_validation->set_rules('notes', 'Notes', 'trim');
         $this->form_validation->set_rules('recipe_category_id', 'Category', 'trim|required');
+        $this->form_validation->set_rules('for_kids', 'For Kids', 'trim');
         $this->form_validation->set_rules('is_active', 'Active', 'trim');
         $this->form_validation->set_rules('is_featured', 'Featured', 'trim');
 
