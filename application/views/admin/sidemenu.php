@@ -79,6 +79,7 @@ switch ($page) {
 			<div class="sidebar">
 				<ul class="side-nav">
 					<li class="heading"><strong>FEATURES</strong></li>
+					<li <?php echo $active == 'add' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('pages/banner_form'); ?>">+ Add Image</a></li>
 					<li <?php echo $active == 'banner' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('pages/banner'); ?>">Banner</a></li>
 				</ul>
 			</div>

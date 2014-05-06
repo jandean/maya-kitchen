@@ -8,7 +8,7 @@ class Main extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(array('recipe_model','article_model','pages_model'));
+        $this->load->model(array('recipe_model','article_model','pages_model','carousel_model'));
         $this->data['feat_recipe']  = $this->recipe_model->get_featured()->row();
         $this->order_by = 'date_created DESC';
         $this->common_side = $this->load->view('side', $this->data, true);
@@ -22,6 +22,7 @@ class Main extends CI_Controller {
         $this->data['banner']       = $this->pages_model->get_entries(PAGE_BANNER)->content;
         $this->data['side']         = $this->load->view('side', $this->data, true);
         $this->data['recordset']    = $this->article_model->get_entries(CONTENT_ARTICLE, null, 7, null, $this->order_by)->result();
+        $this->data['carousel']     = $this->carousel_model->get_entries(null, 5)->result();
         $this->data['page']         = "home";
         $this->load->view('template', $this->data);
     }
