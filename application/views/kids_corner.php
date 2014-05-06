@@ -9,8 +9,29 @@
     
     <div class="core">
         <?php if ($class_set) : ?>
-            <h6>Classes for Kids</h6>
-            <?php foreach ($class_set as $row) : ?>
+            <?php
+            $atype = '';
+            foreach ($class_set as $row) :
+                if ($atype != $row->type) {
+                    echo '<h6>';
+                    switch ($row->type) {
+                        case 1:
+                            echo 'Classes';
+                            break;
+
+                        case 2:
+                            echo 'Articles';
+                            break;
+                        
+                        default:
+                            echo 'Products';
+                            break;
+                    }
+                    echo ' for Kids</h6>';
+                }
+
+                $atype = $row->type;
+                ?>
                 <div class="articleSummary">
                     <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="225">
                     <div>

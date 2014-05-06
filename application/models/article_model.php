@@ -48,6 +48,7 @@ class Article_model extends CI_Model {
     
     function get_kids_entries($limit = null, $offset = null, $order_by = null)
     {
+        $this->db->order_by('type');
         $where = array('for_kids' => 1, 'is_active' => 1);
 
         if (!is_null($order_by))
