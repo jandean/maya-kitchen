@@ -18,7 +18,7 @@ class Carousel_model extends CI_Model {
         if (!is_null($id))
             $this->db->where('id', $id);
 
-        if (!is_null($id))
+        if (!is_null($limit))
             $this->db->limit($limit);
 
         $query = $this->db->order_by('date_created DESC')

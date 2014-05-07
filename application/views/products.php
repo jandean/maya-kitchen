@@ -22,7 +22,7 @@
                 <div class="card">
                     <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%">
                     <div>
-                        <a href="<?php echo base_url('products/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
+                        <h4><?php echo $row->title; ?></h4>
                     </div>
                 </div>
             <?php endif; ?>

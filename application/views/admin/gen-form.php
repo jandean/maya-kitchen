@@ -37,7 +37,9 @@
 			</label>
 			<label>
 				<input type="checkbox" name="is_url" id="is_url" value="1" <?php echo set_value('is_url', @$result->is_url) == 1 ? "checked" : ""; ?> /> Show this as link?
-				<div id="div_url" style="display:none;"><input type="text" placeholder="URL" name="url" id="url" value="<?php echo set_value('url', @$result->url); ?>" /></div>
+			</label>
+			<label>
+				<div id="div_url" <?php if (@$result->is_url != 1) echo 'style="display:none;"'; ?>><input type="text" placeholder="URL" name="url" id="url" value="<?php echo set_value('url', @$result->url); ?>" /></div>
 			</label>
 			<label>
 				<input type="checkbox" name="for_kids" value="1" <?php echo set_value('for_kids', @$result->for_kids) == 1 ? "checked" : ""; ?> /> Is this for Kids?
