@@ -12,13 +12,14 @@
 			<label>Slug
 				<input type="text" placeholder="Title-Slug" name="slug" id="slug" value="<?php echo set_value('slug', @$result->slug); ?>" readonly />
 			</label>
-			<?php if ($content_type == 'class'): ?>
+			<?php if ($content_type == 'class'):
+				$start_date = isset($result->start_date) ? $result->start_date : date('m/d/Y'); ?>
 				<label>
 					Start Date
-					<input type="text" placeholder="Start Date" name="start_date" id="start_date" value="<?php echo set_value('start_date', date('m/d/Y', strtotime(@$result->start_date))); ?>" readonly />
+					<input type="text" placeholder="Start Date" name="start_date" id="start_date" value="<?php echo set_value('start_date', date('m/d/Y', strtotime($start_date))); ?>" readonly />
 				</label>
 	            <label>End Date
-					<input type="text" placeholder="End Date" name="end_date" id="end_date" value="<?php echo set_value('end_date', date('m/d/Y', strtotime(@$result->end_date))); ?>" readonly />
+					<input type="text" placeholder="End Date" name="end_date" id="end_date" value="<?php echo set_value('end_date'); ?>" readonly />
 				</label>
 	            <label>Category
 	                <?php foreach ($categories as $category) : ?>

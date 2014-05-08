@@ -103,7 +103,7 @@ class Article_model extends CI_Model {
         if ($type == CONTENT_CLASS) :
             $this->class_category_id = $this->input->post('class_category_id');
             $this->start_date       = date('Y-m-d', strtotime($this->input->post('start_date')));
-            $this->end_date         = date('Y-m-d', strtotime($this->input->post('end_date')));
+            $this->end_date         = $this->input->post('end_date') == '' ? null : date('Y-m-d', strtotime($this->input->post('end_date')));
         endif;
 
         $this->type         = $type;
@@ -134,7 +134,7 @@ class Article_model extends CI_Model {
         if ($type == CONTENT_CLASS) :
             $this->class_category_id = $this->input->post('class_category_id');
             $this->start_date       = date('Y-m-d', strtotime($this->input->post('start_date')));
-            $this->end_date         = date('Y-m-d', strtotime($this->input->post('end_date')));
+            $this->end_date         = $this->input->post('end_date') == '' ? null : date('Y-m-d', strtotime($this->input->post('end_date')));
         endif;
 
         $this->type         = $type;

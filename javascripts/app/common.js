@@ -35,6 +35,7 @@ $(function() {
   });
 
   $("#start_date").datepicker({
+      'minDate': 0,
       onSelect: function(selected) {
         $("#end_date").datepicker("option","minDate", selected)
       }
