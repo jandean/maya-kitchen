@@ -67,6 +67,8 @@ switch ($page) {
 					<li <?php echo $active == 'contact' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('pages/contact'); ?>">Contact</a></li>
 					<li <?php echo $active == 'terms' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('pages/terms'); ?>">Terms of Use</a></li>
 					<li <?php echo $active == 'policy' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('pages/policy'); ?>">Privacy Policy</a></li>
+					<li <?php echo $active == 'subheader' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('pages/subheader'); ?>">Sub-Header</a></li>
+					<li <?php echo $active == 'subfooter' ? 'class="active"' : ''; ?>><a href="<?php echo base_url('pages/subfooter'); ?>">Sub-Footer</a></li>
 				</ul>
 			</div>
 		</aside>

@@ -14,8 +14,13 @@ class Pages_model extends CI_Model {
     
     function get_entries($type = PAGE_CONTACT)
     {
-        $query = $this->db->get_where('static_pages', array('type' => $type));
-        return $query->row();
+        if (is_array($type))
+            $this->db->where_in('type', $type);
+        else
+            $this->db->where('type', $type);
+
+        $query = $this->db->get('static_pages');
+        return $query;
     }
 
     function update_entry()
@@ -24,6 +29,23 @@ class Pages_model extends CI_Model {
         $this->content  = $this->input->post('content');
         $this->date_updated  = date("Y-m-d h:i:s");
         $this->db->update('static_pages', $this, array('type' => $this->type));
+    }
+
+    function update_subs($type)
+    {
+        $start = PAGE_SUBHEADER_CLASS;
+        $until = PAGE_SUBHEADER_KIDS;
+        if ($type == 'footer') :
+            $start = PAGE_SUBFOOTER_CLASS;
+            $until = PAGE_SUBFOOTER_KIDS;
+        endif;
+
+        for ($i=$start; $i <= $until; $i++) :
+            $this->type     = $this->input->post('page_type_' . $i);
+            $this->content  = $this->input->post('content_' . $i);
+            $this->date_updated  = date("Y-m-d h:i:s");
+            $this->db->update('static_pages', $this, array('type' => $this->type));
+        endfor;
     }
 
 }

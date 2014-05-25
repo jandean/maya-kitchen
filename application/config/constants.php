@@ -94,6 +94,16 @@ define('PAGE_CONTACT', 1);
 define('PAGE_TERMS', 2);
 define('PAGE_POLICY', 3);
 define('PAGE_BANNER', 4);
+define('PAGE_SUBHEADER_CLASS', 5);
+define('PAGE_SUBHEADER_RECIPE', 6);
+define('PAGE_SUBHEADER_ARTICLE', 7);
+define('PAGE_SUBHEADER_PRODUCT', 8);
+define('PAGE_SUBHEADER_KIDS', 9);
+define('PAGE_SUBFOOTER_CLASS', 10);
+define('PAGE_SUBFOOTER_RECIPE', 11);
+define('PAGE_SUBFOOTER_ARTICLE', 12);
+define('PAGE_SUBFOOTER_PRODUCT', 13);
+define('PAGE_SUBFOOTER_KIDS', 14);
 
 define('CLASS_KIDS', 3);
 define('RECIPE_KIDS', 6);

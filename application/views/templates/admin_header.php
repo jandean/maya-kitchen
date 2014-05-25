@@ -91,6 +91,7 @@
                     <li><a href="<?php echo base_url('pages/contact'); ?>">Contact</a></li>
                     <li><a href="<?php echo base_url('pages/terms'); ?>">Terms of Use</a></li>
                     <li><a href="<?php echo base_url('pages/policy'); ?>">Privacy Policy</a></li>
+                    <li><a href="<?php echo base_url('pages/subheader'); ?>">Default Page View</a></li>
                 </ul>
             </li>
             </ul>

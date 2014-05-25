@@ -21,7 +21,7 @@ class Pages extends CI_Controller {
 
         $this->data['title']        = "Contact Us";
         $this->data['type']         = "contact";
-        $this->data['result']       = $this->pages_model->get_entries();
+        $this->data['result']       = $this->pages_model->get_entries()->row();
         $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'pages', 'active' => 'contact'), true);
         $this->data['page']         = "admin/pages-form";
 
@@ -42,7 +42,7 @@ class Pages extends CI_Controller {
 
         $this->data['title']        = "Terms of Use";
         $this->data['type']         = "terms";
-        $this->data['result']       = $this->pages_model->get_entries(PAGE_TERMS);
+        $this->data['result']       = $this->pages_model->get_entries(PAGE_TERMS)->row();
         $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'pages', 'active' => 'terms'), true);
         $this->data['page']         = "admin/pages-form";
 
@@ -63,7 +63,7 @@ class Pages extends CI_Controller {
 
         $this->data['title']        = "Privacy Policy";
         $this->data['type']         = "policy";
-        $this->data['result']       = $this->pages_model->get_entries(PAGE_POLICY);
+        $this->data['result']       = $this->pages_model->get_entries(PAGE_POLICY)->row();
         $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'pages', 'active' => 'policy'), true);
         $this->data['page']         = "admin/pages-form";
 
@@ -147,5 +147,65 @@ class Pages extends CI_Controller {
         $this->carousel_model->remove_entry();
         $msg = 'Successfully removed data.';
         echo json_encode(array('st' => 1, 'msg' => $msg));
+    }
+
+    public function subheader()
+    {
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBHEADER_CLASS, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBHEADER_CLASS, 'Content', 'trim');
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBHEADER_RECIPE, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBHEADER_RECIPE, 'Content', 'trim');
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBHEADER_ARTICLE, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBHEADER_ARTICLE, 'Content', 'trim');
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBHEADER_PRODUCT, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBHEADER_PRODUCT, 'Content', 'trim');
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBHEADER_KIDS, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBHEADER_KIDS, 'Content', 'trim');
+
+        $types = array(PAGE_SUBHEADER_CLASS, PAGE_SUBHEADER_RECIPE, PAGE_SUBHEADER_ARTICLE, PAGE_SUBHEADER_PRODUCT, PAGE_SUBHEADER_KIDS);
+        $this->data['title']        = "Sub Header";
+        $this->data['type']         = "subheader";
+        $this->data['result']       = $this->pages_model->get_entries($types)->result();
+        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'pages', 'active' => 'subheader'), true);
+        $this->data['page']         = "admin/subs-form";
+
+        if ($this->form_validation->run() == true) :
+            $this->pages_model->update_subs('header');
+            redirect('pages/subheader', 'refresh');
+        else :
+            //set the flash data error message if there is one
+            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            $this->load->view('admin/template', $this->data);
+        endif;
+    }
+
+    public function subfooter()
+    {
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBFOOTER_CLASS, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBFOOTER_CLASS, 'Content', 'trim');
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBFOOTER_RECIPE, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBFOOTER_RECIPE, 'Content', 'trim');
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBFOOTER_ARTICLE, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBFOOTER_ARTICLE, 'Content', 'trim');
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBFOOTER_PRODUCT, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBFOOTER_PRODUCT, 'Content', 'trim');
+        $this->form_validation->set_rules('page_type_' . PAGE_SUBFOOTER_KIDS, 'Page Type', 'trim');
+        $this->form_validation->set_rules('content_' . PAGE_SUBFOOTER_KIDS, 'Content', 'trim');
+
+        $types = array(PAGE_SUBFOOTER_CLASS, PAGE_SUBFOOTER_RECIPE, PAGE_SUBFOOTER_ARTICLE, PAGE_SUBFOOTER_PRODUCT, PAGE_SUBFOOTER_KIDS);
+        $this->data['title']        = "Sub Footer";
+        $this->data['type']         = "subfooter";
+        $this->data['result']       = $this->pages_model->get_entries($types)->result();
+        $this->data['sidemenu']     = $this->load->view('admin/sidemenu', array('page' => 'pages', 'active' => 'subfooter'), true);
+        $this->data['page']         = "admin/subs-form";
+
+        if ($this->form_validation->run() == true) :
+            $this->pages_model->update_subs('footer');
+            redirect('pages/subfooter', 'refresh');
+        else :
+            //set the flash data error message if there is one
+            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            $this->load->view('admin/template', $this->data);
+        endif;
     }
 }

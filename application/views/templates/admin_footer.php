@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('stylesheets/jquery-ui/style.css'); ?>">
 <script>
 	$(document).foundation();
-	bkLib.onDomLoaded(function() { nicEditors.allTextAreas({fullPanel : true}); });
+	bkLib.onDomLoaded(function() { nicEditors.allTextAreas({fullPanel : true, iconsPath : config.base+'images/nicEditorIcons.gif'}); });
 </script>
 
 </body>
