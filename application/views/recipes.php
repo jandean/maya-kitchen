@@ -11,17 +11,21 @@
         <?php
         if (!is_null($filter))
             echo "<h6>CATEGORY: {$filter->name}</h6>";
-        ?>
-        <?php if ($recordset) : ?>
-            <?php foreach ($recordset as $row) : ?>
+
+        if ($recordset) :
+            foreach ($recordset as $row) : ?>
             <div class="card">
                 <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%">
                 <div>
                     <a href="<?php echo base_url('recipes/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
                 </div>
             </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+            <?php endforeach;
+        else:
+            foreach ($default_view as $row) :
+                echo "<p>{$row->content}</p>";
+            endforeach;
+        endif; ?>
     </div>
 
     <div class="pagination-centered">

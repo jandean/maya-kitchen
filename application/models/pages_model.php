@@ -22,6 +22,14 @@ class Pages_model extends CI_Model {
         $query = $this->db->get('static_pages');
         return $query;
     }
+    
+    function get_header_footer(Array $type)
+    {
+        $this->db->select('content');
+        $this->db->where_in('type', $type);
+        $query = $this->db->get('static_pages');
+        return $query->result();
+    }
 
     function update_entry()
     {

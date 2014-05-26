@@ -55,6 +55,13 @@
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
+
+        <?php 
+        if (!$class_set && !$recipe_set) :
+            foreach ($default_view as $row) :
+                echo "<p>{$row->content}</p>";
+            endforeach;
+        endif; ?>
     </div>
 
     <div class="pagination-centered">

@@ -18,8 +18,12 @@
                         <?php echo substr(strip_tags($row->content), 0, 220); ?>... [<a href="<?php echo base_url('articles/' . $row->slug); ?>">Read More</a>]
                     </div>
                 </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+            <?php endforeach;
+        else:
+            foreach ($default_view as $row) :
+                echo "<p>{$row->content}</p>";
+            endforeach;
+        endif; ?>
     </div>
 
     <div class="pagination-centered">
