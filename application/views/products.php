@@ -7,10 +7,13 @@
 
     <?php echo $side; ?>
 
+    <?php if ($subheader) :
+        echo "<div>{$subheader->content}</div>";
+    endif; ?>
+
     <div class="core" id="products">
         <!-- <h6>November 2013</h6> -->
-        <?php
-        if ($recordset) :
+        <?php if ($recordset) :
             foreach ($recordset as $row) :
                 if ($row->is_url == 1) : ?>
                     <div class="card">
@@ -29,17 +32,18 @@
                 <?php
                 endif;
             endforeach;
-        else:
-            foreach ($default_view as $row) :
-                echo "<p>{$row->content}</p>";
-            endforeach;
         endif; ?>
-    </div>
 
-    <div class="pagination-centered">
-        <ul class="pagination">
-            <?php echo $links; ?>
-        </ul>
+        <div class="pagination-centered">
+            <ul class="pagination">
+                <?php echo $links; ?>
+            </ul>
+        </div>
+
+        
+        <?php if ($subfooter) :
+            echo "<div>{$subfooter->content}</div>";
+        endif; ?>
     </div>
 
 </div>

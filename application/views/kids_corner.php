@@ -6,10 +6,13 @@
     </nav>
 
     <?php echo $side; ?>
+
+    <?php if ($subheader) :
+        echo "<div>{$subheader->content}</div>";
+    endif; ?>
     
     <div class="core">
-        <?php if ($class_set) : ?>
-            <?php
+        <?php if ($class_set) : 
             $atype = '';
             foreach ($class_set as $row) :
                 if ($atype != $row->type) {
@@ -38,8 +41,9 @@
                         <a href="<?php echo base_url('classes/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
                     </div>
                 </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+            <?php 
+            endforeach;
+        endif; ?>
 
         <p></p>
 
@@ -53,21 +57,21 @@
                         [<a href="<?php echo base_url('recipes/' . $row->slug); ?>">Read More</a>]
                     </div>
                 </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
-
-        <?php 
-        if (!$class_set && !$recipe_set) :
-            foreach ($default_view as $row) :
-                echo "<p>{$row->content}</p>";
+            <?php
             endforeach;
         endif; ?>
-    </div>
 
-    <div class="pagination-centered">
-        <ul class="pagination">
-            <?php echo $links; ?>
-        </ul>
+        <div class="pagination-centered">
+            <ul class="pagination">
+                <?php echo $links; ?>
+            </ul>
+        </div>
+
+        <div>
+            <?php if ($subfooter) :
+                echo "{$subfooter->content}";
+            endif; ?>
+        </div>
     </div>
 
 </div>

@@ -19,7 +19,7 @@ class Main extends CI_Controller {
         $this->data['classes']      = $this->article_model->get_entries(CONTENT_CLASS, null, null, null, 'start_date')->result();
         $this->data['home_side']    = $this->load->view('homepage_side', $this->data, true);
 
-        $this->data['banner']       = $this->pages_model->get_entries(PAGE_BANNER)->content;
+        $this->data['banner']       = $this->pages_model->get_entries(PAGE_BANNER)->row()->content;
         $this->data['side']         = $this->load->view('side', $this->data, true);
         $this->data['recordset']    = $this->article_model->get_entries(CONTENT_ARTICLE, null, 7, null, $this->order_by)->result();
         $this->data['carousel']     = $this->carousel_model->get_entries(null, 5)->result();
@@ -40,7 +40,8 @@ class Main extends CI_Controller {
         $this->data['links']        = $this->pagination->create_links();
         $this->data['side']         = $this->common_side;
         $this->data['recordset']    = $this->article_model->get_entries(CONTENT_CLASS, null, $limit, $offset, 'start_date')->result();
-        $this->data['default_view'] = $this->pages_model->get_header_footer(array(PAGE_SUBHEADER_CLASS,PAGE_SUBFOOTER_CLASS));
+        $this->data['subheader']    = $this->pages_model->get_header_footer(PAGE_SUBHEADER_CLASS);
+        $this->data['subfooter']    = $this->pages_model->get_header_footer(PAGE_SUBFOOTER_CLASS);
         $this->data['page']         = "classes";
         $this->load->view('template', $this->data);
     }
@@ -82,7 +83,8 @@ class Main extends CI_Controller {
         $this->data['side_links']   = $this->load->view('side_category', $this->data, true);
         $this->data['side']         = $this->load->view('side', $this->data, true);
         $this->data['recordset']    = $this->recipe_model->get_entries($where, $limit, $offset, $this->order_by)->result();
-        $this->data['default_view'] = $this->pages_model->get_header_footer(array(PAGE_SUBHEADER_RECIPE,PAGE_SUBFOOTER_RECIPE));
+        $this->data['subheader']    = $this->pages_model->get_header_footer(PAGE_SUBHEADER_RECIPE);
+        $this->data['subfooter']    = $this->pages_model->get_header_footer(PAGE_SUBFOOTER_RECIPE);
         $this->data['page']         = "recipes";
         $this->load->view('template', $this->data);
     }
@@ -100,7 +102,8 @@ class Main extends CI_Controller {
         $this->data['links']        = $this->pagination->create_links();
         $this->data['side']         = $this->common_side;
         $this->data['recordset']    = $this->article_model->get_entries(CONTENT_ARTICLE, null, $limit, $offset, $this->order_by)->result();
-        $this->data['default_view'] = $this->pages_model->get_header_footer(array(PAGE_SUBHEADER_ARTICLE,PAGE_SUBFOOTER_ARTICLE));
+        $this->data['subheader']    = $this->pages_model->get_header_footer(PAGE_SUBHEADER_ARTICLE);
+        $this->data['subfooter']    = $this->pages_model->get_header_footer(PAGE_SUBFOOTER_ARTICLE);
         $this->data['page']         = "articles";
         $this->load->view('template', $this->data);
     }
@@ -132,7 +135,8 @@ class Main extends CI_Controller {
         $this->data['side']         = $this->common_side;
         $this->data['class_set']    = $this->article_model->get_kids_entries($limit / 2 , $offset / 2, $this->order_by)->result();
         $this->data['recipe_set']   = $this->recipe_model->get_kids_entries($limit / 2 , $offset / 2, $this->order_by)->result();
-        $this->data['default_view'] = $this->pages_model->get_header_footer(array(PAGE_SUBHEADER_KIDS,PAGE_SUBFOOTER_KIDS));
+        $this->data['subheader']    = $this->pages_model->get_header_footer(PAGE_SUBHEADER_KIDS);
+        $this->data['subfooter']    = $this->pages_model->get_header_footer(PAGE_SUBFOOTER_KIDS);
         $this->data['page']         = "kids_corner";
         $this->load->view('template', $this->data);
     }
@@ -150,7 +154,8 @@ class Main extends CI_Controller {
         $this->data['links']        = $this->pagination->create_links();
         $this->data['side']         = $this->common_side;
         $this->data['recordset']    = $this->article_model->get_entries(CONTENT_PRODUCT, null, $limit, $offset, $this->order_by)->result();
-        $this->data['default_view'] = $this->pages_model->get_header_footer(array(PAGE_SUBHEADER_PRODUCT,PAGE_SUBFOOTER_PRODUCT));
+        $this->data['subheader']    = $this->pages_model->get_header_footer(PAGE_SUBHEADER_PRODUCT);
+        $this->data['subfooter']    = $this->pages_model->get_header_footer(PAGE_SUBFOOTER_PRODUCT);
         $this->data['page']         = "products";
         $this->load->view('template', $this->data);
     }
@@ -159,7 +164,7 @@ class Main extends CI_Controller {
     {
         $this->data['title']    = 'Contact Us';
         $this->data['side']     = $this->common_side;
-        $this->data['result']   = $this->pages_model->get_entries();
+        $this->data['result']   = $this->pages_model->get_entries()->row();
         $this->data['page']     = "static_page";
         $this->load->view('template', $this->data);
     }
@@ -168,7 +173,7 @@ class Main extends CI_Controller {
     {
         $this->data['title']    = 'Terms of Use';
         $this->data['side']     = $this->common_side;
-        $this->data['result']   = $this->pages_model->get_entries(PAGE_TERMS);
+        $this->data['result']   = $this->pages_model->get_entries(PAGE_TERMS)->row();
         $this->data['page']     = "static_page";
         $this->load->view('template', $this->data);
     }
@@ -177,7 +182,7 @@ class Main extends CI_Controller {
     {
         $this->data['title']    = 'Privacy Policy';
         $this->data['side']     = $this->common_side;
-        $this->data['result']   = $this->pages_model->get_entries(PAGE_POLICY);
+        $this->data['result']   = $this->pages_model->get_entries(PAGE_POLICY)->row();
         $this->data['page']     = "static_page";
         $this->load->view('template', $this->data);
     }

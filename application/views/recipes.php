@@ -7,6 +7,10 @@
 
     <?php echo $side; ?>
 
+    <?php if ($subheader) :
+        echo "<div>{$subheader->content}</div>";
+    endif; ?>
+
     <div class="core" id="recipes">
         <?php
         if (!is_null($filter))
@@ -21,17 +25,19 @@
                 </div>
             </div>
             <?php endforeach;
-        else:
-            foreach ($default_view as $row) :
-                echo "<p>{$row->content}</p>";
-            endforeach;
         endif; ?>
-    </div>
 
-    <div class="pagination-centered">
-        <ul class="pagination">
-            <?php echo $links; ?>
-        </ul>
+        <div class="pagination-centered">
+            <ul class="pagination">
+                <?php echo $links; ?>
+            </ul>
+        </div>
+
+        <div>
+            <?php if ($subfooter) :
+                echo "{$subfooter->content}";
+            endif; ?>
+        </div>
     </div>
 
 </div>
