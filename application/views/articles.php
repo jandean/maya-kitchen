@@ -31,11 +31,9 @@
             </ul>
         </div>
 
-        <div>
-            <?php if ($subfooter) :
-                echo "{$subfooter->content}";
-            endif; ?>
-        </div>
+        <?php if ($subfooter) :
+            echo "{$subfooter->content}";
+        endif; ?>
     </div>
 
 </div>

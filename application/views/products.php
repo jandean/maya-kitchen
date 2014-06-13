@@ -42,7 +42,7 @@
 
         
         <?php if ($subfooter) :
-            echo "<div>{$subfooter->content}</div>";
+            echo "{$subfooter->content}";
         endif; ?>
     </div>
 

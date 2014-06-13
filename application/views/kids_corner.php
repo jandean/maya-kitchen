@@ -11,7 +11,7 @@
         echo "<div>{$subheader->content}</div>";
     endif; ?>
     
-    <div class="core">
+    <div class="core" id="kids">
         <?php if ($class_set) : 
             $atype = '';
             foreach ($class_set as $row) :
@@ -35,8 +35,8 @@
 
                 $atype = $row->type;
                 ?>
-                <div class="articleSummary">
-                    <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="225">
+                <div class="card">
+                    <a href="<?php echo base_url('classes/' . $row->slug); ?>"><img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%"></a>
                     <div>
                         <a href="<?php echo base_url('classes/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
                     </div>
@@ -45,13 +45,14 @@
             endforeach;
         endif; ?>
 
-        <p></p>
+    </div>
+    <div class="core" id="kids">
 
         <?php if ($recipe_set) : ?>
             <h6>Recipes for Kids</h6>
             <?php foreach ($recipe_set as $row) : ?>
-                <div class="articleSummary">
-                    <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="225">
+                <div class="card">
+                    <a href="<?php echo base_url('recipes/' . $row->slug); ?>"><img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%"></a>
                     <div>
                         <a href="<?php echo base_url('recipes/' . $row->slug); ?>"><h4><?php echo $row->title; ?></h4></a>
                         [<a href="<?php echo base_url('recipes/' . $row->slug); ?>">Read More</a>]
@@ -67,11 +68,11 @@
             </ul>
         </div>
 
-        <div>
+        <p>
             <?php if ($subfooter) :
                 echo "{$subfooter->content}";
             endif; ?>
-        </div>
+        </p>
     </div>
 
 </div>
