@@ -111,7 +111,7 @@ class Recipe_model extends CI_Model {
 
     function insert_contents($recipe_id)
     {
-        $contents = array('ingredient', 'procedure', 'yield', 'notes');
+        $contents = array('ingredients', 'procedure', 'yield', 'notes');
 
         foreach ($contents as $title) {
             $data = array(
