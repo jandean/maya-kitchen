@@ -6,6 +6,7 @@
 		<div><?php echo $message; ?></div>
 		<?php echo form_open_multipart('admin/form/' . $content_type . '/' . @$result->id); ?>
 			<input type="hidden" name="article_id" value="<?php echo set_value('article_id', @$result->id); ?>" />
+			<input type="hidden" id="content_type" value="<?php echo $content_type; ?>" />
 			<label>Title
 				<input type="text" placeholder="Title" name="title" id="title" value="<?php echo set_value('title', @$result->title); ?>" />
 			</label>

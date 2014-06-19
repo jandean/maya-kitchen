@@ -20,7 +20,7 @@ $(function() {
         url : config.base + 'index.php/common/set_slug',
         data : postData,
         success : function(ret) {
-          $("form input#slug").val(ret);
+          $("form input#slug").val(ret + '-' + $("form input#content_type").val());
         }
       });
     }

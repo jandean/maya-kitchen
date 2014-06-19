@@ -7,6 +7,7 @@
         <div><?php echo $message; ?></div>
         <?php echo form_open_multipart('recipe/form/' . @$result->id); ?>
             <input type="hidden" name="recipe_id" value="<?php echo set_value('recipe_id', @$result->id); ?>" />
+            <input type="hidden" id="content_type" value="recipe" />
             <label>Title
                 <input type="text" placeholder="Title" name="title" id="title" value="<?php echo set_value('title', @$result->title); ?>" />
             </label>
