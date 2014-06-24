@@ -13,6 +13,9 @@
 			<label>Slug
 				<input type="text" placeholder="Title-Slug" name="slug" id="slug" value="<?php echo set_value('slug', @$result->slug); ?>" readonly />
 			</label>
+			<label>Content
+				<textarea rows="10" placeholder="Article Content" name="content" id="nicEditArea"><?php echo set_value('content', @$result->content); ?></textarea>
+			</label>
 			<?php if ($content_type == 'class'):
 				$start_date = isset($result->start_date) ? $result->start_date : date('m/d/Y'); ?>
 				<label>
@@ -29,11 +32,7 @@
 	                </label>
 	                <?php endforeach; ?>
 	            </label>
-	        <?php else : ?>
-				<label>Content
-					<textarea rows="10" placeholder="Article Content" name="content" id="nicEditArea"><?php echo set_value('content', @$result->content); ?></textarea>
-				</label>
-        	<?php endif; ?>
+	        <?php endif; ?>
 			<label>Cover Image
 				<input type="file" name="image" />
 			</label>

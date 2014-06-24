@@ -7,8 +7,11 @@
 
     <?php echo $side; ?>
 
-    <?php if ($subheader) :
-        echo "<div>{$subheader->content}</div>";
+    <?php
+    if (!is_null($subheader)) :
+        if ($subheader->content != '<br>') :
+            echo "<div class='core'>{$subheader->content}</div>";
+        endif;
     endif; ?>
 
     <div class="core" id="classes">
@@ -19,11 +22,19 @@
                     <div class="card class">
                         <a href="<?php echo $row->url; ?>" target="_blank"><h4><?php echo $row->title; ?></h4></a>
                         <a href="<?php echo $row->url; ?>" target="_blank"><img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%"></a>
+                        <?php 
+                        if ($row->content != '<br>' && $row->content != '0') :
+                            echo $row->content;
+                        endif; ?>
                     </div>
                     <?php else : ?>
                     <div class="card class">
                         <h4><?php echo $row->title; ?></h4>
                         <img src="<?php echo base_url($this->config->item('image_upload_path') . $row->image); ?>" width="100%">
+                        <?php 
+                        if ($row->content != '<br>' && $row->content != '0') :
+                            echo $row->content;
+                        endif; ?>
                     </div>
                     <?php
                 endif;

@@ -20,7 +20,7 @@ class Users extends CI_Controller {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(3);
 
-        $config['base_url']     = base_url('index.php/users/index/');
+        $config['base_url']     = base_url('users/index/');
         $config['total_rows']   = $this->user_model->get_count();
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);

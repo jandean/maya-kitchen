@@ -82,7 +82,7 @@ class Pages extends CI_Controller {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(4);
 
-        $config['base_url']     = base_url("index.php/pages/banner/");
+        $config['base_url']     = base_url("pages/banner/");
         $config['total_rows']   = $this->carousel_model->get_count();
         $config['per_page']     = $this->config->item('per_page');
         $config['uri_segment']  = 4;

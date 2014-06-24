@@ -32,7 +32,7 @@ class Main extends CI_Controller {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(3);
 
-        $config['base_url']     = base_url("index.php/main/classes/");
+        $config['base_url']     = base_url("main/classes/");
         $config['total_rows']   = $this->article_model->get_count(CONTENT_CLASS);
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
@@ -63,17 +63,31 @@ class Main extends CI_Controller {
     public function recipes($category = null)
     {
         $limit  = $this->config->item('per_page');
-        $offset = $this->uri->segment(3);
+
+        $segment2 = $this->uri->segment(2);
+        $segment3 = $this->uri->segment(3);
+        $segment4 = $this->uri->segment(4);
+
+        if ($segment2 > 0) :
+            $category = $segment2;
+            $offset = 0;
+        elseif ($segment2 == 'recipes') :
+            $category = $segment3;
+            $offset = $segment4;
+        else :
+            $category = 0;
+            $offset = 0;
+        endif;
 
         $where = array('is_active' => 1);
-        if (!is_null($category)) :
+        if ($category > 0) :
             $where['recipe_category_id'] = $category;
             $this->data['filter'] = $this->category_model->get_entries(null, $category)->row();
         else :
             $this->data['filter'] = null;
         endif;
 
-        $config['base_url']     = base_url("index.php/main/recipes/");
+        $config['base_url']     = base_url("main/recipes/" . $category . "/");
         $config['total_rows']   = $this->recipe_model->get_count($where);
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
@@ -94,7 +108,7 @@ class Main extends CI_Controller {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(3);
 
-        $config['base_url']     = base_url("index.php/main/articles/");
+        $config['base_url']     = base_url("main/articles/");
         $config['total_rows']   = $this->article_model->get_count();
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
@@ -126,7 +140,7 @@ class Main extends CI_Controller {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(3);
 
-        $config['base_url']     = base_url("index.php/main/kids_corner/");
+        $config['base_url']     = base_url("main/kids_corner/");
         $config['total_rows']   = $this->article_model->get_kids_count() + $this->recipe_model->get_kids_count();
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
@@ -146,7 +160,7 @@ class Main extends CI_Controller {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(3);
 
-        $config['base_url']     = base_url("index.php/main/products/");
+        $config['base_url']     = base_url("main/products/");
         $config['total_rows']   = $this->article_model->get_count(CONTENT_PRODUCT);
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);

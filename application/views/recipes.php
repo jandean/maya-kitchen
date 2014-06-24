@@ -7,15 +7,20 @@
 
     <?php echo $side; ?>
 
-    <?php if ($subheader) :
-        echo "<div>{$subheader->content}</div>";
-    endif; ?>
+    <?php
+    if (!is_null($subheader)) :
+        if ($subheader->content != '<br>') :
+            echo "<div class='core'>{$subheader->content}</div>";
+        endif;
+    endif;
+
+    if (!is_null($filter)) :
+        echo "<div class='core'><h6>CATEGORY: {$filter->name}</h6></div>";
+    endif;
+    ?>
 
     <div class="core" id="recipes">
         <?php
-        if (!is_null($filter))
-            echo "<h6>CATEGORY: {$filter->name}</h6>";
-
         if ($recordset) :
             foreach ($recordset as $row) : ?>
             <div class="card">

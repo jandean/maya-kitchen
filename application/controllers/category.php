@@ -20,7 +20,7 @@ class Category extends CI_Controller {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(3);
 
-        $config['base_url']     = base_url('index.php/category/index/');
+        $config['base_url']     = base_url('category/index/');
         $config['total_rows']   = $this->category_model->get_count($type);
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);

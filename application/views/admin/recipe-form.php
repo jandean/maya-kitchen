@@ -15,7 +15,7 @@
                 <input type="text" placeholder="Title-Slug" name="slug" id="slug" value="<?php echo set_value('slug', @$result->slug); ?>" readonly />
             </label>
             <label>Ingredients
-                <textarea rows="10" placeholder="Type ingredients, one line per item" name="ingredient"><?php echo set_value('ingredient', @$contents['ingredient']); ?></textarea>
+                <textarea rows="10" placeholder="Type ingredients, one line per item" name="ingredients"><?php echo set_value('ingredients', @$contents['ingredients']); ?></textarea>
             </label>
             <label>Procedure
                 <textarea rows="10" placeholder="Type procedure" name="procedure"><?php echo set_value('procedure', @$contents['procedure']); ?></textarea>

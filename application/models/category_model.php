@@ -17,7 +17,7 @@ class Category_model extends CI_Model {
         if (!is_null($order_by))
             $this->db->order_by($order_by);
 
-        if (is_null($id))
+        if (is_null($id) || $id == 0)
             $where = array('type' => $type);
         else
             $where = array('id' => $id);

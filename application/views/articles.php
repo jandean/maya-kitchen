@@ -7,8 +7,11 @@
 
     <?php echo $side; ?>
 
-    <?php if ($subheader) :
-        echo "<div>{$subheader->content}</div>";
+    <?php
+    if (!is_null($subheader)) :
+        if ($subheader->content != '<br>') :
+            echo "<div class='core'>{$subheader->content}</div>";
+        endif;
     endif; ?>
     
     <div class="core">

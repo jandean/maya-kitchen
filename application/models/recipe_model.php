@@ -74,7 +74,7 @@ class Recipe_model extends CI_Model {
         if (!is_null($condition))
             $this->db->where($condition);
 
-        $count = $this->db->count_all('recipe');
+        $count = $this->db->count_all_results('recipe');
         return $count;
     }
 
@@ -148,7 +148,7 @@ class Recipe_model extends CI_Model {
 
     function update_contents($recipe_id)
     {
-        $contents = array('ingredient', 'procedure', 'yield', 'notes');
+        $contents = array('ingredients', 'procedure', 'yield', 'notes');
 
         foreach ($contents as $title) {
             $data = array(

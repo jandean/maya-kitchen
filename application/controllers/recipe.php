@@ -19,7 +19,7 @@ class Recipe extends CI_Controller {
         $limit  = $this->config->item('per_page');
         $offset = $this->uri->segment(3);
 
-        $config['base_url']     = base_url('index.php/recipe/index/');
+        $config['base_url']     = base_url('recipe/index/');
         $config['total_rows']   = $this->recipe_model->get_count();
         $config['per_page']     = $this->config->item('per_page');
         $this->pagination->initialize($config);
@@ -54,7 +54,7 @@ class Recipe extends CI_Controller {
         endif;
 
         $this->form_validation->set_rules('slug', 'Slug', 'trim|required');
-        $this->form_validation->set_rules('ingredient', 'Ingredient', 'trim|required');
+        $this->form_validation->set_rules('ingredients', 'Ingredient', 'trim|required');
         $this->form_validation->set_rules('procedure', 'Procedure', 'trim|required');
         $this->form_validation->set_rules('yield', 'Yield', 'trim');
         $this->form_validation->set_rules('notes', 'Notes', 'trim');
