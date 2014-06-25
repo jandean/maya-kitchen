@@ -1,6 +1,6 @@
  <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['per_page'] = 20;
+$config['per_page'] = 21;
 
 $config['next_link'] = '&raquo;';
 $config['next_tag_open'] = '<li class="arrow unavailable">';
