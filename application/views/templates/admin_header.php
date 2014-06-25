@@ -6,6 +6,8 @@
     <!-- Load Stylesheet -->
     <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('stylesheets/admin/style.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('stylesheets/froala/font-awesome.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('stylesheets/froala/froala_editor.min.css'); ?>">
     <script src="<?php echo base_url('javascripts/jquery-1.11.0.min.js'); ?>"></script>
     <script type="text/javascript">
         var config = {

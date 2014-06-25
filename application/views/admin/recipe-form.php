@@ -16,16 +16,16 @@
             </label>
             <label>Ingredients
                 <textarea rows="10" placeholder="Type ingredients, one line per item" name="ingredients"><?php echo set_value('ingredients', @$contents['ingredients']); ?></textarea>
-            </label>
+            </label><br/>
             <label>Procedure
                 <textarea rows="10" placeholder="Type procedure" name="procedure"><?php echo set_value('procedure', @$contents['procedure']); ?></textarea>
-            </label>
+            </label><br/>
             <label>Yield
                 <input type="text" placeholder="Type yield" name="yield" value="<?php echo set_value('yield', @$contents['yield']); ?>" />
             </label>
             <label>Notes
                 <textarea rows="10" placeholder="Type notes, if any" name="notes"><?php echo set_value('notes', @$contents['notes']); ?></textarea>
-            </label>
+            </label><br/>
             <label>Category
                 <?php foreach ($categories as $category) : ?>
                 <label>

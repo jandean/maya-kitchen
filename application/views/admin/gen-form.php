@@ -16,6 +16,7 @@
 			<label>Content
 				<textarea rows="10" placeholder="Article Content" name="content" id="nicEditArea"><?php echo set_value('content', @$result->content); ?></textarea>
 			</label>
+			<br/>
 			<?php if ($content_type == 'class'):
 				$start_date = isset($result->start_date) ? $result->start_date : date('m/d/Y'); ?>
 				<label>
