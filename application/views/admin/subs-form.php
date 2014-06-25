@@ -30,9 +30,7 @@
             <hr>
             <div><?php echo $message; ?></div>
             <input type="hidden" name="page_type_<?php echo $row->type; ?>" value="<?php echo set_value('page_type', $row->type); ?>" />
-            <label>
-                <textarea rows="12" name="content_<?php echo $row->type; ?>" id="nicEditArea"><?php echo set_value('content', $row->content); ?></textarea>
-            </label>
+            <textarea rows="12" name="content_<?php echo $row->type; ?>"><?php echo set_value('content', $row->content); ?></textarea>
             <br/>
         <?php endforeach; ?>
         <hr>

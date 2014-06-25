@@ -14,18 +14,18 @@
             <label>Slug
                 <input type="text" placeholder="Title-Slug" name="slug" id="slug" value="<?php echo set_value('slug', @$result->slug); ?>" readonly />
             </label>
-            <label>Ingredients
+            <label>Ingredients</label>
                 <textarea rows="10" placeholder="Type ingredients, one line per item" name="ingredients"><?php echo set_value('ingredients', @$contents['ingredients']); ?></textarea>
-            </label><br/>
-            <label>Procedure
+            <br/>
+            <label>Procedure</label>
                 <textarea rows="10" placeholder="Type procedure" name="procedure"><?php echo set_value('procedure', @$contents['procedure']); ?></textarea>
-            </label><br/>
+            <br/>
             <label>Yield
                 <input type="text" placeholder="Type yield" name="yield" value="<?php echo set_value('yield', @$contents['yield']); ?>" />
             </label>
-            <label>Notes
+            <label>Notes</label>
                 <textarea rows="10" placeholder="Type notes, if any" name="notes"><?php echo set_value('notes', @$contents['notes']); ?></textarea>
-            </label><br/>
+            <br/>
             <label>Category
                 <?php foreach ($categories as $category) : ?>
                 <label>
